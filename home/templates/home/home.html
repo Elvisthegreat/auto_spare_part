@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!--page header
+    to push the top of it down to the bottom of the main nav bar and site header.-->
+    {% block page_header %}
+    <section>
+        <div class="container header-container">
+            <div class="row">
+                <div class="col"></div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block content %}
+    <section>
+        <div class="container h-100">
+            <div class="row h-100">
+                <!-- For large screens (lg and above), use 'col-lg-2' to get 6 columns (since 12/2 = 6) -->
+                <!-- For small screens (md and below), use 'col-6' to get 2 columns (since 12/6 = 2) -->
+                <div class="col-6 col-lg-2 my-auto">
+                    <!-- Your image goes here -->
+                </div>
+                <!-- Repeat the above 'div' for each image you want to add -->
+            </div>
+        </div>
+        
+    </section>
+{% endblock %}

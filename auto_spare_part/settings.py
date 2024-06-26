@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'allauth.account',
     # Optional -- requires install using `django-allauth[socialacocunt]`.
     'allauth.socialaccount', # copied end
+    'home',
+    
 ]
 
 MIDDLEWARE = [
