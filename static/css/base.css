@@ -1,4 +1,17 @@
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
 .base-header {
-    background: #132530;
+    background-color: #132530;
+    color: white;
     padding-bottom: 12px;
+}
+
+#main-content{
+    min-height: 100vh;
+    flex: 1 0 auto;
 }
