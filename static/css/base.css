@@ -11,7 +11,32 @@ body{
     padding-bottom: 12px;
 }
 
+.base-header2 {
+    background-color: #10181f;
+    color: white;
+    padding-bottom: 12px;
+}
+
 #main-content{
     min-height: 100vh;
     flex: 1 0 auto;
+}
+
+.contact-info{
+    font-size: 12px;
+}
+
+.nav-links{
+    font-size: 17px;
+    font-weight: 400;
+    color: #132530 !important;
+}
+
+.nav-links:hover{
+    color: yellow !important;
+}
+
+.nav-items{
+    margin-right: 50px;
+    padding: 5px;
 }
