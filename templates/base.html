@@ -84,6 +84,7 @@
                 </li>
               </ul>
               <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+                <!--List-inline are use to style horizontally-->
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                   <li class="list-inline-item dropdown nav-items">
                     <a class="text-decoration-none text-dark nav-link" href="#" id="user-options"
@@ -101,8 +102,46 @@
                       <a href="" class="dropdown-item">My Profile</a>
                       <a href="" class="dropdown-item">Logout</a>
                       {% else %}
-                      <a href="" class="dropdown-item">Register</a>
-                      <a href="" class="dropdown-item">Login</a>
+                      <!-- Register Modal -->
+                      <a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#registerModal">Register</a>
+                      <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="registerModalLabel">Register</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <!-- Registration form goes here -->
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-primary">Register</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Login Modal -->
+                      <a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+                      <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <!-- Login form goes here -->
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-primary">Login</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                       {% endif %}
                     </div>
                   </li>
@@ -138,7 +177,9 @@
               <form method="GET" action="#" class="d-flex" role="search">
                   <input class="form-control me-2" type="search" name="q" placeholder="Search AutoSparePart"
                       aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
+                  <div class="input-group-append">
+                      <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
+                  </div>
               </form>
           </div>
       </div>
