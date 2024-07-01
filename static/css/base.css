@@ -12,7 +12,7 @@ body{
 }
 
 .base-header2 {
-    background-color: #10181f;
+    background-color: whitesmoke;
     color: white;
     padding-bottom: 12px;
 }
@@ -37,6 +37,11 @@ body{
 }
 
 .nav-items{
-    margin-right: 50px;
+    margin-right: 90px;
     padding: 5px;
+}
+
+.nav-icon{
+    margin-right: 20px;
+    font-size: 24px;
 }
