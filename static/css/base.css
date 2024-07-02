@@ -14,9 +14,14 @@ body{
 .base-header2 {
     background-color: whitesmoke;
     color: white;
-    padding-bottom: 12px;
 }
 
+/*Logo size*/
+.logo-font {
+    font-size: 30px; /* Adjust this value to your preference */
+}
+
+/*Body height to push footer down*/
 #main-content{
     min-height: 100vh;
     flex: 1 0 auto;
@@ -30,10 +35,6 @@ body{
     font-size: 17px;
     font-weight: 400;
     color: #132530 !important;
-}
-
-.nav-links:hover{
-    color: yellow !important;
 }
 
 .nav-items{
