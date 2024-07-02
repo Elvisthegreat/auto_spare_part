@@ -42,20 +42,9 @@
   {% block extra_js %}
   {% endblock %}
 
-<div class="container">
-  <div class="w-100 d-flex d-none d-md-block">
-    <div>
-      <i class="bi bi-envelope-fill text-light contact-info"></i>
-      <a href="" class="navbar-sm-brand text-light text-decoration-none contact-info">info@autosparepart.com</a>
-      <i class="bi bi-phone-fill contact-info text-light"></i>
-      <a href="" class="navbar-sm-brand text-white text-decoration-none contact-info">2227223709</a>
-    </div>
-  </div>
-</div>
-
 <body>
   <!--container-fluid and fixed-top to ensure that it sticks to the top of the page.-->
-  <header class="container-fluid fixed-top base-header">
+  <header class="fixed-top base-header">
     <div class="container">
       <div class="w-100 d-flex d-none d-md-block">
         <div>
@@ -66,16 +55,22 @@
         </div>
       </div>
     </div>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary mt-2">
-      <div class="container-fluid">
-        <a href="{% url 'home' %}" class="nav-link main-logo-link me-4">
-          <h1 class="logo-font d-none d-md-block"><strong><span class="text-warning">Auto</span></strong><span
-              class="text-black">SparePart</span></h1>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    
+
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <!--Wrapped the button and logo in a div with d-flex align-items-center to align them horizontally.-->
+      <div class="container-fluid d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center">
+          <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a href="{% url 'home' %}" class="nav-link main-logo-link">
+            <h1 class="logo-font d-none d-sm-block"><strong><span class="text-warning">Auto</span></strong><span class="text-black">SparePart</span></h1>
+          </a>
+        </div>
+
+        <div class="collapse navbar-collapse text-lg-center" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item d-lg-none">
               <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
@@ -91,127 +86,53 @@
                 <li><a class="dropdown-item" href="#">Something else here</a></li>
               </ul>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </li>
+            <!-- Repeat dropdown items as needed -->
           </ul>
         </div>
-        <div class="col-12 my-auto py-1 py-lg-0 me-4">
-          <!--list-inline are use to style horizontally-->
-          <ul class="list-inline list-unstyled text-center text-lg-right my-0">
-            <li class="list-inline-item dropdown nav-items me-2">
-              <a class="text-decoration-none text-dark nav-link" href="#" id="user-options"
-                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <div class="text-center">
-                  <div><i class="bi bi-person-fill nav-icon"></i></div>
-                  <p class="my-0">My Account</p>
-                </div>
-              </a>
-              <div class="dropdown-menu border-0" aria-labelledby="user-options">
-                {% if request.user.is_authenticated %}
-                {% if request.user.is_superuser %}
-                    <a href="" class="dropdown-item">Product Management</a>
-                {% endif %}
-                    <a href="" class="dropdown-item">My Profile</a>
-                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                {% else %}
-                <!-- Register Modal -->
-                    <a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#registerModal">Register</a>
-                <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel"
-                  aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="registerModalLabel">Register</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div class="modal-body">
-                        <!-- Registration form goes here -->
-                          <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Register</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Login Modal -->
-                <a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
-                <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel"
-                  aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="loginModalLabel">Login</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div class="modal-body">
-                        <!-- Login form goes here -->
-                        <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Login</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                {% endif %}
+      </div> 
+      <div class="col-12 col-lg-2 my-auto py-1 py-lg-0">
+        <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+          <li class="list-inline-item dropdown">
+            <a class="text-black nav-link" href="#" id="user-options" data-bs-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              <div class="text-center">
+                <div><i class="fas fa-user fa-lg"></i></div>
+                <p class="my-0">My Account</p>
               </div>
-            </li>
-            <li class="list-inline-item">
-              <!--Highlight the bag icon whenever ther is something in it-->
-              <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} text-decoration-none text-dark nav-link"
-                href="">
-                <div class="text-center">
-                  <div><i class="bi bi-cart-fill nav-icon"></i></div>
-                  <p class="my-0">
-                    <!--checking whether this grand total template variable exists-->
-                    {% if grand_total %}
-                    ${{ grand_total|floatformat:2 }}
-                    {% else %}
-                    $0.00
-                    {% endif %}
-                  </p>
-                </div>
-              </a>
-            </li>
-          </ul>
-          </div>
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="user-options">
+              {% if request.user.is_authenticated %}
+              {% if request.user.is_superuser %}
+              <a href="" class="dropdown-item">Product Management</a>
+              {% endif %}
+              <a href="" class="dropdown-item">My Profile</a>
+              <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+              {% else %}
+              <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+              <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+              {% endif %}
+            </div>
+          </li>
+          <li class="list-inline-item">
+            <!--Highlight the bag icon whenever ther is something in it-->
+            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
+              href="">
+              <div class="text-center">
+                <div><i class="fas fa-shopping-cart fa-lg"></i></div>
+                <p class="my-0">
+                  {% if grand_total %}
+                  ${{ grand_total|floatformat:2 }}
+                  {% else %}
+                  $0.00
+                  {% endif %}
+                </p>
+              </div>
+            </a>
+          </li>
+        </ul>
       </div>
     </nav>
-
+        
     <!--Search div-->
     <div class="container text-center">
       <div class="row justify-content-center">
