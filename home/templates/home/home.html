@@ -14,18 +14,139 @@
 {% endblock %}
 
 {% block content %}
-    <section>
-        <div class="container h-100">
-            <div class="row h-100">
-                <!-- For large screens (lg and above), use 'col-lg-2' to get 6 columns (since 12/2 = 6) -->
-                <!-- For small screens (md and below), use 'col-6' to get 2 columns (since 12/6 = 2) -->
-                <div class="col-6 col-lg-2 my-auto">
-                    <!-- Your image goes here -->
-                
+<div class="overlay"></div>
+    <!--Section for homepage images-->
+    <section class="row row-cols-2 row-cols-md-6 g-4 margin">
+            <div class="col">
+              <div class="card h-100">
+                <a href="">
+                    <img src="{% static 'images/tires.png' %}" class="card-img-top" alt="An image of motor tires">
+                </a>
+                <div class="card-body">
+                  <h5 class="text-center">Tires</h5>
                 </div>
-                <!-- Repeat the above 'div' for each image you want to add -->
+              </div>
             </div>
-        </div>
-        
+            <div class="col">
+              <div class="card h-100">
+                <a href="">
+                    <img src="{% static 'images/breaks.png' %}" class="card-img-top" alt="breaks logo">
+                </a>
+                <div class="card-body">
+                  <h5 class="text-center">Breaks</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <a href="">
+                    <img src="{% static 'images/clutchs.png' %}" class="card-img-top" alt="clutch logo">
+                </a>
+                <div class="card-body">
+                  <h5 class="text-center">Clutch</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                  <a href="">
+                     <img src="{% static 'images/cushioning.png' %}" class="card-img-top" alt="cushioning logo">
+                  </a>
+                  <div class="card-body">
+                    <h5 class="text-center">Cushioning</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100">
+                  <a href="">
+                     <img src="{% static 'images/filter.png' %}" class="card-img-top" alt="motor filters">
+                  </a>
+                  <div class="card-body">
+                    <h5 class="text-center">Filter</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100">
+                    <a href="">
+                        <img src="{% static 'images/engine.png' %}" class="card-img-top" alt="car engine images">
+                    </a>
+                  <div class="card-body">
+                    <h5 class="text-center">Engine</h5>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card h-100">
+                    <a href="">
+                        <img src="{% static 'images/oils-&-liquids.png' %}" class="card-img-top" alt="oil product for cars">
+                    </a>
+                  <div class="card-body">
+                    <h5 class="text-center">Oils & Liquid</h5>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card h-100">
+                    <a href="">
+                        <img src="{% static 'images/hanging-lamp.png' %}" class="card-img-top" alt="car hanging lamp">
+                    </a>
+                  <div class="card-body">
+                    <h5 class="text-center">Suspension</h5>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card h-100">
+                    <a href="">
+                        <img src="{% static 'images/belts-chains-rollers.png' %}" class="card-img-top" alt="car engine belt chains and rollers">
+                    </a>
+                  <div class="card-body">
+                    <h5 class="text-center">Belts, chains, rollers</h5>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card h-100">
+                    <a href="">
+                        <img src="{% static 'images/electrical.png' %}" class="card-img-top" alt="car electrical part">
+                    </a>
+                  <div class="card-body">
+                    <h5 class="text-center">Electrical</h5>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card h-100">
+                    <a href="">
+                        <img src="{% static 'images/exhaust-gas-recirculation-valve.png' %}" class="card-img-top" alt="car gas recircualtion valve">
+                    </a>
+                  <div class="card-body">
+                    <h5 class="text-center">Exhaust gas Valve</h5>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card h-100">
+                    <a href="">
+                        <img src="{% static 'images/other-categories.png' %}" class="card-img-top" alt="differents cars categories">
+                    </a>
+                  <div class="card-body">
+                    <h5 class="text-center">Other categories</h5>
+                  </div>
+                </div>
+              </div>
     </section>
+    <article class="row">
+        <p class="text-center text-black">
+            BUY CAR SPARE PARTS FROM WELL-KNOWN MANUFACTURERS ONLINE
+        </p>
+    </article>
 {% endblock %}

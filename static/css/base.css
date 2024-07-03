@@ -16,6 +16,10 @@ body{
     color: white;
 }
 
+.contact-info{
+    font-size: 12px;
+}
+
 /***************************Logo size*/
 .logo-font {
     font-size: 30px;
@@ -23,9 +27,15 @@ body{
 
 /****************************Nav links*/
 .nav-links{
-    font-size: 17px;
-    font-weight: 380;
+    font-size: 18px;
+    font-weight: 400;
     color: rgb(27, 27, 27) !important;
+}
+
+/***************************** Homepage images styling*/
+.margin{
+    margin-top: 160px;
+    padding: 50px;
 }
 
 /*Body height to push footer down*/
@@ -40,6 +50,11 @@ body{
     .nav-items {
         margin-left: 90px;
         padding: 5px;
+    }
+
+    .margin{
+        margin-top: 130px;
+        padding: 50px;
     }
 }
 
