@@ -3,6 +3,17 @@ body{
     display: flex;
     flex-direction: column;
     background-color: rgba(255, 255, 255, 0.7);
+    font-family: "EB Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+/*Body Google font*/
+.cormorant-garamond-semibold {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 300;
+    font-style: normal;
 }
 
 .base-header {

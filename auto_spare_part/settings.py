@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-klggg)lj1)%h2z71nrrz+%k)gdy47&auj@va3#b8w_r5huk!cc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-elvisthegre-autosparepa-qlbjn7m2kg4.ws-eu115.gitpod.io']
+ALLOWED_HOSTS = ['8000-elvisthegre-autosparepa-udtuuxrgaw4.ws.codeinstitute-ide.net']
 
 
 # Application definition
