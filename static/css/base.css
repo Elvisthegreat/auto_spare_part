@@ -2,7 +2,7 @@ body{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(183, 196, 159, 0.451);
     font-family: "EB Garamond", serif;
     font-optical-sizing: auto;
     font-weight: 600;
