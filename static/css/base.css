@@ -16,9 +16,16 @@ body{
     color: white;
 }
 
-/*Logo size*/
+/***************************Logo size*/
 .logo-font {
-    font-size: 30px; /* Adjust this value to your preference */
+    font-size: 30px;
+}
+
+/****************************Nav links*/
+.nav-links{
+    font-size: 17px;
+    font-weight: 380;
+    color: rgb(27, 27, 27) !important;
 }
 
 /*Body height to push footer down*/
@@ -27,35 +34,14 @@ body{
     flex: 1 0 auto;
 }
 
-.contact-info{
-    font-size: 12px;
-}
-
-.nav-links{
-    font-size: 17px;
-    font-weight: 400;
-    color: #132530 !important;
-}
-
-.nav-items{
-    margin-right: 90px;
-    padding: 5px;
-}
-
-.nav-icon{
-    margin-right: 20px;
-    font-size: 24px;
-}
-
 /*Media queries*/
 /* For smaller screens */
-@media (max-width: 767px) {
-    .navbar-toggler {
-      margin-right: 0; /* Remove default margin */
+@media (min-width: 768px) {
+    .nav-items {
+        margin-left: 90px;
+        padding: 5px;
     }
-    .navbar-brand {
-      margin-right: 10px; /* Adjust as needed */
-    }
-  }
+}
+
   
   
