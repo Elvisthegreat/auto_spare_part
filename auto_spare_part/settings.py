@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     # Optional -- requires install using `django-allauth[socialacocunt]`.
     'allauth.socialaccount', # copied end
     'home',
+    'products',
 
     # Other
     'storages'
@@ -113,7 +114,7 @@ DATABASES = {
     }
 }
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-elvisthegre-autosparepa-qlbjn7m2kg4.ws-eu114.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://8000-elvisthegre-autosparepa-udtuuxrgaw4.ws.codeinstitute-ide.net']
 
 
 # Password validation
