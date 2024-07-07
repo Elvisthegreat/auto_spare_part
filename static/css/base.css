@@ -101,6 +101,7 @@ body{
 
 .cart-bg {
     background-color: #2a3943;
+    border-radius: 50px;
 }
 
 .cart-size {
