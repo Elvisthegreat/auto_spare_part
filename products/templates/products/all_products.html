@@ -3,7 +3,7 @@
 
 {% block content %}
 <div class="overlay"></div>
-<section class="container-fluid push-header-down">
+<section class="container-fluid push-content-down">
     <div class="row">
         <div class="col text-center mt-2">
             <h1 class="logo-font"><strong><span class="text-warning">All</span></strong><span
@@ -21,11 +21,11 @@
                         <div class="col-sm-6 col-md-6 col-lg-2 col-xl-2">
                             <div class="card h-100 border-0">
                                 {% if product.image %}
-                                <a href=""> <!--link to the product details page to each product image-->
+                                <a href="{% url 'product_detail' product.id %}"> <!--link to the product details page to each product image-->
                                     <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}"> <!--products image if image exist-->
                                 </a>
                                 {% else %}
-                                <a href=""> <!--link to the product details page to each product image-->
+                                <a href="{% url 'product_detail' product.id %}"> <!--link to the product details page to each product image-->
                                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}"> <!--Or the default image from the media folder otherwise.-->
                                 </a>
                                 {% endif %} <!--End products image-->

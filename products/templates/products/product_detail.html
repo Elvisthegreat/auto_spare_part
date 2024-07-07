@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="overlay"></div>
+<section>
+    <div class="container-fluid push-content-down-detail">
+        <div class="row">
+            <!--First column-->
+            <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+                <div class="image-container m-5 py-5">
+                    {% if product.image %}
+                    <a href="#" onclick="openModal('{{ product.image.url }}')">
+                        <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                    </a>
+                    {% else %}
+                    <a href="#">
+                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+            
+            <!-- Modal Structure -->
+            <div id="myModal" class="modal push-modal-down">
+                <span class="close push-modal-x-down" onclick="closeModal()">x</span>
+                <img class="modal-content" id="modalImage">
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- JavaScript -->
+<script>
+function openModal(imageUrl) {
+    var modal = document.getElementById("myModal");
+    var modalImg = document.getElementById("modalImage");
+    modal.style.display = "block";
+    modalImg.src = imageUrl;
+}
+
+function closeModal() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "none";
+}
+</script>
+{% endblock %}

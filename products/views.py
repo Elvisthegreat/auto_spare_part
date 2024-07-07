@@ -17,3 +17,18 @@ def all_products(request):
     }
 
     return render(request, 'products/all_products.html', context)
+
+
+def product_detail(request, product_id):
+    """A view to display individual product"""
+
+    # Returning one product so we use get_object_or_404
+    product = get_object_or_404(Product, pk=product_id)
+
+    return render(
+        request, 'products/product_detail.html',
+
+    {
+        'product': product,
+    }
+)
