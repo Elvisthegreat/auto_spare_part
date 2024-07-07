@@ -36,12 +36,49 @@ body{
     font-size: 30px;
 }
 
+
 /****************************Nav links*/
-.nav-links{
+.nav-link-glow{
     font-size: 18px;
     font-weight: 400;
     color: rgb(27, 27, 27) !important;
 }
+
+/******************************* Logo Styling*/
+.nav-shine {
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-shine::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 5px;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+    z-index: -1;
+    animation: shine 2s infinite;
+}
+
+@keyframes shine {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.5), 0 0 15px rgba(255, 255, 255, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.5), 0 0 15px rgba(255, 255, 255, 0.5);
+    }
+}
+
 
 /***************************** Homepage images styling*/
 .margin{
@@ -53,6 +90,11 @@ body{
 #main-content{
     min-height: 100vh;
     flex: 1 0 auto;
+}
+
+/************************** Push products header down*/
+.push-header-down{
+    margin-top: 13em;
 }
 
 /*Media queries*/
