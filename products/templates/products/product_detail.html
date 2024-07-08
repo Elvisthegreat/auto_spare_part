@@ -6,9 +6,9 @@
 <section>
     <div class="container-fluid push-content-down-detail">
         <div class="row">
-            <!--First column-->
+            <!-- First column -->
             <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
-                <div class="image-container mt-3">
+                <div class="image-container p-sm-0 p-lg-5">
                     {% if product.image %}
                     <a href="#" onclick="openModal('{{ product.image.url }}')">
                         <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
@@ -20,87 +20,88 @@
                     {% endif %}
                 </div>
             </div>
+
             <!-- Modal Structure -->
             <div id="myModal" class="modal push-modal-down">
                 <span class="close push-modal-x-down" onclick="closeModal()">×</span>
                 <img class="modal-content" id="modalImage">
             </div>
-            <section>
-                <!--Second column-->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="product-details-container mb-5 mt-md-5">
-                        <p class="mb-0">{{ product.name }}</p>
-                        <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
-                        <!--checks if a product has a category and, if so, it displays a link with the category’s friendly name.
-                    This is that little tage below the price amount for the product-->
-                        {% if product.category %}
+
+            <!-- Second column -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="product-details-container mt-5 mt-md-5">
+                    <p class="mb-0">{{ product.name }}</p>
+                    <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
+                    {% if product.category %}
                         <p class="small mt-1 mb-0">
-                            <a class="text-muted" href="{% url 'all_products' %}?category={{ product.category.name }}">
+                            <a class="text-muted text-decoration-none" href="{% url 'all_products' %}?category={{ product.category.name }}">
                                 <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
                             </a>
                         </p>
-                        {% endif %}
-                        {% if product.rating %}
+                    {% endif %}
+                    {% if product.rating %}
                         <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
-                        {% else %}
+                    {% else %}
                         <small class="text-muted">No Rating</small>
-                        {% endif %}
-
-                        {% if request.user.is_superuser %}
+                    {% endif %}
+                    
+                    {% if request.user.is_superuser %}
                         <small class="ml-3">
-                            <a href=""><i class="fas fa-edit"></i></a> |
+                            <a href=""><i class="fas fa-edit"></i></a> | 
                             <a class="text-danger" href=""><i class="bi bi-trash-fill"></i></a>
                         </small>
-                        {% endif %}
-                        <article>
-                            <p class="mt-3">{{ product.description }}</p>
-                        </article>
-                        <div class="col-12">
-                            <p class="mt-3"><strong>Quantity:</strong></p>
-                            <div class="form-group w-50">
-                                <div class="input-group">
-                                    <!--For the product_detail decrement button targeted with Javascript in quantity_input_script-->
-                                    <div class="input-group-prepend">
-                                        <button class="decrement-qty btn btn-black rounded-0"
-                                            data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
-                                            <span class="icon">
-                                                <i class="fas fa-minus"></i>
-                                            </span>
-                                        </button>
-                                    </div>
-                                    <!--Just understand that this input it will allow us to submit a quantity.
-                                            And a specific product id to add to the bag.-->
-                                    <input class="form-control qty_input" type="number" name="quantity" value="1"
-                                        min="1" max="99" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
-                                    <!--For the product_detail increment button targeted with Javascript in quantity_input_script-->
-                                    <div class="input-group-append">
-                                        <button class="increment-qty btn btn-black rounded-0"
-                                            data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
-                                            <span class="icon">
-                                                <i class="fas fa-plus"></i>
-                                            </span>
-                                        </button>
+                    {% endif %}
+
+                    <article>
+                        <p class="mt-3">{{ product.description }}</p>
+                    </article>
+                    
+                    <form class="form" action="" method="POST">
+                        {% csrf_token %}
+                        <div class="form-row">
+                            <div class="col-12">
+                                <p class="mt-3"><strong>Quantity:</strong></p>
+                                <div class="form-group w-50">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <button class="decrement-qty btn btn-warning rounded-0" 
+                                                data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
+                                                <span class="icon">
+                                                    <i class="fas fa-minus"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <input class="form-control qty_input" type="number" 
+                                            name="quantity" value="1" min="1" max="99" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+                                        <div class="input-group-append">
+                                            <button class="increment-qty btn btn-warning rounded-0"
+                                                data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
+                                                <span class="icon">
+                                                    <i class="fas fa-plus"></i>
+                                                </span>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-12 mt-2">
+                                <a href="{% url 'all_products' %}" class="btn btn-outline-black cart-bg rounded-0 mt-5">
+                                    <span class="icon">
+                                        <i class="fas fa-chevron-left text-white"></i>
+                                    </span>
+                                    <span class="text-capitalize text-white font-weight-bold">Back to Store</span>
+                                </a>
+                                <input type="submit" class="btn btn-black bg-warning rounded-0 text-capitalize font-weight-bold mt-5" value="Add Item">
+                            </div>
+                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
-                        <div class="col{% if s %}-12 mt-2{% endif %}">
-                            <!--I'll reuse the s variable in this last column in order to make it full width and have a little top margin only if the product has sizes.-->
-                            <a href="{% url 'all_products' %}" class="btn btn-outline-black rounded-0 mt-5">
-                                <span class="icon">
-                                    <i class="fas fa-chevron-left"></i>
-                                </span>
-                                <span class="text-uppercase">Keep Shopping</span>
-                            </a>
-                            <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
-                        </div>
-                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                    </div>
+                    </form>
                 </div>
-            </section>
+            </div>
         </div>
     </div>
 </section>
+
 
 <!-- JavaScript -->
 <!--Display image as modal when click to view as single-->
