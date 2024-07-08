@@ -119,6 +119,15 @@ body{
     border-radius: 50px;
 }
 
+/*Product detail Add item button styling*/
+.bg-hover-change{
+    background-color:  #FFC107;
+}
+
+.bg-hover-change:hover{
+    background-color: #2a3943;
+    color: white;
+}
 
 /* The Modal (background) product_detail page*/
 .modal {
