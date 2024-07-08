@@ -16,6 +16,12 @@ def all_products(request):
 
     if request.GET:
 
+        """Handling a specific category"""
+        if 'category' in request.GET:
+            categories = request.GET['category'].split(',')
+            products = products.filter(category__name__in=categories)
+            categories = Category.objects.filter(name__in=categories)
+
         """Handling the search query"""
         if 'q' in request.GET: # remember the 'q' is the name in our input form in base.html
             query = request.GET['q']
@@ -29,6 +35,8 @@ def all_products(request):
 
     context = {
         'products': products,
+        'search_term': query,
+        'current_categories': categories,
     }
 
     return render(request, 'products/all_products.html', context)
