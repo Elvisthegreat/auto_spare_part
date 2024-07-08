@@ -156,12 +156,7 @@
                 <hr class="dropdown-divider">
                 <li><a class="dropdown-item" href="{% url 'all_products' %}?category=filters, clutch, engines">All-Items</a></li>
               </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link nav-shine nav-links nav-link-glow" href="{% url 'all_products' %}" role="button" aria-expanded="false">
-                  <strong><span class="text-warning">All</span></strong><span class="text-black">SparePart-Products</span>
-              </a>
-          </li>          
+            </li>        
           </ul>
         </div>
       </div>
@@ -246,21 +241,28 @@
     </nav>
 
     <!--Search div-->
-    <div class="container text-center">
+    <div class="container">
       <div class="row justify-content-center">
         <div class="col-12 col-lg-6 pt-2">
-          <!-- Search fields-->
-          <form method="GET" action="#" class="d-flex" role="search">
-            <input class="form-control me-2" type="search" name="q" placeholder="Search AutoSparePart"
-              aria-label="Search">
-            <div class="input-group-append">
-              <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
+          <div class="d-flex align-items-center">
+            <!-- Search fields-->
+            <form method="GET" action="{% url 'all_products' %}" class="d-flex flex-grow-1 mr-5" role="search" style="margin-right: 25px;">
+              <input class="form-control me-2" type="search" name="q" placeholder="Search AutoSparePart" aria-label="Search">
+              <div class="input-group-append">
+                <button class="btn btn-outline-success mr-2" type="submit"><i class="bi bi-search"></i></button>
+              </div>
+            </form>
+            <!-- Logo -->
+            <div class="pl-5 d-none d-lg-block">
+              <a class="nav-link nav-shine nav-links nav-link-glow" href="{% url 'all_products' %}" role="button" aria-expanded="false">
+                <strong><span class="text-warning">All</span></strong><span class="text-black">SparePart-Products</span>
+              </a>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
-  </header>
+ </header>
 
   <section>
     <!--Display any messages that we send back from Django-->
