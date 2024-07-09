@@ -19,7 +19,16 @@ def all_products(request):
     if request.GET:
 
         """Sorting products and the direction either asc or desc"""
-        if 'sort' in request.GET:
+        if 'sort' in request.GET: # checking if 'sort' is there
+            sortkey = request.GET['sort']
+            sort = sortkey # setting sort defined to None to sortkey
+            if sortkey == 'name':
+                sortkey = 'lower_name'
+                products = products.annotate(lower_name=Lower('name'))
+                # sort category by name instead of category id
+            if sortkey == 'category':
+                sortkey = 'category_name'
+                
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
