@@ -28,7 +28,7 @@ def all_products(request):
                 # sort category by name instead of category id
             if sortkey == 'category':
                 sortkey = 'category_name'
-                
+
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
@@ -52,10 +52,14 @@ def all_products(request):
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
+    """for sorting asc & desc"""
+    current_sorting = f'{sort}_{direction}' # return the current sorting methodology to the template.
+
     context = {
         'products': products,
         'search_term': query,
         'current_categories': categories,
+        'current_sorting': current_sorting,
     }
 
     return render(request, 'products/all_products.html', context)
