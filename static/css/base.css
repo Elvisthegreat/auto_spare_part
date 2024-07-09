@@ -173,12 +173,12 @@ body{
 
 /*Media queries*/
 /* For smaller screens */
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
     .nav-items {
         margin-left: 90px;
         padding: 5px;
     }
-}
+} */
 
 /*For screens that are 768px wider or smaller.*/
 @media (max-width: 768px) {

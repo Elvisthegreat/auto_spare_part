@@ -13,8 +13,18 @@ def all_products(request):
     # making sure the variables are defined for it to work properly
     query = None
     categories = None
+    sort = None
+    direction = None
 
     if request.GET:
+
+        """Sorting products and the direction either asc or desc"""
+        if 'sort' in request.GET:
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}' # Add - which will reverse the order.
+            products = products.order_by(sortkey) # order_by to sort all products
 
         """Handling a specific category"""
         if 'category' in request.GET:
@@ -27,7 +37,7 @@ def all_products(request):
             query = request.GET['q']
             if not query:
                 messages.error(request, '“Oops! It looks like you forgot to enter a search query.”')
-                return redirect(reverse('all_products'))
+                return redirect(reverse('home'))
 
             # Return match query in either the product name or the description.
             queries = Q(name__icontains=query) | Q(description__icontains=query)
