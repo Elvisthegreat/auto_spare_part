@@ -117,6 +117,10 @@ a.category-badge > span.badge:hover {
 }
 
 /*Back to top link*/
+.btt-button:hover {
+    background-color: #2a3943;
+}
+
 .btt-button {
     height: 42px;
     width: 42px;
@@ -217,7 +221,9 @@ a.category-badge > span.badge:hover {
     cursor: pointer;
 }
 
-
+.customize-selector-box {
+   
+}
 
 /*Media queries*/
 /* For smaller screens */

@@ -21,9 +21,9 @@
         <div class="row">
             <div class="product-container col-10 offset-1">
                 <div class="row mt-1 mb-2">
-                    <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end"> <!--This layout will put the sort select box on top on mobile.
-                                        But using the order first and order last classes adjusts it so that the sort
-                                        select box will actually be the last column on medium and larger screens.-->
+                    <div class="customize-selector-box col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end"> <!--This layout will put the sort select box on top on mobile.
+                            But using the order first and order last classes adjusts it so that the sort
+                            select box will actually be the last column on medium and larger screens.-->
                         <div class="sort-select-wrapper w-50 ">
                             <select id="sort-selector"
                                 class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
@@ -50,8 +50,8 @@
                                         select box will actually be the last column on medium and larger screens.-->
                         <p class="center-small-screen text-muted mt-3">
                             {% if search_term or current_categories or current_sorting != 'None_None' %}
-                            <span class="small fade-animation"><a class="text-decoration-none" href="{% url 'all_products' %}">Back To
-                                    All Products</a> | </span>
+                            <span class="small fade-animation"><a class="text-decoration-none" href="{% url 'all_products' %}">
+                                Back To All Products</a> | </span>
                             {% endif %}
                             {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
                         </p>
@@ -145,25 +145,52 @@
         </a>	
     </div>
 </section>
-
-<script>
-    // Select the first element with the class 'btt-link'
-    let bttLink = document.getElementsByClassName('btt-link')[0];
-
-    // Ensure the element exists before adding the event listener
-        bttLink.addEventListener('click', function(e) {
-            e.preventDefault(); // Prevent default link behavior
-            window.scrollTo(0, 0); // Scroll to the top
-        });
-</script>
 {% endblock %}
 
 {% block postloadjs %}
 {{ block.super }} <!--Using block.super will ensure we append this code to anything already in the block as opposed to replacing it.-->
-    <script type="text/javascript">
-        // Code for back to top button js to handle the functionality
-        $('.btt-link').click(function(e) {
-            window.scrollTo(0,0)
+   <!--Back to Top functionality-->
+    <script>
+        // Select the first element with the class 'btt-link'
+        let bttLink = document.getElementsByClassName('btt-link')[0];
+
+        // Ensure the element exists before adding the event listener
+            bttLink.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent default link behavior
+                window.scrollTo(0, 0); // Scroll to the top
+            });
+    </script>
+    
+    <script type="text/javaScript">
+        // capture the change event from the source selector itself.
+        $('#sort-selector').change(function() {
+            var selector = $(this);
+            var currentUrl = new URL(window.location);
+
+            var selectedVal = selector.val();
+            if(selectedVal != 'reset') {
+                var sort = selectedVal.split('_')[0];
+                var direction = selectedVal.split('_')[1]
+
+                /**
+                 * This line sets the value of the sort query parameter
+                 *  to the value stored in the sort variable. If the sort parameter already
+                 *  exists in the URL, its value will be updated; if it doesn’t exist, 
+                 * it will be added.
+                */
+                currentUrl.searchParams.set("sort", sort);
+                currentUrl.searchParams.set("direction", direction);
+
+                window.location.replace(currentUrl);
+            } else {
+                /*If the user has selected the reset option.
+                simply delete the sort and direction get parameters
+                and then replace the location.*/
+                currentUrl.searchParams.delete("sort");
+                currentUrl.searchParams.delete("direction");
+
+                window.location.replace(currentUrl);
+            }
         })
     </script>
 {% endblock %}
