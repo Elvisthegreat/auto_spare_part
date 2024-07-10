@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount', # copied end
     'home',
     'products',
-
+    'bag'
     # Other
     'storages'
     
