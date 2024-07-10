@@ -145,4 +145,25 @@
         </a>	
     </div>
 </section>
+
+<script>
+    // Select the first element with the class 'btt-link'
+    let bttLink = document.getElementsByClassName('btt-link')[0];
+
+    // Ensure the element exists before adding the event listener
+        bttLink.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent default link behavior
+            window.scrollTo(0, 0); // Scroll to the top
+        });
+</script>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }} <!--Using block.super will ensure we append this code to anything already in the block as opposed to replacing it.-->
+    <script type="text/javascript">
+        // Code for back to top button js to handle the functionality
+        $('.btt-link').click(function(e) {
+            window.scrollTo(0,0)
+        })
+    </script>
 {% endblock %}
