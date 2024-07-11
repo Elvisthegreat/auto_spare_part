@@ -12,31 +12,18 @@
                     <p class="text-center text-muted">Review your selected items and proceed to checkout.</p>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-8 offset-md-2">
-                    <article class="card shadow-sm mb-3">
-                        <header class="card-header">
-                            <h5 class="card-title">Item 1</h5>
-                        </header>
-                        <div class="card-body">
-                            <p class="card-text">Description of item 1.</p>
-                            <p class="card-text"><strong>Price:</strong> $10.00</p>
+            <section>
+                <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                        {% if bag_items %}
+                        {% else %}
+                        {% endif %}
+                        <div class="text-center mt-4">
+                            <button class="btn btn-primary">Proceed to Checkout</button>
                         </div>
-                    </article>
-                    <article class="card shadow-sm mb-3">
-                        <header class="card-header">
-                            <h5 class="card-title">Item 2</h5>
-                        </header>
-                        <div class="card-body">
-                            <p class="card-text">Description of item 2.</p>
-                            <p class="card-text"><strong>Price:</strong> $20.00</p>
-                        </div>
-                    </article>
-                    <div class="text-center mt-4">
-                        <button class="btn btn-primary">Proceed to Checkout</button>
                     </div>
                 </div>
-            </div>
+        </section>
         </section>
     </div>
 {% endblock %}
