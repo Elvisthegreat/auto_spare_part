@@ -53,14 +53,21 @@
   <!--container-fluid and fixed-top to ensure that it sticks to the top of the page.-->
   <header class="fixed-top base-header">
     <div class="container mt-2">
-      <div class="w-100 d-flex d-none d-md-block">
-        <div>
-          <i class="bi bi-envelope-fill text-light contact-info"></i>
-          <span class="navbar-sm-brand text-light text-decoration-none contact-info">info@autosparepart.com</span>
-          <i class="bi bi-phone-fill contact-info text-light"></i>
-          <span class="navbar-sm-brand text-white text-decoration-none contact-info">+39356123478</span>
-        </div>
-      </div>
+      <section>
+          <div class="w-100 d-flex d-none d-md-block">
+            <div>
+              <i class="bi bi-envelope-fill text-light contact-info"></i>
+              <span class="navbar-sm-brand text-light text-decoration-none contact-info">info@autosparepart.com</span>
+              <i class="bi bi-phone-fill contact-info text-light"></i>
+              <span class="navbar-sm-brand text-white text-decoration-none contact-info">+39356123478</span>
+            </div>
+            <div class="text-center">
+                <p class="text-light">Free shipping for orders above €86
+                <i class="fa fa-shipping-fast" style="margin-left: 8px;"></i>
+              </p>        
+            </div>
+          </div>
+    </section>
     </div>
 
     <!--Navbar-->
@@ -226,7 +233,7 @@
           <li class="list-inline-item">
             <!--Highlight the bag icon whenever ther is something in it-->
             <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
-              <div class="text-center">
+              <div class="text-center" style="margin-left: 20px;">
                 <div><i class="fas fa-shopping-cart fa-lg"></i></div>
                 <p class="my-0">
                   {% if grand_total %}
