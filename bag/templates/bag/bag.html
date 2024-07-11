@@ -29,7 +29,7 @@
                             </div>
                         {% else %}
                             <div class="text-center fade-animation">
-                                <p class="lead my-4">Your cart is empty</p>
+                                <p class="lead my-3">Your cart is empty</p>
                                 <a class="btn btn-outline-dark rounded-0 btn-lg" href="{% url 'all_products' %}">
                                     <span class="icon">
                                         <i class="bi bi-chevron-left"></i>
@@ -37,6 +37,9 @@
                                     <span>Continue shopping</span>
                                 </a>
                             </div>
+                            <section class="text-center my-4 pb-5">
+                                <img class="img-fluid" src="{% static 'images/cart.jpeg' %}" alt="A cart image">
+                            </section>
                         {% endif %}
                     </div>
                 </div>

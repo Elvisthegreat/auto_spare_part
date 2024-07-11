@@ -146,6 +146,9 @@ a.category-badge > span.badge:hover {
     animation: fadeInOut 4s linear infinite;
   }
   
+.a-cart-image {
+    width: 140px;
+}
 
 /*Push products header down*/
 .push-content-down{
