@@ -135,6 +135,7 @@ a.category-badge > span.badge:hover {
     cursor: pointer;
 }
 
+
 /*Fade in and out and color changing animation*/
 @keyframes fadeInOut {
     0%, 100% { opacity: 0; color: #2a3943; }
