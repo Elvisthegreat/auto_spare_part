@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, reverse, redirect, get_object_or_404
 from django.contrib import messages
 from products.models import Product
 
@@ -10,7 +10,7 @@ def view_bag(request):
 
 def add_item_to_bag(request, item_id):
     """ Add a quantity of the specified product to the shopping bag """
-    products = get_objects_or_404(Product, pk=item_id)
+    product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity')) # Convert string to an integer
     redirect_url = request.POST.get('redirect_url') # redirect_url found in our form
 
@@ -19,7 +19,7 @@ def add_item_to_bag(request, item_id):
     if 'product_size' in request.POST:
         size = request.POST['product_size']
         """first check to see if there's a bag variable in the session. And if not we'll create one."""
-    bag = reuest.session.get('bag', {})
+    bag = request.session.get('bag', {})
 
     if size:
         """If the item is already in the bag.
@@ -46,4 +46,4 @@ def add_item_to_bag(request, item_id):
             messages.success(request, f'Added {product.name} to your bag')
             
     request.session['bag'] = bag
-    return redirect_url(redirect_url)
+    return redirect(redirect_url)

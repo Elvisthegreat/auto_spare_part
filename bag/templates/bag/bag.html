@@ -14,18 +14,49 @@
                 <div class="row">
                     <div class="col-md-8 offset-md-2">
                         {% if bag_items %}
-                            <div class="d-block d-md-none">
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="text-center mt-4">
-                                            <p class="text-center text-muted">Review your selected items and proceed to checkout.</p>
-                                            <a class="btn btn-primary btn-lg" href="{% url 'checkout' %}">Proceed to Checkout</a>
+                        <!--Summary of the bag content-->
+                            <section>
+                                <div class="d-block d-md-none">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="text-center mt-4">
+                                                <p class="text-center text-muted">Review your selected items and proceed to checkout.</p>
+                                                <a class="btn btn-warning btn" href="">Proceed to Checkout</a>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            {% include "bag/bag-total.html" %}
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="table-responsive rounded">
+                                <div class="row">
+                                    <div class="col">
+                                        {% include "bag/checkout-buttons.html" %}
+                                    </div>
+                                </div>
+                                <!--Iterate through the bag items and generate a row for each item. on smaller screen-->
+                                {% for item in bag_items %}
+                                    <div class="row">
+                                        <div class="col-12 col-sm-6 mb-2">
+                                            {% include "bag/product-image.html" %}
+                                        </div>
+                                        <div class="col-12 col-sm-6 mb-2">
+                                            {% include "bag/product-info.html" %}
+                                        </div>
+                                        <div class="col-12 col-sm-6 order-sm-last">
+                                            <p class="my-0">Price Each: ${{ item.product.price }}</p>
+                                            
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <!--{% include "bag/quantity-form.html" %}-->
+                                        </div>
+                                    </div>
+                                    <div class="row"><div class="col"><hr></div></div>
+                                {% endfor %}
+                            </section>
+                            <div class="table-responsive rounded d-none d-md-block">
                                 <!-- Table content goes here -->
+                                {{ bag_items }}
                             </div>
                         {% else %}
                             <div class="text-center fade-animation">

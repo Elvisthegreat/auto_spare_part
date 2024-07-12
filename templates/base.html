@@ -231,9 +231,8 @@
             </div>
           </li>
           <li class="list-inline-item">
-            <!--Highlight the bag icon whenever ther is something in it-->
-            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
-              <div class="text-center" style="margin-left: 20px;">
+            <a class="{% if grand_total %}text-info text-warning font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
+              <div class="text-center" style="margin-left: 20px; position: relative;">
                 <div><i class="fas fa-shopping-cart fa-lg"></i></div>
                 <p class="my-0">
                   {% if grand_total %}
@@ -244,7 +243,7 @@
                 </p>
               </div>
             </a>
-          </li>
+          </li>            
         </ul>
       </div>
     </nav>
@@ -291,6 +290,25 @@
     
     <!--postloadjs-->
     {% block postloadjs %}
+        <script>
+          function createStarDust(x, y) {
+            const star = document.createElement('div');
+            star.classList.add('star-dust');
+            star.style.left = `${x}px`;
+            star.style.top = `${y}px`;
+            document.body.appendChild(star);
+
+            // Remove the star after the animation ends
+            star.addEventListener('animationend', () => {
+              star.remove();
+            });
+          }
+
+          document.querySelector('.fa-shopping-cart').addEventListener('click', (event) => {
+            const rect = event.target.getBoundingClientRect();
+            createStarDust(rect.left + rect.width / 2, rect.top + rect.height / 2);
+          });
+      </script>
 	  {% endblock %}
   </main>
 
