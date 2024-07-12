@@ -17,13 +17,12 @@
                         <!--Summary of the bag content-->
                             <section>
                                 <div class="d-block d-md-none">
+                                    <div class="col">
+                                        <article class="text-center">
+                                            <p class="text-center text-muted">Review your selected items and proceed to checkout.</p>
+                                        </article>
+                                    </div>
                                     <div class="row">
-                                        <div class="col">
-                                            <div class="text-center mt-4">
-                                                <p class="text-center text-muted">Review your selected items and proceed to checkout.</p>
-                                                <a class="btn btn-warning btn" href="">Proceed to Checkout</a>
-                                            </div>
-                                        </div>
                                         <div class="col">
                                             {% include "bag/bag-total.html" %}
                                         </div>
@@ -35,28 +34,40 @@
                                     </div>
                                 </div>
                                 <!--Iterate through the bag items and generate a row for each item. on smaller screen-->
-                                {% for item in bag_items %}
-                                    <div class="row">
-                                        <div class="col-12 col-sm-6 mb-2">
-                                            {% include "bag/product-image.html" %}
-                                        </div>
-                                        <div class="col-12 col-sm-6 mb-2">
-                                            {% include "bag/product-info.html" %}
-                                        </div>
-                                        <div class="col-12 col-sm-6 order-sm-last">
-                                            <p class="my-0">Price Each: ${{ item.product.price }}</p>
-                                            
-                                        </div>
-                                        <div class="col-12 col-sm-6">
-                                            <!--{% include "bag/quantity-form.html" %}-->
-                                        </div>
+                            {% for item in bag_items %}
+                                <div class="row">
+                                    <div class="col-12 col-sm-6 mb-2 d-flex align-items-center">
+                                      {% include "bag/product-image.html" %}
+                                      <div style="margin-left: 10px;">
+                                        <!-- Product info and price inline with the image on smaller screens -->
+                                        {% include "bag/product-info.html" %}
+                                        <p class="my-0">Price Each: ${{ item.product.price }}</p>
+                                      </div>
                                     </div>
-                                    <div class="row"><div class="col"><hr></div></div>
-                                {% endfor %}
+                                     <div class="row">
+                                        <p class="my-0 small text-muted d-block d-md-none d-lg-none">SKU: {{ item.product.sku|upper }}</p>
+                                    </div>
+                                    
+                                    <div class="col-12 col-sm-6">
+                                      {% include "bag/quantity-form.html" %}
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col">
+                                      <hr>
+                                    </div>
+                                  </div>
+                            {% endfor %}
+                            <!--Code for back to top button html template-->
+                            <div class="btt-button shadow-sm rounded-0 border border-black"> <!--btt-button and btt-link found in our base.css-->
+                                <a class="btt-link d-flex h-100">
+                                    <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+                                </a>
+                        </div>
                             </section>
                             <div class="table-responsive rounded d-none d-md-block">
                                 <!-- Table content goes here -->
-                                {{ bag_items }}
+                                
                             </div>
                         {% else %}
                             <div class="text-center fade-animation">
@@ -77,4 +88,19 @@
             </section>
         </section>
     </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+   <!--Back to Top functionality-->
+    <script>
+        // Select the first element with the class 'btt-link'
+        let bttLink = document.getElementsByClassName('btt-link')[0];
+
+        // Ensure the element exists before adding the event listener
+            bttLink.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent default link behavior
+                window.scrollTo(0, 0); // Scroll to the top
+            });
+    </script>
 {% endblock %}

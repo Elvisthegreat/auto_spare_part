@@ -1,0 +1,15 @@
+<div class="col-12 col-sm-6 mb-2 d-flex align-items-center d-block d-md-none d-lg-none">
+    {% include "bag/product-image.html" %}
+    <div style="margin-left: 10px;">
+      <!-- Product info and price inline with the image on smaller screens -->
+      {% include "bag/product-info.html" %}
+      <p class="my-0">Price Each: ${{ item.product.price }}</p>
+    </div>
+  </div>
+   <div class="row">
+      <p class="my-0 small text-muted d-block d-md-none d-lg-none">SKU: {{ item.product.sku|upper }}</p>
+  </div>
+  
+  <div class="col-12 col-sm-6">
+    <!--{% include "bag/quantity-form.html" %}-->
+  </div>

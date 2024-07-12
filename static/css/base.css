@@ -248,6 +248,21 @@ a.category-badge > span.badge:hover {
     cursor: pointer;
 }
 
+.btn-outline-secondary {
+    border-color: #6c757d;
+    color: #6c757d;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.qty_input {
+    max-width: 80px;
+}
+
+
 /*Media queries*/
 /* For smaller screens */
 /* @media (min-width: 768px) {
@@ -276,7 +291,18 @@ a.category-badge > span.badge:hover {
     .center-small-screen {
         text-align: center;
     }
+
+    /*Checkout width styling*/
+    .checkout-width {
+        width: 98%;
+    }
+     
+    .reduce-image {
+        height: 130px;
+        width: 120px;
+    }
 }
+  
 
 
   
