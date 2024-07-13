@@ -248,33 +248,17 @@ a.category-badge > span.badge:hover {
     cursor: pointer;
 }
 
+/*Grand total money green*/
 .text-green-color {
     color: green;
 }
 
-.btn-outline-secondary {
-    border-color: #6c757d;
-    color: #6c757d;
+/* Bag white background styling*/
+.back-ground-white {
+    background-color: #FFFFFF;
+    width: 100%;
+    padding: 10px;
 }
-
-.btn-outline-secondary:hover {
-    background-color: #6c757d;
-    color: #fff;
-}
-
-.qty_input {
-    max-width: 80px;
-}
-
-
-/*Media queries*/
-/* For smaller screens */
-/* @media (min-width: 768px) {
-    .nav-items {
-        margin-left: 90px;
-        padding: 5px;
-    }
-} */
 
 /*For screens that are 768px wider or smaller.*/
 @media (max-width: 768px) {
@@ -304,6 +288,21 @@ a.category-badge > span.badge:hover {
     .reduce-image {
         height: 130px;
         width: 120px;
+    }
+      
+    /*Qty increment & decrement*/
+    .btn-outline-secondary {
+        border-color: #6c757d;
+        color: #6c757d;
+    }
+    
+    .btn-outline-secondary:hover {
+        background-color: #6c757d;
+        color: #fff;
+    }
+    
+    .qty_input {
+        max-width: 80px;
     }
 }
   

@@ -53,6 +53,7 @@
   <!--container-fluid and fixed-top to ensure that it sticks to the top of the page.-->
   <header class="fixed-top base-header">
     <div class="container mt-2">
+      <!--Section for our contact info-->
       <section>
           <div class="w-100 d-flex d-none d-md-block">
             <div>
@@ -60,11 +61,12 @@
               <span class="navbar-sm-brand text-light text-decoration-none contact-info">info@autosparepart.com</span>
               <i class="bi bi-phone-fill contact-info text-light"></i>
               <span class="navbar-sm-brand text-white text-decoration-none contact-info">+39356123478</span>
-            </div>
-            <div class="text-center">
-                <p class="text-light">Free shipping for orders above €86
-                <i class="fa fa-truck" style="margin-left: 8px;"></i>
-              </p>        
+              <span class="navbar-sm-brand text-center text-white text-decoration-none d-flex justify-content-center align-items-center">  
+                <span class="mt-0">
+                  Free shipping for orders above €86
+                  <i class="fa fa-truck" style="margin-left: 8px;"></i>
+                </span>
+            </span>
             </div>
           </div>
     </section>
@@ -288,27 +290,8 @@
     {% block content %}
     {% endblock %}
     
-    <!--postloadjs-->
+    <!--block postloadjs-->
     {% block postloadjs %}
-        <script>
-          function createStarDust(x, y) {
-            const star = document.createElement('div');
-            star.classList.add('star-dust');
-            star.style.left = `${x}px`;
-            star.style.top = `${y}px`;
-            document.body.appendChild(star);
-
-            // Remove the star after the animation ends
-            star.addEventListener('animationend', () => {
-              star.remove();
-            });
-          }
-
-          document.querySelector('.fa-shopping-cart').addEventListener('click', (event) => {
-            const rect = event.target.getBoundingClientRect();
-            createStarDust(rect.left + rect.width / 2, rect.top + rect.height / 2);
-          });
-      </script>
 	  {% endblock %}
   </main>
 
