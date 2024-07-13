@@ -248,6 +248,10 @@ a.category-badge > span.badge:hover {
     cursor: pointer;
 }
 
+.text-green-color {
+    color: green;
+}
+
 .btn-outline-secondary {
     border-color: #6c757d;
     color: #6c757d;
