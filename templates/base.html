@@ -279,7 +279,21 @@
   <section>
     <!--Display any messages that we send back from Django-->
     {% if messages %}
-    <div class="message-container" id="disappear-notification"></div>
+    <div class="message-container" id="disappear-notification">
+        {% for message in messages %}
+              {% with message.level as level %}
+                {% if level == 40 %} <!--Level 40 is Error-->
+                  {% include 'includes/toasts/toast_error.html' %}
+              {% elif level == 30 %} <!--Level 30 is Warning-->
+                  {% include 'includes/toasts/toast_warning.html' %}
+              {% elif level == 25 %} <!--Level 25 is Success-->
+                  {% include 'includes/toasts/toast_success.html' %}
+              {% else %} <!--Alert-->
+                  {% include 'includes/toasts/toast_info.html' %}
+              {% endif %}
+            {% endwith %}
+  {% endfor %}
+    </div>
     {% endif %}
   </section>
 
@@ -292,6 +306,10 @@
     
     <!--block postloadjs-->
     {% block postloadjs %}
+        <!--JavaScript. To call the toast method from bootstrap. With an option of show.-->
+        <script type="text/javascript">
+           $('.toast').toast('show');
+        </script>
 	  {% endblock %}
   </main>
 
