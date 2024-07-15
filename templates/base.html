@@ -320,6 +320,15 @@
               $('.toast').toast('show');
           });
         </script>
+
+        <!--Remove success message after 4 seconds-->
+        <script>
+          disappearNotification = document.getElementById('disappear-notification');
+          // Hide the success message after 4 seconds
+          setTimeout(function() {
+            disappearNotification.style.display = 'none';
+          }, 4000)
+        </script>
 	  {% endblock %}
   </main>
 
