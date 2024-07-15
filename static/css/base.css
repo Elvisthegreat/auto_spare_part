@@ -142,8 +142,8 @@ a.category-badge > span.badge:hover {
 /* ------------------------------- bootstrap toasts */
 .message-container{
     position: fixed;
-    top: 110px;
-    right: 27px;
+    top: 138px;
+    right: 11px;
     /* Z index so it's always on top of everything else. */
     z-index: 99999999999;
 }
@@ -172,13 +172,13 @@ a.category-badge > span.badge:hover {
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
 .arrow-up {
     width: 0; 
-    height: 0; 
+    height: 0;
     border-left: 4px solid transparent;
     border-right: 4px solid transparent; 
     border-bottom: 10px solid black;
     position: absolute;
     top: -10px;
-    right: 36px;
+    right: 30px;
 }
 
 /* Convenience classes - colors copied from Bootstrap */
@@ -340,7 +340,7 @@ a.category-badge > span.badge:hover {
         padding: 12px;
     }
 
-    /*Move away search bar from allspare-products logo*/
+    /*Move away search bar from allsparepart-products logo*/
     .mr-sm-from-logo {
         margin-right: 10px;
     }
@@ -376,10 +376,15 @@ a.category-badge > span.badge:hover {
         width: 90%;
         display: flex;
         justify-content: center;
-        top: 90px;
-        right: 15px;
+        top: 87px;
+        right: 12px;
         /* Z index so it's always on top of everything else. */
         z-index: 99999999999;
+    }
+
+    .arrow-up {
+        top: -10px;
+        right: 40px;
     }
       
     /*Qty increment & decrement*/
