@@ -79,6 +79,10 @@ body{
     }
 }
 
+/*Move away search bar from allspare-products logo*/
+.mr-sm-from-logo {
+    margin-right: 25px;
+}
 
 /***************************** Homepage images styling*/
 .margin-t{
@@ -332,8 +336,13 @@ a.category-badge > span.badge:hover {
     }
 
     .margin-t{
-        margin-top: 150px;
-        padding: 20px;
+        margin-top: 210px;
+        padding: 12px;
+    }
+
+    /*Move away search bar from allspare-products logo*/
+    .mr-sm-from-logo {
+        margin-right: 10px;
     }
 
     /*Profile and Cart icon*/
@@ -344,7 +353,7 @@ a.category-badge > span.badge:hover {
         top: 6px;
         right: 27px;
     }
-    
+
      /*Back To All Products style*/
     .center-small-screen {
         text-align: center;
