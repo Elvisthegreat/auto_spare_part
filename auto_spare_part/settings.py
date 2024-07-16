@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'django_countries',
     'storages',
     'crispy_forms',
+    'crispy_bootstrap5',
     
 ]
 
@@ -74,7 +75,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'auto_spare_part.urls'
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 
 TEMPLATES = [
