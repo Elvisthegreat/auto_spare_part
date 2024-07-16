@@ -79,7 +79,7 @@ body{
     }
 }
 
-/*Move away search bar from allspare-products logo*/
+/*Move away search bar from allsparepart-products logo*/
 .mr-sm-from-logo {
     margin-right: 25px;
 }
@@ -314,7 +314,7 @@ a.category-badge > span.badge:hover {
 
 /*Grand total money green*/
 .text-green-color {
-    color: green;
+    color: rgba(7, 181, 7, 0.928) !important;
 }
 
 /* Bag white background styling*/
@@ -323,6 +323,31 @@ a.category-badge > span.badge:hover {
     width: 100%;
     padding: 10px;
 }
+
+/*styling for items count added to cart*/
+.badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 0.75em;
+    opacity: 1;
+    transition: opacity 2s ease-out;
+}
+
+.badge.hidden {
+    opacity: 0;
+}
+
+/*Hide items count*/
+.hidden {
+    display: none;
+}
+
+
 
 /*For screens that are 768px wider or smaller.*/
 @media (max-width: 768px) {

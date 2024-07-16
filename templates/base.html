@@ -242,19 +242,22 @@
             </div>
           </li>
           <li class="list-inline-item">
-            <a class="{% if grand_total %}text-info text-warning font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
-              <div class="text-center" style="margin-left: 20px; position: relative;">
-                <div><i class="fas fa-shopping-cart fa-lg"></i></div>
-                <p class="my-0">
-                  {% if grand_total %}
-                  ${{ grand_total|floatformat:2 }}
-                  {% else %}
-                  $0.00
-                  {% endif %}
-                </p>
-              </div>
+            <a class="{% if grand_total %}text-info text-green-color font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
+                <div class="text-center" style="margin-left: 20px; position: relative;">
+                    <div style="position: relative;">
+                        <i class="fas fa-shopping-cart fa-lg"></i>
+                        <span class="badge" id="cart-count">{{ request.session.total_items }}</span>
+                    </div>
+                    <p class="my-0">
+                        {% if grand_total %}
+                        ${{ grand_total|floatformat:2 }}
+                        {% else %}
+                        $0.00
+                        {% endif %}
+                    </p>
+                </div>
             </a>
-          </li>            
+        </li>
         </ul>
       </section>
     </nav>
@@ -337,6 +340,34 @@
             disappearNotification.style.display = 'none';
           }, 4000)
         </script>
+
+          <!-- Function to update the cart count-->
+          <script>
+            document.addEventListener('DOMContentLoaded', function() {
+              function updateCartCount(newCount) {
+                  const cartCountElement = document.getElementById('cart-count');
+                  cartCountElement.textContent = newCount;
+                  cartCountElement.classList.remove('hidden'); // Ensure it's visible
+
+                  // Add the hidden class after 3 seconds
+                  setTimeout(() => {
+                      cartCountElement.classList.add('hidden'); // Add the hidden class back
+                  }, 6000); // 3000 milliseconds = 3 seconds
+              }
+
+              // Example function to simulate adding an item to the cart
+              function addItemToCart() {
+                  // Fetch the current count
+                  let currentCount = parseInt(document.getElementById('cart-count').textContent);
+                  // Increment the count
+                  currentCount += 1;
+                  // Update the cart count
+                  updateCartCount(currentCount);
+              }
+              // Simulate adding an item to the cart for testing
+              addItemToCart();
+          });
+        </script>        
 	  {% endblock %}
   </main>
 
