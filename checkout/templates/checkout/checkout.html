@@ -7,11 +7,11 @@
 {% endblock %}
 
 {% block page_header %}
-    <div class="container header-container">
+    <section class="container header-container">
         <div class="row">
             <div class="col"></div>
         </div>
-    </div>
+    </section>
 {% endblock %}
 
 {% block content %}
@@ -26,7 +26,7 @@
         </div>
 
         <div class="row">
-            <div class="col-12 col-lg-6 order-lg-last mb-5">
+            <section class="col-12 col-lg-6 order-lg-last mb-5">
                 <div class="card">
                     <div class="card-header">
                         <p class="text-muted mb-0">Order Summary ({{ product_count }})</p>
@@ -68,9 +68,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <div class="col-12 col-lg-6">
+            <section class="col-12 col-lg-6">
                 <p class="text-muted">Please fill out the form to complete your order</p>
                 <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                     {% csrf_token %}
@@ -102,12 +102,15 @@
                     </fieldset>
                     <fieldset class="px-3">
                         <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
+                        <!-- A Stripe card element will go here -->
                         <div class="mb-3" id="card-element"></div>
+                        <!-- Used to display form errors -->
                         <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                        <!-- Pass the client secret to the view so we can get the payment intent id -->
                         <input type="hidden" value="{{ client_secret}}" name="client_secret">
                     </fieldset>
 
-                    <div class="submit-button text-end mt-5 mb-2">
+                    <section class="submit-button text-end mt-5 mb-2">
                         <a href="{% url 'view_bag' %}" class="btn btn-outline-dark rounded-0">
                             <span class="icon">
                                 <i class="fas fa-chevron-left"></i>
@@ -126,19 +129,19 @@
                             </span>
                             <span>Your card will be charged <strong>${{ grand_total|floatformat:2 }}</strong></span>
                         </p>
-                    </div>
+                    </section>
                 </form>
-            </div>
+            </section>
         </div>
     </div>
     <!--This will have a big giant spinner icon right in the center of the screen when payment processing-->
-    <div id="loading-overlay">
+    <section id="loading-overlay">
         <h1 class="text-light logo-font loading-spinner">
             <span class="icon">
                 <i class="fas fa-3x fa-sync-alt fa-spin"></i>
             </span>
         </h1>
-    </div>
+    </section>
 {% endblock %}
 
 {% block postloadjs %}
