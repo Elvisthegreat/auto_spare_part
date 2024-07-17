@@ -49,7 +49,7 @@
                                     <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
                                 </div>
                                 <div class="col-3 text-end">
-                                    <p class="my-0 small text-muted">${{ item.product.price | calc_subtotal:item.quantity }}</p>
+                                    <p class="my-0 small text-muted text-green-color">${{ item.product.price | calc_subtotal:item.quantity }}</p>
                                 </div>
                             </div>
                         {% endfor %}
@@ -60,7 +60,7 @@
                                 <p class="my-0">Delivery:</p>
                                 <p class="my-0">Grand Total:</p>
                             </div>
-                            <div class="col-3">
+                            <div class="col-3 text-green-color">
                                 <p class="my-0">${{ total | floatformat:2 }}</p>
                                 <p class="my-0">${{ delivery | floatformat:2 }}</p>
                                 <p class="my-0"><strong>${{ grand_total | floatformat:2 }}</strong></p>

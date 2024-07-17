@@ -50,6 +50,9 @@
         </script>
       <script src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+      <!--Stripe-->
+      <script src="https://js.stripe.com/v3/"></script>
   {% endblock %}
 
   <!--In case we want to add any extra meta CSS or JavaScript in the head without
@@ -349,10 +352,10 @@
                   cartCountElement.textContent = newCount;
                   cartCountElement.classList.remove('hidden'); // Ensure it's visible
 
-                  // Add the hidden class after 3 seconds
+                  // Add the hidden class after 6 seconds
                   setTimeout(() => {
                       cartCountElement.classList.add('hidden'); // Add the hidden class back
-                  }, 6000); // 3000 milliseconds = 3 seconds
+                  }, 6000); // 6000 milliseconds = 6 seconds
               }
 
               // Example function to simulate adding an item to the cart
