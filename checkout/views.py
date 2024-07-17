@@ -13,6 +13,11 @@ import stripe # imported stripe
 import json
 
 # Create your views here.
+@require_POST
+
+
+
+
 def checkout(request):
     """Payment intent"""
     stripe_public_key = settings.STRIPE_PUBLIC_KEY # inside our env
