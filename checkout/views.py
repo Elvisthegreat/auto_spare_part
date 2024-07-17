@@ -6,7 +6,8 @@ from django.conf import settings
 from .forms import OrderForm
 from bag.contexts import  bag_contents
 
-import stripe
+import stripe # imported stripe
+import json
 
 # Create your views here.
 def checkout(request):
@@ -73,19 +74,28 @@ def checkout(request):
                     order.delete()
                     return redirect(reverse('view_bag'))
 
-    bag = request.session.get('bag', {}) # Shopping bag
-    if not bag:
-        messages.error(request, 'Your bag is currently empty.')
-        return redirect(reverse('products'))
+            # whether or not the user wanted to save their profile information to the session. And then redirect them to a new page"""
+            request.session['save_info'] = 'save_info' in request.POST
+            return redirect(reverse('checkout_success', args=[order.order_number]))
+        else:
+            messages.error(request, 'There was an error with your form. \
+                Please double check your information.')
+    else:
+        bag = request.session.get('bag', {}) # Shopping bag
+        if not bag:
+            messages.error(request, 'Your bag is currently empty.')
+            return redirect(reverse('products'))
 
-    current_bag = bag_contents(request)
-    total = current_bag['grand_total']
-    stripe_total = round(total * 300)
-    stripe.api_key = stripe_secret_key
-    intent = stripe.PaymentIntent.create(
-        amount=stripe_total,
-        currency=settings.STRIPE_CURRENCY,
-    )
+        current_bag = bag_contents(request)
+        total = current_bag['grand_total']
+        stripe_total = round(total * 300)
+        stripe.api_key = stripe_secret_key
+        intent = stripe.PaymentIntent.create(
+            amount=stripe_total,
+            currency=settings.STRIPE_CURRENCY,
+        )
+
+        # Since user now have profile user, users default delivery information to pre-fill the form on checkout page
 
     order_form = OrderForm()
 
