@@ -118,6 +118,14 @@ AUTHENTICATION_BACKENDS = [
 
 SITE_ID = 1
 
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email' # tells allauth that we want to allow authentication using either usernames or emails.
+ACCOUNT_EMAIL_REQUIRED = True # Email is required to register
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory' # Email is mandatory so we know users are using a real email.
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True # And they're gonna be required to enter their email twice on the registration page
+ACCOUNT_USERNAME_MIN_LENGTH = 4 # setting a minimum username length of four characters.
+LOGIN_URL = '/accounts/login/' # specifying a login url
+LOGIN_REDIRECT_URL = '/' # And a url to redirect back to after logging in.
+
 WSGI_APPLICATION = 'auto_spare_part.wsgi.application'
 
 

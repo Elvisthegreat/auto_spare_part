@@ -6,6 +6,8 @@ from django.conf import settings
 
 from .forms import OrderForm
 from .models import Order, OrderLineItem
+from profiles.forms import UserProfileForm
+from profiles.models import UserProfile
 from products.models import Product
 from bag.contexts import  bag_contents
 
@@ -57,14 +59,14 @@ def checkout(request):
         }
         order_form = OrderForm(form_data)
         if order_form.is_valid():
-           order = order_form.save(commit=False) # Prevent 1st save from happening
-           pid = request.POST.get('client_secret').split('_secret')[0]
-           order.stripe_pid = pid
-           order.original_bag = json.jumps(bag)
-           order.save()
+            order = order_form.save(commit=False) # Prevent 1st save from happening
+            pid = request.POST.get('client_secret').split('_secret')[0]
+            order.stripe_pid = pid
+            order.original_bag = json.dumps(bag)
+            order.save()
 
-           """iterate through the bag items to create each line item."""
-           for item_id, item_data in bag.items():
+            """iterate through the bag items to create each line item."""
+            for item_id, item_data in bag.items():
                 try:
                     # Get product id out from the bag
                     product = Product.objects.get(id=item_id)
@@ -101,11 +103,11 @@ def checkout(request):
                     order.delete()
                     return redirect(reverse('view_bag'))
 
-                """whether or not the user wanted to save their profile
+            """whether or not the user wanted to save their profile
                 information to the session. And then redirect them to a new page"""
 
-                request.session['save_info'] = 'save_info' in request.POST
-                return redirect(reverse('checkout_success', args=[order.order_number]))
+            request.session['save_info'] = 'save_info' in request.POST
+            return redirect(reverse('checkout_success', args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')

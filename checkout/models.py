@@ -36,7 +36,7 @@ class Order(models.Model):
         which will just generate a random string of 
         32 characters we can use as an order number.
         """
-        return uuid.uuid4.hex().upper()
+        return uuid.uuid4().hex.upper()
 
     def update_total(self):
         """
@@ -77,7 +77,7 @@ class OrderLineItem(models.Model):
         Override the original save method to set the lineitem total
         and update the order total.
         """
-        self.lineitem_total = self.product.price * qauntity
+        self.lineitem_total = self.product.price * self.quantity
         super().save(*args, **kwargs)
 
         def __str__(self):

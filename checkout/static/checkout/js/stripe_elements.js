@@ -56,10 +56,10 @@ card.addEventListener('change', function(event) {
 // Handle form Submit
 var form = document.getElementById('payment-form');
 form.addEventListener('submit', function(event) {
-    event.preventDefault() // Prevent default submition
+    event.preventDefault(); // Prevent default submition
 
     // disable both the card element and the submit button to prevent multiple submissions.
-    card.update({'disabled': true});
+    card.update({ 'disabled': true});
     $('#submit-button').attr('disabled', true);
     // fade out the form when the user clicks the submit button and reverse that if there's any error.
     $('#payment-form').fadeToggle(100); // fade out
@@ -81,7 +81,7 @@ form.addEventListener('submit', function(event) {
     };
 
     // cache_checkout_data in our checkout views.py
-    var url = 'checkout/cache_checkout_data';
+    var url = '/checkout/cache_checkout_data/';
     $.post(url, postData).done(function() {
         stripe.confirmCardPayment(clientSecret, {
             payment_method: {
@@ -89,12 +89,12 @@ form.addEventListener('submit', function(event) {
                 // confirm card payment method
                 // using the trim method to strip off any excess ,leading whitespace.
                 billing_details: {
-                    name: $.trim(form.first_name.value),
+                    name: $.trim(form.full_name.value),
                     phone: $.trim(form.phone_number.value),
                     email: $.trim(form.email.value),
                     address: {
-                        line1: $.trim(form.street_addreess1.value),
-                        line2: $.trim(form.street_addreess1.value),
+                        line1: $.trim(form.street_address1.value),
+                        line2: $.trim(form.street_address1.value),
                         city: $.trim(form.town_or_city.value),
                         country: $.trim(form.country.value),
                         state: $.trim(form.county.value),
@@ -130,11 +130,11 @@ form.addEventListener('submit', function(event) {
                 $('#payment-form').fadeToggle(100);
                 $('#loading-overlay').fadeToggle(100);
                 /** Re-enable the card element and the submit button to allow the user to fix it. */
-                card.update({'disbled': false});
+                card.update({ 'disabled': false});
                 $('#submit-button').attr('disabled', false);
             }else{
-                if(result.paymentIntent.status === 'Succeeded') {
-                    form.onsubmit();
+                if(result.paymentIntent.status === 'succeeded') {
+                    form.submit();
                 }
             }
         });

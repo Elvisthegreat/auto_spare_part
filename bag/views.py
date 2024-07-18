@@ -48,11 +48,15 @@ def add_item_to_bag(request, item_id):
     request.session['bag'] = bag
 
     # Calculate the total item count
-    total_items = sum(
-        item['items_by_size'][size] if isinstance(item, dict) else item
-        for item in bag.values()
-        for size in (item['items_by_size'].keys() if isinstance(item, dict) else [None])
-    )
+    total_items = 0
+
+    for item in bag.values():
+        if isinstance(item, dict):
+            for size in item['items_by_size'].keys():
+                total_items += item['items_by_size'][size]
+        else:
+            total_items += item
+
     request.session['total_items'] = total_items
-    
+
     return redirect(redirect_url)
