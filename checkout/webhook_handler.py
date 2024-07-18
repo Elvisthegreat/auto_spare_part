@@ -1,4 +1,4 @@
-from djanfo.http import HttpResponse
+from django.http import HttpResponse
 from django.http import HttpResponse
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
@@ -6,7 +6,7 @@ from django.conf import settings
 
 from .models import Order, OrderLineItem
 from products.models import Product
-from profiles.models import UserProfile
+
 
 import stripe
 import json
@@ -64,7 +64,6 @@ class StripeWH_Handler:
         shipping_details = intent.shipping
         grand_total = round(stripe_charge.amount / 100, 2) # updated
 
-        # Clean data in the shipping details clean up the data by ensuring that fields without values are explicitly set to None instead of an empty string.
         # It loops through each key-value pair in the shipping_details.address dictionary.
         # For each pair, it checks if the value is an empty string ("")
         # If an empty string is found, it replaces the empty string with None.
@@ -87,13 +86,12 @@ class StripeWH_Handler:
                 profile.default_county__ = shipping_details.address.state
                 profile.save()
 
-        order_exists = False # Let's start by assuming the order by user doesn't exist in our database. We can do that with a simple variable set to false.
+        order_exists = False
         attempt = 1
         while attempt <= 5:
             try:
                 order = Order.objects.get(
                     # iexact lookup field to make it an exact match
-                    # For example, if shipping_details.name is “John Doe”, this query iexact will match records with full_name as “john doe”, “JOHN DOE”, “John Doe”, etc.
                     full_name__iexact=shipping_details.name,
                     email__iexact=billing_details.email,
                     phone_number__iexact=shipping_details.phone,
@@ -108,14 +106,15 @@ class StripeWH_Handler:
                     stripe_pid=pid,
                 )
                 """If the order is found we'll set order exists to true,
-                    and return a 200 HTTP response to stripe, with the message that we verified the order already exists."""
+                    and return a 200 HTTP response to stripe, with the 
+                    message that we verified the order already exists."""
                 order_exists = True
                 break # Break out of the loop if order is found
             except Order.DoesNotExist:
                 attempt += 1
                 time.sleep(1)
         if order_exists:
-            self._send_confirmation_email(order) # Calling the send confirmation email method. The payment has definitely been completed at this point. So we'll want to send an email no matter what. send it just before returning that response to stripe
+            self._send_confirmation_email(order)
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
                 status=200)
@@ -125,7 +124,7 @@ class StripeWH_Handler:
                 # And otherwise will create the order.
                 order = Order.objects.create(
                     full_name=shipping_details.name,
-                    user_profile=profile, # In this way, the webhook handler can create orders for both authenticated users by attaching their profile. And for anonymous users by setting that field to none.
+                    user_profile=profile,
                     email=billing_details.email,
                     phone_number=shipping_details.phone,
                     country=shipping_details.address.country,

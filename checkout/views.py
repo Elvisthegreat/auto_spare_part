@@ -13,8 +13,12 @@ import stripe # imported stripe
 import json
 
 # Create your views here.
+# Decorator: @require_POST ensures that this view only handles POST requests
 @require_POST
 def cache_checkout_data(request):
+    """ This function interact with stripe_elements.js.
+    Interact with stripe Api for payment processing
+     """
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
