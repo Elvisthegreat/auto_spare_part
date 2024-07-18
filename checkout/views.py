@@ -62,6 +62,8 @@ def checkout(request):
            order.stripe_pid = pid
            order.original_bag = json.jumps(bag)
            order.save()
+
+           """iterate through the bag items to create each line item."""
            for item_id, item_data in bag.items():
                 try:
                     # Get product id out from the bag
@@ -160,8 +162,7 @@ def checkout(request):
 
 
 def checkout_success(request, order_number):
-    """checkout success view. 
-    This is simply going to take the order number and render a nice success page
+    """This is simply going to take the order number and render a nice success page
     letting the user know that their payment is complete."""
 
     """
