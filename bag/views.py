@@ -57,6 +57,10 @@ def add_item_to_bag(request, item_id):
         else:
             total_items += item
 
+    # Ensure total_items is 0 if the bag is empty
+    if total_items == 0:
+        total_items = 0
+
     request.session['total_items'] = total_items
 
     return redirect(redirect_url)

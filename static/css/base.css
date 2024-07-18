@@ -347,6 +347,11 @@ a.category-badge > span.badge:hover {
     display: none;
 }
 
+.modal-register .modal-dialog {
+    width: 75%; /* Adjust the width as needed */
+    max-width: none; /* Ensure the width is not limited by Bootstrap's default max-width */
+    margin: 30px auto; /* Center the modal */
+}
 
 
 /*For screens that are 768px wider or smaller.*/

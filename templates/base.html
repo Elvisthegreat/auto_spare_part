@@ -50,6 +50,7 @@
         </script>
       <script src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
       <!--Stripe-->
       <script src="https://js.stripe.com/v3/"></script>
@@ -196,51 +197,15 @@
             <div class="dropdown-menu border-0" aria-labelledby="user-options">
               {% if request.user.is_authenticated %}
               {% if request.user.is_superuser %}
-              <a href="#" class="dropdown-item">Product Management</a>
+                <a href="#" class="dropdown-item">Product Management</a>
               {% endif %}
-              <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-              <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
               {% else %}
-              <!-- Register Modal -->
-              <a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#registerModal">Register</a>
-              <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="registerModalLabel">Register</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Register</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Login Modal -->
-              <a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
-              <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="loginModalLabel">Login</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Login</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                  <!-- Register Modal -->
+                  <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                  <!-- Login Modal -->
+                  <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
               {% endif %}
             </div>
           </li>
