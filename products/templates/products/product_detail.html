@@ -47,8 +47,8 @@
                     
                     {% if request.user.is_superuser %}
                         <small class="ml-3">
-                            <a href=""><i class="fas fa-edit"></i></a> | 
-                            <a class="text-danger" href=""><i class="bi bi-trash-fill"></i></a>
+                            <a href="{% url 'edit_product' product.id %}"><i class="fas fa-edit"></i></a> | 
+                            <a class="text-danger" href="{% url 'delete_product' product.id %}"><i class="bi bi-trash-fill"></i></a>
                         </small>
                     {% endif %}
 
