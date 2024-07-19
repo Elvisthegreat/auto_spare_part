@@ -339,30 +339,36 @@
           <!-- Function to update the cart count-->
           <script>
             document.addEventListener('DOMContentLoaded', function() {
-              function updateCartCount(newCount) {
-                  const cartCountElement = document.getElementById('cart-count');
-                  cartCountElement.textContent = newCount;
-                  cartCountElement.classList.remove('hidden'); // Ensure it's visible
-
-                  // Add the hidden class after 6 seconds
-                  setTimeout(() => {
-                      cartCountElement.classList.add('hidden'); // Add the hidden class back
-                  }, 6000); // 6000 milliseconds = 6 seconds
-              }
-
-              // Example function to simulate adding an item to the cart
-              function addItemToCart() {
-                  // Fetch the current count
-                  let currentCount = parseInt(document.getElementById('cart-count').textContent);
-                  // Increment the count
-                  currentCount += 1;
-                  // Update the cart count
-                  updateCartCount(currentCount);
-              }
-              // Simulate adding an item to the cart for testing
-              addItemToCart();
-          });
-        </script>        
+                function updateCartCount(newCount) {
+                    const cartCountElement = document.getElementById('cart-count');
+                    cartCountElement.textContent = newCount;
+                    cartCountElement.classList.remove('hidden'); // Ensure it's visible
+                }
+        
+                // Example function to simulate adding an item to the cart
+                function addItemToCart() {
+                    // Fetch the current count
+                    let currentCount = parseInt(document.getElementById('cart-count').textContent);
+                    // Check if currentCount is NaN and set it to 0 if it is
+                    if (isNaN(currentCount)) {
+                        currentCount = 0;
+                    }
+                    // Increment the count
+                    currentCount += 1;
+                    // Update the cart count
+                    updateCartCount(currentCount);
+                }
+        
+                // Initialize the cart count to 0 if it's not a number
+                let initialCount = parseInt(document.getElementById('cart-count').textContent);
+                if (isNaN(initialCount)) {
+                    initialCount = 0;
+                    updateCartCount(initialCount);
+                }
+            });
+        </script>
+        
+                
 	  {% endblock %}
   </main>
 

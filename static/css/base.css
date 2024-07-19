@@ -324,6 +324,11 @@ a.category-badge > span.badge:hover {
     padding: 10px;
 }
 
+.back-ground-white-color {
+    background-color: #FFFFFF;
+    width: 100%;
+}
+
 /*styling for items count added to cart*/
 .badge {
     position: absolute;
@@ -340,11 +345,6 @@ a.category-badge > span.badge:hover {
 
 .badge.hidden {
     opacity: 0;
-}
-
-/*Hide items count*/
-.hidden {
-    display: none;
 }
 
 .modal-register .modal-dialog {
@@ -485,6 +485,10 @@ a.category-badge > span.badge:hover {
       
       .allauth-form-inner-content a {
           color: #17a2b8; /* text-info */
+      }
+
+      .button-size {
+        text-align: center;
       }
 }
   
