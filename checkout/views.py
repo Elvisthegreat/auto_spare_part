@@ -126,7 +126,8 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-        # Since user now have profile user, users default delivery information to pre-fill the form on checkout page
+        """Since user now have profile user, users default delivery
+        information to pre-fill the form on checkout page"""
         if request.user.is_authenticated:
             try:
                 """For example, we can fill in the full_name with the built
