@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <header class="container header-container" style="padding: 20px; margin-bottom: 20px;">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </header>
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <main class="container push-content-down back-ground-white-color" style="padding: 20px;">
+        <section class="row">
+            <article class="col-12 col-md-6">
+                <hr>
+                <h2 class="logo-font mb-4">Product Management</h2>
+                <h5 class="text-muted">Edit a Product</h5>
+                <hr>
+            </article>
+        </section>
+
+        <section class="row">
+            <article class="col-12 col-md-6">
+                <form method="POST" action="{% url 'edit_product' product.id %}" class="form mb-2" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        {% if field.name != 'image' %}
+                            <div style="margin-bottom: 15px;">
+                                {{ field | as_crispy_field }}
+                            </div>
+                        {% else %}
+                            <div style="margin-bottom: 15px;">
+                                {{ field }}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                    <div class="text-right" style="margin-top: 20px;">
+                        <a class="btn btn-danger rounded-0 text-light" href="{% url 'all_products' %}">Cancel</a>
+                        <button class="btn btn-success text-light float-end rounded-0" type="submit">Update Product</button>
+                    </div>
+                </form>
+            </article>            
+        </section>
+    </main>
+{% endblock %}
