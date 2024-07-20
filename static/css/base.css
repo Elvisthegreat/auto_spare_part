@@ -257,7 +257,7 @@ a.category-badge > span.badge:hover {
 }
 
 .cart-bg {
-    background-color: #2a3943;
+    background-color: #2a3943 !important;
     border-radius: 50px;
 }
 

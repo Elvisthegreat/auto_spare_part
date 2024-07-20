@@ -25,7 +25,7 @@ def add_item_to_bag(request, item_id):
         """If the item is already in the bag.
         Then we need to check if another item of the same id and same size already exists.
         And if so increment the quantity for that size and otherwise just set it equal to the quantity"""
-        if item_id in list(bag.keys):
+        if item_id in list(bag.keys()):
             if size in bag[item_id]['items_by_size'].keys():
                 bag[item_id]['items_by_size'][size] += quantity
                 messages.success(request, f'Updated size {size.upper()} {product.name} quantity to {bag[item_id]["items_by_size"][size]}')
@@ -57,10 +57,7 @@ def add_item_to_bag(request, item_id):
         else:
             total_items += item
 
-    # Ensure total_items is 0 if the bag is empty
-    if total_items == 0:
-        total_items = 0
-
     request.session['total_items'] = total_items
+
 
     return redirect(redirect_url)
