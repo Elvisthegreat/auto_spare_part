@@ -53,7 +53,7 @@
                             <span class="small fade-animation"><a class="text-decoration-none" href="{% url 'all_products' %}">
                                 Back To All Products</a> | </span>
                             {% endif %}
-                            {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+                            <span>Total:</span> {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
                         </p>
                     </div>
                 </div>
@@ -107,7 +107,7 @@
                                                     {% csrf_token %}
                                                     <input type="hidden" name="quantity" value="1">
                                                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                                                    <button type="submit" class="text-danger text-decoration-none cart-bg">Add to Cart</button>
+                                                    <button type="submit"  class="text-danger text-decoration-none cart-bg">Add to Cart</button>
                                                 </form>
                                             </div>
                                             
