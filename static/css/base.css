@@ -9,6 +9,16 @@ body{
     font-style: normal;
 }
 
+.modal {
+    z-index: 99999999;
+}
+
+.modal-content {
+    padding: 20px;
+    margin: 20px;
+}
+
+
 /*Body Google font*/
 .cormorant-garamond-semibold {
     font-family: "Cormorant Garamond", serif;
