@@ -1,8 +1,12 @@
 from django import forms
 from .models import Order
+from phonenumber_field.modelfields import PhoneNumberField
 
 
 class OrderForm(forms.ModelForm):
+
+    phone_number = PhoneNumberField(widget=forms.TextInput(attrs={'placeholder': '+3935190768745'}))
+
     class Meta:
         model = Order
         fields = ('full_name', 'email', 'phone_number',
