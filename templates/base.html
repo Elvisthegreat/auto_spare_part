@@ -209,23 +209,23 @@
                   <!-- Trigger Button -->
                   <a href="#" class="btn" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
                   <!-- Modal -->
-                  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+                  <section class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                       <div class="modal-content">
-                        <div class="modal-header">
+                        <header class="modal-header">
                           <h5 class="modal-title">Modal title</h5>
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
+                        </header>
                         <div class="modal-body">
                           <p>Modal body text goes here.</p>
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                          <button type="button" class="btn btn-primary">Save changes</button>
+                          <button type="button" class="btn btn-primary">Login</button>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </section>
               {% endif %}
             </div>
           </li>
@@ -359,18 +359,7 @@
                     updateCartCount(initialCount);
                 }
             });
-        </script>
-        
-        <script>
-          // modal
-          const myModal = document.getElementById('myModal')
-          const myInput = document.getElementById('myInput')
-
-          myModal.addEventListener('shown.bs.modal', () => {
-            myInput.focus()
-          })
-      </script>
-                
+        </script>   
 	  {% endblock %}
   </main>
 
