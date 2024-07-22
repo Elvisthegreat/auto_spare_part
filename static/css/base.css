@@ -359,12 +359,6 @@ a.category-badge > span.badge:hover {
     opacity: 0;
 }
 
-.modal-register .modal-dialog {
-    width: 75%; /* Adjust the width as needed */
-    max-width: none; /* Ensure the width is not limited by Bootstrap's default max-width */
-    margin: 30px auto; /* Center the modal */
-}
-
 /* Allauth form formatting */
       
 .allauth-form-inner-content p {

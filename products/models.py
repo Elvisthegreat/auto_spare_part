@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 # Create your models here.
@@ -16,6 +17,7 @@ class Category(models.Model):
         return self.friendly_name
 
 class Product(models.Model):
+    """Product models"""
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL) # if a Category is deleted SET_NULL instead of deleting it
     sku = models.CharField(max_length=254, null=True, blank=True) # sku stands for Stock Keeping Unit
     name = models.CharField(max_length=254)
@@ -28,3 +30,13 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Wishlist(models.Model):
+    """wishlist model"""
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.user.username}'s wishlist"
+
