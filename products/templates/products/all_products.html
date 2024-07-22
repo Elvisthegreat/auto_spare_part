@@ -78,7 +78,7 @@
                                 </div>
 
                                     <!--Footer containing price and rating-->
-                                <div class="card-footer bg-white pt-0 border-0 text-left">
+                                <section class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
                                         <div class="col">
                                             <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
@@ -102,6 +102,7 @@
                                                     <a class="text-danger" href="{% url 'delete_product' product.id %}"><i class="bi bi-trash-fill"></i></a>
                                                 </small>
                                             {% endif %}
+                                              <!--Add to cart-->
                                             <div class="col text-center mt-2 cart-bg">
                                                 <form class="form" action="{% url 'add_item_to_bag' product.id %}" method="POST">
                                                     {% csrf_token %}
@@ -110,10 +111,9 @@
                                                     <button type="submit"  class="text-danger text-decoration-none cart-bg">Add to Cart</button>
                                                 </form>
                                             </div>
-                                            
                                         </div>
                                     </div>
-                                </div> <!--End footer-->
+                                </section> <!--End footer-->
                             </div>
                         </div>
                         {% if forloop.counter|divisibleby:1 %}

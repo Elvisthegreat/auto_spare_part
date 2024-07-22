@@ -5,7 +5,7 @@ from django.db.models import Q # To generate a search query
 from django.db.models.functions import Lower
 
 
-from .models import Product, Category
+from .models import Product, Category, Wishlist
 from .forms import ProductForm
 
 # Create your views here.
@@ -154,3 +154,24 @@ def delete_product(request, product_id):
     messages.success(request, 'Successfully deleted!')
 
     return redirect(reverse('all_products'))
+
+
+@login_required
+def add_to_wishlist(request, product_id):
+    """Handle adding to wishlist"""
+    product = get_object_or_404(Product, id=product_id)
+    Wishlist.objects.get_or_create(user=request.user, product=product)
+    return redirect('wishlist')
+
+@login_required
+def remove_from_wishlist(request, product_id):
+    """Handl deleting from wishlist"""
+    product = get_object_or_404(Product, id=product_id)
+    Wishlist.objects.filter(user=request.user, product=product).delete()
+    return redirect('wishlist')
+
+@login_required
+def wishlist(request):
+    """Handle wishlist main page"""
+    wishlist_items = Wishlist.objects.filter(user=request.user)
+    return render(request, 'products/wishlist.html', {'wishlist_items': wishlist_items})

@@ -102,6 +102,21 @@
                         </div>
                     </form>
                 </div>
+                <!-- product wishlist-->
+                {% if user.is_authenticated %}
+                    <section class="my-2">
+                        <span style="margin-right: 20px;">
+                            <a class=" text-success text-decoration-none" href="{% url 'add_to_wishlist' product.id %}">
+                                <i class="fas fa-heart"></i> Add to Wishlist
+                            </a>
+                        </span>
+                        <span>
+                            <a class="text-danger text-decoration-none" href="{% url 'remove_from_wishlist' product.id %}">
+                                <i class="fas fa-heart-broken"></i> Remove from Wishlist
+                            </a>
+                        </span>
+                    </section>
+                {% endif %}
             </div>
         </div>
     </div>

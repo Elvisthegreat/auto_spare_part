@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="overlay back-ground-white-color"></div>
+<main class="container push-content-down p-5">
+    <header class="text-center my-4">
+        <h1 class="text-warning">
+            <hr>
+                Your Wishlist</h1>
+            <hr>
+    </header>
+    <section class="row">
+        {% if wishlist_items %}
+            <div class="row">
+                {% for item in wishlist_items %}
+                    <div class="col-12 col-md-6 col-lg-4 p-4">
+                        <div class="card h-100">
+                            {% if item.product.image %}
+                                <img class="card-img-top img-fluid img-box" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                            {% endif %}
+                            <div class="card-body text-center">
+                                <p class="lead mb-0 text-left font-weight-bold">${{ item.product.price }}</p>
+                                <h5 class="card-title">{{ item.product.name }}</h5>
+                                <a class="btn btn-danger" href="{% url 'remove_from_wishlist' item.product.id %}">
+                                    <i class="bi bi-trash-fill"></i> Remove
+                                </a>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="col-12 text-center">
+                <p id="wishlist-fade-in-out" class="text-muted">Your wishlist is currently empty. Start adding some items!</p>
+            </div>
+        {% endif %}
+    </section>
+</main>
+
+<section>
+    <!--Code for back to top button html template-->
+    <div class="btt-button shadow-sm rounded-0 border border-black"> <!--btt-button and btt-link found in our base.css-->
+        <a class="btt-link d-flex h-100">
+            <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+        </a>	
+    </div>
+</section>
+
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+   <!--Back to Top functionality-->
+
+    <script>
+        // Select the first element with the class 'btt-link'
+        let bttLink = document.getElementsByClassName('btt-link')[0];
+
+        // Ensure the element exists before adding the event listener
+            bttLink.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent default link behavior
+                window.scrollTo(0, 0); // Scroll to the top
+            });
+    </script>
+{% endblock %}

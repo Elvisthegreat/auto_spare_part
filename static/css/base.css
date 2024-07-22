@@ -89,6 +89,26 @@ body{
     }
 }
 
+.profile-and-cart-icon .list-inline-item {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.profile-and-cart-icon .text-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 5px;
+}
+
+/*Wishlist page*/
+.img-box {
+    width: 180px;
+    height: 160px;
+    box-shadow: 5px 5px 10px #000;
+}
+
+
 /*Move away search bar from allsparepart-products logo*/
 .mr-sm-from-logo {
     margin-right: 25px;
@@ -238,7 +258,8 @@ a.category-badge > span.badge:hover {
     50% { opacity: 3; color: #FFC107; }
   }
 
-  .fade-animation a, #proceed-checkout {
+  .fade-animation a, #proceed-checkout,
+   #wishlist-fade-in-out {
     animation: fadeInOut 4s linear infinite;
   }
   
@@ -526,6 +547,14 @@ a.category-badge > span.badge:hover {
       .button-size {
         text-align: center;
       }
+
+      /*Wishlist page*/
+    .img-box {
+        width: 98%;
+        height: 150px;
+        box-shadow: 5px 5px 10px #000;
+        padding: 0;
+    }
 }
   
 
