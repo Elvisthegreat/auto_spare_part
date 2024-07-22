@@ -59,7 +59,6 @@ INSTALLED_APPS = [
     'storages',
     'crispy_forms',
     'crispy_bootstrap5',
-    'phonenumber_field',
     
 ]
 
