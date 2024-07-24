@@ -91,8 +91,8 @@
         <div class="d-flex align-items-center my-2">
           <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            aria-label="Toggle navigation" style="width: 44px; height: 34px;">
+            <span class="navbar-toggler-icon" style="width: 20px; height: 20px;"></span>
           </button>
           <a href="{% url 'home' %}" class="nav-link main-logo-link">
             <h1 class="logo-font d-none d-sm-block"><strong><span class="text-warning">Auto</span></strong><span
@@ -184,80 +184,58 @@
         </div>
       </div>
 
-      <section class="col-12 col-lg-2 my-auto pt-sm-0 py-lg-0">
+      <section class="d-flex justify-content-end col-12 col-lg-6 my-auto pt-sm-0 py-lg-0 style-nav-icons" style="margin-right: 23px;">
         <ul class="list-inline list-unstyled text-center profile-and-cart-icon offset-sm-2 text-lg-right my-0">
-          <li class="list-inline-item">
-            <div class="text-center">
-                <a class="text-black" href="{% url 'wishlist' %}">
-                  <i class="fas fa-star fs-4"></i>
-                </a>
-            </div>
-          </li>
-          <li class="list-inline-item dropdown">
-            <a class="text-black nav-link" href="#" id="user-options" data-bs-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">
-              <div class="text-center">
-                <div><i class="fas fa-user fa-lg"></i></div>
-                <p class="my-0">My Account</p>
-              </div>
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="user-options">
-              {% if request.user.is_authenticated %}
-              {% if request.user.is_superuser %}
-                <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
-              {% endif %}
-                  <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                  <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-              {% else %}
-                  <!-- Register Modal -->
-                  <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-
-                  <!-- Login Modal -->
-                  <!-- Trigger Button -->
-                   <!-- Button trigger modal -->
-                  <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                    Login
-                  </button>
-                      <!-- Modal -->
-                      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
-                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                              ...
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                              <button type="button" class="btn btn-primary">Understood</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>  
-              {% endif %}
-            </div>
-          </li>
-          <li class="list-inline-item">
-            <a class="{% if grand_total %}text-info text-green-color font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
-                <div class="text-center" style="margin-left: 20px; position: relative;">
-                    <div style="position: relative;">
-                        <i class="fas fa-shopping-cart fa-lg"></i>
-                        <span class="badge" id="cart-count">{{ request.session.total_items }}</span>
-                    </div>
-                    <p class="my-0">
-                        {% if grand_total %}
-                        ${{ grand_total|floatformat:2 }}
-                        {% else %}
-                        $0.00
-                        {% endif %}
-                    </p>
+            <li class="list-inline-item">
+                <div>
+                    <a class="text-black text-decoration-none" href="{% url 'wishlist' %}">
+                        <i class="fas fa-star fs-4"></i>
+                        <p class="my-0">My Wishlist</p>
+                    </a>
                 </div>
-            </a>
-        </li>
+            </li>
+            <li class="list-inline-item dropdown">
+                <a class="text-black nav-link" href="#" id="user-options" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div>
+                        <div><i class="fas fa-user fa-lg"></i></div>
+                        <p class="my-0">My Account</p>
+                    </div>
+                </a>
+                <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                  {% if request.user.is_authenticated %}
+                  {% if request.user.is_superuser %}
+                    <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
+                  {% endif %}
+                      <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                      <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                  {% else %}
+                      <!-- Register Modal -->
+                      <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                      <!-- Login Modal -->
+                      <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                </div>
+                {% endif %}
+            </li>
+            <li class="list-inline-item">
+                <a class="{% if grand_total %}text-info text-green-color font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
+                    <div style="margin-left: 7px; position: relative;">
+                        <div style="position: relative;">
+                            <i class="fas fa-shopping-cart fa-lg"></i>
+                            <span class="badge" id="cart-count">{{ request.session.total_items }}</span>
+                        </div>
+                        <p class="my-0">
+                            {% if grand_total %}
+                            ${{ grand_total|floatformat:2 }}
+                            {% else %}
+                            $0.00
+                            {% endif %}
+                        </p>
+                    </div>
+                </a>
+            </li>
         </ul>
-      </section>
+    </section>
+    
     </nav>
 
     <!--Search div-->

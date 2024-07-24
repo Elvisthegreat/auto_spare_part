@@ -9,16 +9,6 @@ body{
     font-style: normal;
 }
 
-.modal {
-    z-index: 99999999;
-}
-
-.modal-content {
-    padding: 20px;
-    margin: 20px;
-}
-
-
 /*Body Google font*/
 .cormorant-garamond-semibold {
     font-family: "Cormorant Garamond", serif;
@@ -89,17 +79,6 @@ body{
     }
 }
 
-.profile-and-cart-icon .list-inline-item {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.profile-and-cart-icon .text-center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-right: 5px;
-}
 
 /*Wishlist page*/
 .img-box {
@@ -465,6 +444,10 @@ a.category-badge > span.badge:hover {
     border-radius: 0;
 }
 
+.text-decoration-none-remove {
+    text-decoration: none;
+}
+
 
 /*For screens that are 768px wider or smaller.*/
 @media (max-width: 768px) {
@@ -494,7 +477,14 @@ a.category-badge > span.badge:hover {
         position: absolute; 
         top: 6px;
         right: 27px;
+        padding-top: 8px;
+        margin-left: 25px;
     }
+
+    .style-nav-icons {
+        margin-right: 39px !important;
+    }
+
 
      /*Back To All Products style*/
     .center-small-screen {
@@ -556,6 +546,7 @@ a.category-badge > span.badge:hover {
         padding: 0;
     }
 }
+
   
 
 
