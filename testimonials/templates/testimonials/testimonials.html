@@ -1,0 +1,15 @@
+<section>
+    <h2>Testimonials</h2>
+    {% for testimonial in testimonials %}
+        <article>
+            <header>
+                <h3>{{ testimonial.name }}</h3>
+            </header>
+            <p>{{ testimonial.message }}</p>
+            <footer>
+                <small>{{ testimonial.created_at }}</small>
+            </footer>
+        </article>
+    {% endfor %}
+</section>
+
