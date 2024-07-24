@@ -1,8 +1,8 @@
 <section>
     <h4 class="text-muted">Submit a Testimonial</h4>
-    <form method="post">
+    <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}
-        <button class="cart-bg text-light offset-lg-4 mt-2" type="submit">Submit</button>
+        <button class="cart-bg text-success offset-lg-5 mt-2" type="submit">Submit</button>
     </form>
 </section>

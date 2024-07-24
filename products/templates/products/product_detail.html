@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-<div class="overlay"></div>
+<div class="overlay back-ground-white-colors"></div>
 <main>
     <div class="container-fluid push-content-down-detail">
         <div class="row">
@@ -124,6 +124,12 @@
                 </section>
             </div>
         </div>
+        
+        <section class="row">
+            <div class="col-12">
+                {% include "testimonials/testimonials.html" %}
+            </div>
+        </section>
     </div>
 </main>
 

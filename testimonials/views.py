@@ -12,6 +12,7 @@ def submit_testimonial(request):
     else:
         form = TestimonialForm()
     return render(request, 'submit_testimonial.html', {'form': form})
+    
 
 def testimonials(request):
     testimonials = Testimonial.objects.all()

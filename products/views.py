@@ -8,6 +8,9 @@ from django.db.models.functions import Lower
 from .models import Product, Category, Wishlist
 from .forms import ProductForm
 
+from testimonials.forms import TestimonialForm
+from testimonials.models import Testimonial
+
 # Create your views here.
 def all_products(request):
     """ A view to display all products, including sorting and search queries"""
@@ -74,11 +77,18 @@ def product_detail(request, product_id):
     # Returning one product so we use get_object_or_404
     product = get_object_or_404(Product, pk=product_id)
 
+    # form from submit_testimonial views.py
+    form = TestimonialForm()
+    testimonials = Testimonial.objects.all()
+
     return render(
         request, 'products/product_detail.html',
 
     {
         'product': product,
+         # form from submit_testimonial views.py
+        'form': form,
+        'testimonials': testimonials,
     }
 )
 
