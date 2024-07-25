@@ -74,24 +74,15 @@ def all_products(request):
 
 def product_detail(request, product_id):
     """A view to display individual product"""
-
-    # Returning one product so we use get_object_or_404
     product = get_object_or_404(Product, pk=product_id)
-
-    # form from submit_testimonial views.py
     form = TestimonialForm()
-    testimonials = Testimonial.objects.all()
+    testimonials = Testimonial.objects.filter(product=product)
 
-    return render(
-        request, 'products/product_detail.html',
-
-    {
+    return render(request, 'products/product_detail.html', {
         'product': product,
-         # form from submit_testimonial views.py
         'form': form,
         'testimonials': testimonials,
-    }
-)
+    })
 
 
 @login_required
