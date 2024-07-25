@@ -8,6 +8,7 @@ from django.db.models.functions import Lower
 from .models import Product, Category, Wishlist
 from .forms import ProductForm
 
+# Testimonials
 from testimonials.forms import TestimonialForm
 from testimonials.models import Testimonial
 
