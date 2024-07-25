@@ -1,15 +1,14 @@
 <section class="mt-4 offset-lg-1">
     <h2 class="text-success">Testimonials</h2>
     {% for testimonial in testimonials %}
-        <article>
+        <article class="mt-4">
             <header>
-                <h3>{{ testimonial.name }}</h3>
+                <span class="fs-5">{{ testimonial.author }}</span> / 
+                <time datetime="{{ testimonial.created_at|date:'Y-m-d' }}">
+                    <small><em>{{ testimonial.created_at }}</em></small>
+                </time>
             </header>
             <p>{{ testimonial.message }}</p>
-            <footer>
-                <small>{{ testimonial.created_at }}</small>
-            </footer>
         </article>
     {% endfor %}
 </section>
-
