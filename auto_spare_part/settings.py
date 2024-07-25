@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 
 if os.path.exists('env.py'):
     import env
@@ -154,7 +155,7 @@ else:
     }
 
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-elvisthegre-autosparepa-udtuuxrgaw4.ws.codeinstitute-ide.net']
+CSRF_TRUSTED_ORIGINS = ['https://8000-elvisthegre-autosparepa-udtuuxrgaw4.ws.codeinstitute-ide.net', 'auto_spare_part.herokuapp.com', 'localhost']
 
 
 # Password validation
