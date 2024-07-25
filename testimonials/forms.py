@@ -4,7 +4,7 @@ from .models import Testimonial
 class TestimonialForm(forms.ModelForm):
     class Meta:
         model = Testimonial
-        fields = ['name', 'message']
+        fields = ['product', 'name', 'message']
         # Some styling for the fields
         widgets = {
             'name': forms.TextInput(attrs={
