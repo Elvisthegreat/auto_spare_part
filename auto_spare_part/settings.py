@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['8000-elvisthegre-autosparepa-udtuuxrgaw4.ws.codeinstitute-ide.net']
+ALLOWED_HOSTS = ['8000-elvisthegre-autosparepa-udtuuxrgaw4.ws.codeinstitute-ide.net', 'auto-spare-part-ad8a81e06f4e.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -155,7 +155,8 @@ else:
     }
 
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-elvisthegre-autosparepa-udtuuxrgaw4.ws.codeinstitute-ide.net', 'auto_spare_part.herokuapp.com', 'localhost']
+CSRF_TRUSTED_ORIGINS = ['https://8000-elvisthegre-autosparepa-udtuuxrgaw4.ws.codeinstitute-ide.net', 'https://auto_spare_part.herokuapp.com',
+    'http://localhost',]
 
 
 # Password validation
