@@ -1,13 +1,41 @@
+{% load static %}
+
+{% block submit_testimonial_content %}
 <main>
     <header>
         <h4 class="text-muted">Submit a Testimonial</h4>
     </header>
-    <form class="answer-box" id="commentForm" method="POST" action="{% url 'submit_testimonial' product.id %}">
+    <form class="answer-box" id="commentForms" method="POST" action="{% url 'submit_testimonial' product.id %}">
         {% csrf_token %}
         {{ form.as_p }}
-        <button class="cart-bg text-success offset-lg-5 mt-2" type="submit">Submit</button>
+        <button id="submitButton" class="cart-bg text-success offset-lg-5 mt-2" type="submit">Submit</button>
     </form>
 </main>
+{% endblock %}
+
+{% block testimonial_content %}
+<section class="mt-4 custom-section">
+    <h2 class="text-success">Testimonials</h2>
+    {% for testimonial in testimonials %}
+        <article class="mt-4">
+            <header>
+                <span class="fs-5">{{ testimonial.author }}</span> / 
+                <time datetime="{{ testimonial.created_at|date:'Y-m-d' }}">
+                    <small><em>{{ testimonial.created_at }}</em></small>
+                </time>
+            </header>
+            <span>{{ testimonial.message }}</span>  
+            <span class="dropdown">
+                <i class="fas fa-pen"></i>
+                <div class="dropdown-content">
+                    <button class="btn btn-delete text-danger btn-delete" data-testimonial_id="{{ testimonial.id }}">Delete</button>
+                    <button class="btn btn-edit text-success btn-edit" data-testimonial_id="{{ testimonial.id }}">Edit</button>
+                </div>
+            </span>
+        </article>
+    {% endfor %}
+</section>
+{% endblock %}
 
 {% block postloadjs %}
     <script>
@@ -19,4 +47,6 @@
         }
         });
     </script>
+
+    <script src="{% static 'testimonials/js/testimonials.js' %}"></script>
 {% endblock %}

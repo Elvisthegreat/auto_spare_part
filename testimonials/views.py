@@ -27,14 +27,22 @@ def submit_testimonial(request, product_id):
     testimonial_form = TestimonialForm()
     
     return render(request, 'submit_testimonial.html', {'form': testimonial_form})
+
+
+def edit_testimonial(request, testimonial_id):
+    """Edit testimonial"""
+    testimonial = get_object_or_404(Testimonial, pk=testimonial_id)
+
+    if request.method == 'POST':
+        testimonial_form = TestimonialForm(data=request.POST, instance=testimonial)
+
+        if testimonial_form.is_valid() and testimonial.author == request.user:
+            form = testimonial_form.save(commit=False)
+            form.save()
+            messages.success(request, 'Updated Successfully')
+        else:
+            messages.error(request, 'Error updating testimonial!')
+        return redirect('product_detail', product_id=testimonial.product.id)
     
-
-def testimonials(request):
-    testimonials = Testimonial.objects.all()
-
-    return render(request, 'testimonials.html',
-
-     {'testimonials': testimonials
-     }
-     )
-
+    testimonial_form = TestimonialForm(instance=testimonial)
+    return render(request, 'edit_testimonial.html', {'form': testimonial_form})
