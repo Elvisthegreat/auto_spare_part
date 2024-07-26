@@ -20,11 +20,25 @@
                                 <img class="card-img-top img-fluid img-box" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                             {% endif %}
                             <div class="card-body text-center">
-                                <p class="lead mb-0 text-left font-weight-bold">${{ item.product.price }}</p>
-                                <h5 class="card-title">{{ item.product.name }}</h5>
-                                <a class="btn btn-danger" href="{% url 'remove_from_wishlist' item.product.id %}">
-                                    <i class="bi bi-trash-fill"></i> Remove
-                                </a>
+                                <header>
+                                    <p class="lead mb-0 text-left font-weight-bold">${{ item.product.price }}</p>
+                                    <h5 class="card-title">{{ item.product.name }}</h5>
+                                </header>
+                                <div class="d-flex flex-column flex-md-row justify-content-center">
+                                    <a class="btn btn-danger btn-sm mb-2 mb-md-0 mr-md-2 text-decoration-none cart-bg-wish-del-btn" style="margin-right: 5px;" href="{% url 'remove_from_wishlist' item.product.id %}">
+                                        <i class="bi bi-trash-fill"></i> Remove
+                                    </a>
+                                    <!--form to Add to Cart-->
+                                    <form class="form" action="{% url 'add_item_to_bag' item.product.id %}" method="POST">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="quantity" value="1">
+                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                        <button type="submit" class="text-danger text-decoration-none cart-bg btn-sm">Add to Cart</button>
+                                    </form>
+                                </div>
+                                <footer>
+                                    <p class="card-text mt-3">{{ item.product.description }}</p>
+                                </footer>
                             </div>
                         </div>
                         <hr>

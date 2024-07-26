@@ -271,6 +271,10 @@ a.category-badge > span.badge:hover {
     border-radius: 50px;
 }
 
+.cart-bg-wish-del-btn {
+    border-radius: 80px;
+}
+
 /*Product detail Add item button styling*/
 .bg-hover-change{
     background-color:  #FFC107;
@@ -327,7 +331,7 @@ a.category-badge > span.badge:hover {
     color: rgba(7, 181, 7, 0.928) !important;
 }
 
-
+/*************************Styling for testimonials dropdown delete and edit button*/
 .dropdown {
     position: relative;
     display: inline-block;
@@ -360,6 +364,7 @@ a.category-badge > span.badge:hover {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+/******************************End styling/
 
 /* Bag white background styling*/
 .back-ground-white {
