@@ -75,11 +75,13 @@ def all_products(request):
 def product_detail(request, product_id):
     """A view to display individual product"""
     product = get_object_or_404(Product, pk=product_id)
+    # from testimonial
     form = TestimonialForm()
     testimonials = Testimonial.objects.filter(product=product)
 
     return render(request, 'products/product_detail.html', {
         'product': product,
+        # from testimonial
         'form': form,
         'testimonials': testimonials,
     })

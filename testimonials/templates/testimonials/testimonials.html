@@ -8,7 +8,14 @@
                     <small><em>{{ testimonial.created_at }}</em></small>
                 </time>
             </header>
-            <p>{{ testimonial.message }}</p>
+            <span>{{ testimonial.message }}</span>  
+            <span class="dropdown">
+                <i class="fas fa-cog"></i>
+                <div class="dropdown-content">
+                    <button class="btn btn-delete text-danger" data-comment_id="{{ testimonial.id }}">Delete</button>
+                    <button class="btn btn-edit text-success" data-comment_id="{{ testimonial.id }}">Edit</button>
+                </div>
+            </span>
         </article>
     {% endfor %}
 </section>
