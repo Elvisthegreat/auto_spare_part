@@ -7,7 +7,7 @@ from products.models import Product
 class Testimonial(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE,
                                 related_name='testimonial')
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, null=True, blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE,
                                  related_name='testimonials')
     message = models.TextField()

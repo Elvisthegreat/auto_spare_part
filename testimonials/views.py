@@ -15,14 +15,15 @@ def submit_testimonial(request, product_id):
 
     if request.method == 'POST':
         testimonial_form = TestimonialForm(data=request.POST)
-        if testimonial_form.is_valid():
+        if testimonial_form.is_valid(): # Check if the form is valid
+            # Create a testimonial object but don't save to the database yet
             form = testimonial_form.save(commit=False)
-            form.author = request.user
-            form.product = product
-            form.save()
+            form.author = request.user  # Set the author of the testimonial
+            form.product = product # Associate the testimonial with the current post
+            form.save() # Save the testimonial to the database
             messages.success(request, "Submitted Successfully")
             return redirect('product_detail', product_id=product.id)
-    
+            
     testimonial_form = TestimonialForm()
     
     return render(request, 'submit_testimonial.html', {'form': testimonial_form})

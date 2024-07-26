@@ -1,8 +1,10 @@
-<section>
-    <h4 class="text-muted">Submit a Testimonial</h4>
-    <form method="POST">
+<main>
+    <header>
+        <h4 class="text-muted">Submit a Testimonial</h4>
+    </header>
+    <form method="POST" action="{% url 'submit_testimonial' product.id %}">
         {% csrf_token %}
         {{ form.as_p }}
         <button class="cart-bg text-success offset-lg-5 mt-2" type="submit">Submit</button>
     </form>
-</section>
+</main>
