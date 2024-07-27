@@ -244,8 +244,13 @@ a.category-badge > span.badge:hover {
   
 .a-cart-image {
     width: 140px;
-} 
-  
+}
+
+.custom-modal {
+    z-index: 99999999999;
+    width: 100%;
+}
+
 
 /*Push products header down*/
 .push-content-down{

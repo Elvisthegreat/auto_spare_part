@@ -1,8 +1,9 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.contrib import messages
 from .models import Testimonial
 from .forms import TestimonialForm
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseRedirect
 
 from products.models import Product
 # Create your views here.
@@ -37,12 +38,25 @@ def edit_testimonial(request, testimonial_id):
         testimonial_form = TestimonialForm(data=request.POST, instance=testimonial)
 
         if testimonial_form.is_valid() and testimonial.author == request.user:
-            form = testimonial_form.save(commit=False)
-            form.save()
+            testimonial_form.save()
             messages.success(request, 'Updated Successfully')
+            return redirect('product_detail', product_id=testimonial.product.id)
         else:
             messages.error(request, 'Error updating testimonial!')
-        return redirect('product_detail', product_id=testimonial.product.id)
-    
-    testimonial_form = TestimonialForm(instance=testimonial)
-    return render(request, 'edit_testimonial.html', {'form': testimonial_form})
+
+    else:
+        testimonial_form = TestimonialForm(instance=testimonial)
+    return HttpResponseRedirect(reverse('post_detail'))
+
+
+def delete_testimonial(request, testimonial_id):
+    """Handle delete testimonial"""
+    testimonial = get_object_or_404(Testimonial, pk=testimonial_id)
+
+    if testimonial.author == request.user:
+        testimonial.delete()
+        messages.add_message(request, messages.SUCCESS, 'Testimonial deleted!')
+    else:
+        messages.add_message(request, messages.ERROR, 'You can only delete your own testimonial!')
+        return redirect(reverse('product_detail'))
+

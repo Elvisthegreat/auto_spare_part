@@ -1,19 +1,16 @@
 {% load static %}
 
-{% block submit_testimonial_content %}
 <main>
     <header>
         <h4 class="text-muted">Submit a Testimonial</h4>
     </header>
-    <form class="answer-box" id="commentForms" method="POST" action="{% url 'submit_testimonial' product.id %}">
+    <form class="answer-box" id="commentForm" method="POST" action="{% url 'submit_testimonial' product.id %}">
         {% csrf_token %}
         {{ form.as_p }}
         <button id="submitButton" class="cart-bg text-success offset-lg-5 mt-2" type="submit">Submit</button>
     </form>
 </main>
-{% endblock %}
 
-{% block testimonial_content %}
 <section class="mt-4 custom-section">
     <h2 class="text-success">Testimonials</h2>
     {% for testimonial in testimonials %}
@@ -24,18 +21,44 @@
                     <small><em>{{ testimonial.created_at }}</em></small>
                 </time>
             </header>
-            <span>{{ testimonial.message }}</span>  
-            <span class="dropdown">
-                ...
+            <p id="testimonial{{ testimonial.id }}">{{ testimonial.message }}</p>  
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-bs-toggle btn-sm" type="button" id="commentActions" data-bs-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  ...
+                </button>
                 <div class="dropdown-content">
                     <button class="btn btn-delete text-danger" data-testimonial_id="{{ testimonial.id }}">Delete</button>
                     <button class="btn btn-edit text-success" data-testimonial_id="{{ testimonial.id }}">Edit</button>
                 </div>
-            </span>
+            </div>
         </article>
     {% endfor %}
 </section>
-{% endblock %}
+
+
+<!-- Delete confirmation modal -->
+<div class="modal push-modal-down custom-modal" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel"
+    aria-hidden="true" data-bs-backdrop="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Delete comment?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete your comment?
+                This action cannot be undone.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a id="deleteConfirm" href="#" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 {% block postloadjs %}
     <script>
