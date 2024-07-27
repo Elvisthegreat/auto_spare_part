@@ -30,7 +30,7 @@ def submit_testimonial(request, product_id):
     return render(request, 'submit_testimonial.html', {'form': testimonial_form})
 
 
-def edit_testimonial(request, testimonial_id):
+def testimonial_edit(request, testimonial_id):
     """Edit testimonial"""
     testimonial = get_object_or_404(Testimonial, pk=testimonial_id)
 

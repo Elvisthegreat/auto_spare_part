@@ -520,16 +520,17 @@ a.category-badge > span.badge:hover {
         padding: 12px
     }
 
+    /*Move away search bar from allsparepart-products logo*/
+    .mr-sm-from-logo {
+        margin-right: 10px;
+    }
+
+    /***********************Nav icons*/
     .fixed-section {
         position: fixed;
         top: 20px;
         left: 1px;
         z-index: 1000;
-    }
-
-    /*Move away search bar from allsparepart-products logo*/
-    .mr-sm-from-logo {
-        margin-right: 10px;
     }
 
     /*Profile and Cart icon*/
