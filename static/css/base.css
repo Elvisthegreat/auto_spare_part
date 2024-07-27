@@ -97,7 +97,15 @@ body{
 .margin-t{
     margin-top: 160px;
     padding: 80px;
+    width: 100%;
 }
+
+.fixed-section {
+    position: fixed;
+    right: 0;
+    z-index: 1000;
+}
+
 
 /****************************** All Main Content Section
 
@@ -244,11 +252,6 @@ a.category-badge > span.badge:hover {
   
 .a-cart-image {
     width: 140px;
-}
-
-.custom-modal {
-    z-index: 99999999999;
-    width: 100%;
 }
 
 
@@ -515,6 +518,13 @@ a.category-badge > span.badge:hover {
     .margin-t{
         margin-top: 210px;
         padding: 12px
+    }
+
+    .fixed-section {
+        position: fixed;
+        top: 20px;
+        left: 1px;
+        z-index: 1000;
     }
 
     /*Move away search bar from allsparepart-products logo*/
