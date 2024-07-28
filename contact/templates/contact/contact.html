@@ -4,12 +4,14 @@
 
 {% block content %}
 <div class="overlay back-ground-white-color"></div>
-<section class="push-content-down">
-    <h2>Contact Us</h2>
-    <form class="answer-box" id="commentForm" method="post">
+<section class="float-center">
+    <header class="py-4 push-content-down push-content-down-smallers">
+        <h2>Contact Us</h2>
+    </header>
+    <form class="answer-box answer-box-contact" id="commentForm" method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Submit</button>
+        <button class="btn btn-success" type="submit">Submit</button>
     </form>
 </section>
 
