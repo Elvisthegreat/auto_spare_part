@@ -503,6 +503,27 @@ a.category-badge > span.badge:hover {
     text-decoration: none;
 }
 
+/**********************Contact us input fields*/
+.contact-us {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    color: #333;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.contact-us:focus {
+    border-color: #66afe9;
+    outline: none;
+    box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+
 
 /*For screens that are 768px wider or smaller.*/
 @media (max-width: 768px) {

@@ -104,6 +104,9 @@
             <li class="nav-item d-lg-none">
               <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
             </li>
+            <li class="nav-item d-lg-none">
+              <a class="nav-link active" aria-current="page" href="{% url 'contact' %}">Contact Us</a>
+            </li>
             <li class="nav-item dropdown">
               <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
                   <a href="{% url 'all_products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
@@ -185,6 +188,14 @@
 
       <section class="d-flex justify-content-end col-12 col-lg-6 my-auto pt-sm-0 py-lg-0 style-nav-icons fixed-section" style="margin-right: 23px;">
         <ul class="list-inline list-unstyled text-center profile-and-cart-icon offset-sm-2 text-lg-right my-0">
+          <li class="list-inline-item">
+            <div>
+                <a class="text-black text-decoration-none d-none d-sm-block" href="{% url 'contact' %}">
+                    <i class="fas fa-phone fs-4"></i>
+                    <p class="my-0">Contact Us</p>
+                </a>
+            </div>
+        </li>
             <li class="list-inline-item">
                 <div>
                     <a class="text-black text-decoration-none" href="{% url 'wishlist' %}">

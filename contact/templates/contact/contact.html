@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<div class="overlay back-ground-white-color"></div>
+<section class="push-content-down">
+    <h2>Contact Us</h2>
+    <form class="answer-box" id="commentForm" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
+{% endblock %}
+
+{% block postloadjs %}
+    <script>
+        // Using Enter keyboard button function to send message
+        document.getElementsByClassName("answer-box")[0].addEventListener("keydown", function(event) {
+        if (event.key === "Enter"){
+            event.preventDefault(); // Prevent the default action (if any)
+            document.getElementById("commentForm").submit(); // Submit the form
+        }
+        });
+    </script>
+{% endblock %}
