@@ -26,9 +26,13 @@
     }
 </style>
 <main class="push-content-down">
-    <h1>Thank You!</h1>
-    <p>Your message has been successfully sent. We appreciate you reaching out to us.</p>
-    <p>We will get back to you as soon as possible.</p>
-    <p>In the meantime, feel free to <a href="{% url 'home' %}">return to our homepage</a>.</p>
+    <header>
+        <h1>Thank You!</h1>
+    </header>
+    <article>
+        <p>Your message has been successfully sent. We appreciate you reaching out to us.</p>
+        <p>We will get back to you as soon as possible.</p>
+        <p>In the meantime, feel free to <a href="{% url 'home' %}">return to our homepage</a>.</p>
+    </article>
 </main>
 {% endblock %}
