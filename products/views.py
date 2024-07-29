@@ -202,7 +202,7 @@ def submit_testimonial(request, product_id):
     return render(request, 'submit_testimonial.html', {'form': testimonial_form})
 
 
-def testimonial_edit(request, testimonial_id):
+def testimonial_edit(request, product_id, testimonial_id):
     """Edit testimonial"""
     testimonial = get_object_or_404(Testimonial, pk=testimonial_id)
 
@@ -212,13 +212,13 @@ def testimonial_edit(request, testimonial_id):
         if testimonial_form.is_valid() and testimonial.author == request.user:
             testimonial_form.save()
             messages.success(request, 'Updated Successfully')
-            return redirect('product_detail', product_id=testimonial.product.id)
+            return redirect('product_detail', product_id=product_id)
         else:
             messages.error(request, 'Error updating testimonial!')
 
     else:
         testimonial_form = TestimonialForm(instance=testimonial)
-    return HttpResponseRedirect(reverse('post_detail'))
+    return HttpResponseRedirect(reverse('post_detail', product_id=product_id))
 
 
 def delete_testimonial(request, product_id, testimonial_id):
