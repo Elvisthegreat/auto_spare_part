@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 
 class ContactRequest(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
+    name = models.CharField(max_length=255, default='Your name')
     email = models.EmailField(max_length=255, unique=True)
     message = models.TextField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)

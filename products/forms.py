@@ -1,6 +1,6 @@
 from django import forms
 from .widgets import CustomClearableFileInput # class imported from the widgets in our directory
-from .models import Product, Category
+from .models import Product, Category, Testimonial
 
 
 class ProductForm(forms.ModelForm):
@@ -19,3 +19,23 @@ class ProductForm(forms.ModelForm):
         self.fields['category'].choices = friendly_names
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border-black rounded-0'
+
+
+class TestimonialForm(forms.ModelForm):
+    class Meta:
+        model = Testimonial
+        fields = ['message']
+        # Some styling for the fields
+        widgets = {
+            'name': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Enter your name',
+                'style': 'border: 2px solid #ced4da; border-radius: 0.25rem;'
+            }),
+            'message': forms.Textarea(attrs={
+                'class': 'form-control',
+                'placeholder': 'Write your testimonial',
+                'rows': 5,
+                'style': 'border: 2px solid #ced4da; border-radius: 0.25rem;'
+            }),
+        }
