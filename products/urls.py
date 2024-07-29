@@ -16,6 +16,6 @@ urlpatterns = [
 
     # Testimonials
     path('products/<int:product_id>/submit_testimonial/', views.submit_testimonial, name='submit_testimonial'),
-    path('<int:product_id>/edit_testimonial/<int:testimonial_id>/', views.testimonial_edit, name='testimonial_edit'),
-    path('delete_testimonial/<int:testimonial_id>/', views.delete_testimonial, name='delete_testimonial'),
+    path('products/<int:product_id>/edit_testimonial/<int:testimonial_id>/', views.testimonial_edit, name='testimonial_edit'),
+    path('products/<int:product_id>/delete_testimonial/<int:testimonial_id>/', views.delete_testimonial, name='delete_testimonial'),
 ]

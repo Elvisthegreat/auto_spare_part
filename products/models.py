@@ -42,8 +42,10 @@ class Wishlist(models.Model):
 
 
 class Testimonial(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE,
+                                related_name='testimonial')
+    author = models.ForeignKey(User, on_delete=models.CASCADE,
+                                related_name='testimonials')
     message = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 

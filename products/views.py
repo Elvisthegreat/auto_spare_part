@@ -221,15 +221,16 @@ def testimonial_edit(request, testimonial_id):
     return HttpResponseRedirect(reverse('post_detail'))
 
 
-def delete_testimonial(request, testimonial_id):
+def delete_testimonial(request, product_id, testimonial_id):
     """Handle delete testimonial"""
     testimonial = get_object_or_404(Testimonial, pk=testimonial_id)
 
     if testimonial.author == request.user:
         testimonial.delete()
         messages.add_message(request, messages.SUCCESS, 'Testimonial deleted!')
-        return redirect('product_detail')
+        return redirect('product_detail', product_id=product_id)
     else:
         messages.add_message(request, messages.ERROR, 'You can only delete your own testimonial!')
-        return redirect(reverse('product_detail'))
+        return redirect('product_detail', product_id=product_id)
+
 
