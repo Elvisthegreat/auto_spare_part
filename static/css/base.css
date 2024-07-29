@@ -274,6 +274,10 @@ a.category-badge > span.badge:hover {
     padding: 2.7rem;
 }
 
+.contact-us-bg {
+    background-color: #2a3943;
+}
+
 .cart-bg {
     background-color: #2a3943 !important;
     border-radius: 50px;

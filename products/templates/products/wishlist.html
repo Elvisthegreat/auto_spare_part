@@ -11,6 +11,13 @@
             <hr>
     </header>
     <section class="row">
+        <div class="col-12">
+            <a href="{% url 'all_products' %}" class="btn btn-outline-warning">
+                <i class="fas fa-arrow-left"></i> Back to Store
+            </a>
+        </div>
+    </section>
+    <section class="row">
         {% if wishlist_items %}
             <div class="row">
                 {% for item in wishlist_items %}

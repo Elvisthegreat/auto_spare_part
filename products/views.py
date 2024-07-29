@@ -164,14 +164,26 @@ def delete_product(request, product_id):
 def add_to_wishlist(request, product_id):
     """Handle adding to wishlist"""
     product = get_object_or_404(Product, id=product_id)
-    Wishlist.objects.get_or_create(user=request.user, product=product)
+    wishlist_item, created = Wishlist.objects.get_or_create(user=request.user, product=product)
+    
+    if created:
+        messages.add_message(request, messages.SUCCESS, 'Product added to your wishlist!')
+    else:
+        messages.add_message(request, messages.ERROR, 'Product is already in your wishlist!')
     return redirect('wishlist')
 
 @login_required
 def remove_from_wishlist(request, product_id):
-    """Handl deleting from wishlist"""
+    """Handle deleting from wishlist"""
     product = get_object_or_404(Product, id=product_id)
-    Wishlist.objects.filter(user=request.user, product=product).delete()
+    wishlist_item = Wishlist.objects.filter(user=request.user, product=product)
+    
+    if wishlist_item.exists():
+        wishlist_item.delete()
+        messages.add_message(request, messages.SUCCESS, 'Product removed from your wishlist!')
+    else:
+        messages.add_message(request, messages.ERROR, 'Product was not found in your wishlist!')
+    
     return redirect('wishlist')
 
 @login_required
@@ -191,7 +203,7 @@ def submit_testimonial(request, product_id):
         if testimonial_form.is_valid(): # Check if the form is valid
             # Create a testimonial object but don't save to the database yet
             form = testimonial_form.save(commit=False)
-            form.author = request.user  # Set the author of the testimonial
+            form.author = request.user # Set the author of the testimonial
             form.product = product # Associate the testimonial with the current post
             form.save() # Save the testimonial to the database
             messages.success(request, "Submitted Successfully")
@@ -202,6 +214,7 @@ def submit_testimonial(request, product_id):
     return render(request, 'submit_testimonial.html', {'form': testimonial_form})
 
 
+@login_required
 def testimonial_edit(request, product_id, testimonial_id):
     """Edit testimonial"""
     testimonial = get_object_or_404(Testimonial, pk=testimonial_id)
@@ -221,6 +234,7 @@ def testimonial_edit(request, product_id, testimonial_id):
     return HttpResponseRedirect(reverse('post_detail', product_id=product_id))
 
 
+@login_required
 def delete_testimonial(request, product_id, testimonial_id):
     """Handle delete testimonial"""
     testimonial = get_object_or_404(Testimonial, pk=testimonial_id)
