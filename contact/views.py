@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.db import IntegrityError  # Import IntegrityError
 from .forms import ContactRequestForm
 
 # Create your views here.
@@ -7,8 +8,12 @@ def contact_view(request):
     if request.method == 'POST':
         form = ContactRequestForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('success')
+            try:
+                form.save()  # Attempt to save the form
+                return redirect('success')  # Redirect to success page if save is successful
+            except IntegrityError:
+                # Handle the error, e.g., by showing a message to the user
+                form.add_error('email', 'This email address is already in use.')
     else:
         form = ContactRequestForm()
     return render(request, 'contact/contact.html', {'form': form})

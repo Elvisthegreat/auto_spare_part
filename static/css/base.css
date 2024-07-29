@@ -562,10 +562,18 @@ a.category-badge > span.badge:hover {
 }
 /**********************End Contact us input fields styling*/
 
-
+@media (min-width: 768px) {
+    .push-content-down {
+        margin-top: 15.7em;
+    }
+}
 
 /*For screens that are 768px wider or smaller.*/
 @media (max-width: 768px) {
+
+    .push-content-down {
+        margin-top: 15.7em;
+    }
 
     .push-modal-down {
         margin-top: 11em;
@@ -663,6 +671,10 @@ a.category-badge > span.badge:hover {
         height: 150px;
         box-shadow: 5px 5px 10px #000;
         padding: 0;
+    }
+
+    .answer-box-contact {
+        max-width: 300px;
     }
 }
 
