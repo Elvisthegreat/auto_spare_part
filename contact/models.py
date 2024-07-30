@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class ContactRequest(models.Model):
+    """Models for contact request"""
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     name = models.CharField(max_length=255,)
     email = models.EmailField(max_length=255, unique=True)

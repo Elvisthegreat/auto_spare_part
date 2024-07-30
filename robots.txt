@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /bags/
+Disallow: /https://auto-spare-part-ad8a81e06f4e.herokuapp.com/sitemap.xml

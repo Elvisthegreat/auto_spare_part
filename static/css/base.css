@@ -576,12 +576,21 @@ padding: 0;
     .push-content-down-homepage {
         margin-top: 16.7em;
         padding: 15px;
+        width: 100%;
     }
-    
      
     /*Contact*/
     .push-content-down {
         margin-top: 16.5em;
+    }
+
+    .push-modal-down {
+        margin-top: 12em;
+    }
+
+    .push-content-down-detail {
+        margin-top: 12.5em;
+        padding-top: 6rem;
     }
 }
 
@@ -594,7 +603,7 @@ padding: 0;
     
 
     .push-modal-down {
-        margin-top: 11em;
+        margin-top: 12em;
     }
 
     .push-modal-x-down {
