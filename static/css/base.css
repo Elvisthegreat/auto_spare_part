@@ -566,6 +566,11 @@ a.category-badge > span.badge:hover {
 }
 /**********************End Contact us input fields styling*/
 
+/*Mailchimp*/
+#mc_embed_signup {
+padding: 0;
+}
+
 /* For screens smaller than 992px */
 @media (max-width: 992px) {
     .push-content-down-homepage {
