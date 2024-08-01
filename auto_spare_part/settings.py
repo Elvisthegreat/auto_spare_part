@@ -204,7 +204,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 if 'USE_AWS' in os.environ:
     # Cache control
-    # Tell the browser cache static files for a long time since they don't change very often, and this will improve performance for our users.
+    # Tell the browser cache static files for a long time since 
+    # they don't change very often, and this will improve performance for our users.
     AWS_S3_OBJECT_PARAMETERS = {
         'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
         'CacheControl': 'max-age=94608000',
