@@ -156,6 +156,8 @@ else:
         }
     }
 
+print(DATABASES)
+
 
 CSRF_TRUSTED_ORIGINS = ['https://8000-elvisthegre-autosparepa-udtuuxrgaw4.ws.codeinstitute-ide.net', 'https://auto_spare_part.herokuapp.com',
     'http://localhost',]
