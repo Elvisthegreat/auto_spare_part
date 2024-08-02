@@ -3,11 +3,6 @@
 {% block content %}
 
     <div class="overlay back-ground-white-color"></div>
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
     <main class="container h-100 push-content-down">
         <header class="container header-container">
             <div class="row">
@@ -17,14 +12,14 @@
             </div>
         </header>
         <div class="row h-100">
-            <article class="col-7 col-md-6 my-auto">
-                <h1 class="display-4 logo-font text-black">
+            <article class="col-12 my-auto">
+                <h1 class="logo-font text-black">
                     The page you are looking for isn't available
                 </h1>
-                <div class="my-5">
+                <div class="mt-4">
                     <h4>
                         <a href="{% url 'home' %}" 
-                            class="btn btn-lg btn-outline-warning rounded-0 text-capitalize py-3">
+                            class="btn btn-lg btn-outline-danger rounded-0 text-capitalize">
                                 Return to Home page
                         </a>
                     </h4>
