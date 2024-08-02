@@ -260,11 +260,6 @@ a.category-badge > span.badge:hover {
     width: 140px;
 }
 
-/*Style error 404 when users emter url that doesn't exist*/
-.push-content-error-404-down {
-    margin-top: 18em;
-}
-
 
 /*Push products header down*/
 .push-content-down{
@@ -611,12 +606,6 @@ padding: 0;
         max-height: 130px;
         max-width: 120px;
     }
-
-    /*Style error 404 when users emter url that doesn't exist*/
-    .push-content-error404-down {
-        margin-top: 18em;
-    }
-
 }
 
 /*For screens that are 768px wider or smaller.*/
@@ -727,11 +716,6 @@ padding: 0;
 
     .answer-box-contact {
         max-width: 300px;
-    }
-
-    /*Style error 404 when users emter url that doesn't exist*/
-    .push-content-error404-down {
-        margin-top: 14em;
     }
 }
 
