@@ -1,5 +1,7 @@
 # AutoSparePart
 Welcome to AutoSparePart! This website is your one-stop destination for all your automobile spare parts needs. Whether you’re looking for parts for your car, truck, or motorcycle, we’ve got you covered. AutoSparePart is an online platform that provides a wide range of automotive spare parts for various makes and models. Our mission is to make vehicle maintenance easier and more accessible by offering high-quality parts at competitive prices.
+<br>
+Founded in 2024, AutoSparePart was born out of a passion for automobiles and a desire to make vehicle maintenance easier and more accessible for everyone. We understand the frustration of searching for the right parts, dealing with unreliable suppliers, and facing high costs. That's why we set out to create a platform that simplifies the process and ensures you get the best parts at the best prices.
 
 ## Features
 - Wide Range of Products: We offer a vast selection of spare parts for various vehicle makes and models.
