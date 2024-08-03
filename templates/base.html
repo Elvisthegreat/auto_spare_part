@@ -209,7 +209,7 @@
                 <div>
                     <a class="text-black text-decoration-none" href="{% url 'wishlist' %}">
                         <i class="fas fa-star fs-4"></i>
-                        <p class="my-0">My Wishlist (<span id="wishlist-count">{{ wishlist_count }}</span>)</p>
+                        <p class="my-0">My Wishlist (<span>{{ wishlist_count }}</span>)</p>
                     </a>
                 </div>
             </li>
@@ -385,7 +385,8 @@
                 <ul class="list-unstyled small">
                     <li class="mb-2">Your one-stop shop for all auto spare parts.</li>
                     <li class="mb-2">Quality parts at unbeatable prices.</li>
-                    <li class="mb-2">Contact us: info@autospareparts.com</li>
+                    <li class="mb-3 text-info">Contact us: info@autospareparts.com</li>
+                    <li class="mb-2 text-info">Customer Support: support@autosparepart.com</li>
                 </ul>
             </div>
             <div class="col-6 col-lg-2 offset-lg-1 mb-3">
