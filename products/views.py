@@ -170,6 +170,7 @@ def add_to_wishlist(request, product_id):
         messages.add_message(request, messages.SUCCESS, 'Product added to your wishlist!')
     else:
         messages.add_message(request, messages.ERROR, 'Product is already in your wishlist!')
+    
     return redirect('wishlist')
 
 @login_required
@@ -190,7 +191,8 @@ def remove_from_wishlist(request, product_id):
 def wishlist(request):
     """Handle wishlist main page"""
     wishlist_items = Wishlist.objects.filter(user=request.user)
-    return render(request, 'products/wishlist.html', {'wishlist_items': wishlist_items})
+    wishlist_count = wishlist_items.count()
+    return render(request, 'products/wishlist.html', {'wishlist_items': wishlist_items, 'wishlist_count': wishlist_count})
 
 
 @login_required
