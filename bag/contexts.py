@@ -3,23 +3,25 @@ from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Product
 
+
 def bag_contents(request):
 
     bag_items = []
     total = 0
     product_count = 0
     bag = request.session.get('bag', {})
-
-    for item_id, item_data in bag.items(): # bag.items() returns each item in the bag along with its associated data.
+    """bag.items() returns each item in the bag with its associated data."""
+    for item_id, item_data in bag.items():
         """Execute this code if the item has no sizes."""
-        if isinstance(item_data, int): # checks if item_data is an integer
+        if isinstance(item_data, int):  # checks if item_data is an integer
             product = get_object_or_404(Product, pk=item_id)
             total += item_data * product.price
             product_count += item_data
             bag_items.append({
-                'item_id': item_id, # # The ID of the item
-                'quantity': item_data, # The quantity of the item
-                'product': product, # The product object retrieved from the database
+                'item_id': item_id,  # The ID of the item
+                'quantity': item_data,  # The quantity of the item
+                # The product object retrieved from the database
+                'product': product,
             })
         else:
             product = get_object_or_404(Product, pk=item_id)
@@ -35,7 +37,8 @@ def bag_contents(request):
 
     if total < settings.FREE_DELIVERY_THRESHOLD:
         # Calculate delivery charges
-        delivery = total * Decimal(settings.FREE_DELIVERY_THRESHOLD / 300) * Decimal(0.9)
+        delivery = total * Decimal(settings.FREE_DELIVERY_THRESHOLD / 300)
+        * Decimal(0.9)
         # Calculate how much more need to be spent for f-delivery
         free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total
     else:
@@ -55,3 +58,4 @@ def bag_contents(request):
     }
 
     return context
+    
