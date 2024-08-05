@@ -12,8 +12,9 @@ class ProductAdmin(admin.ModelAdmin):
         'rating',
         'image',
     )
-    
-    ordering = ('sku',) # sort the products by SKU using the ordering attribute. for reverse we can just add - minus
+    # sort the products by SKU using the ordering attribute.
+    # for reverse we can just add - minus
+    ordering = ('sku',)
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (

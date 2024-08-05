@@ -11,10 +11,11 @@ from checkout.models import Order
 @login_required
 def profile(request):
     """ Display the user's profile """
-    profile = get_object_or_404(UserProfile, user=request.user) # Storing the user models in a variable name profile
-
-    if request.method == 'POST': # If the request method is Post from the user
-        form = UserProfileForm(request.POST, instance=profile) # Create a new instance of the user profile form using the post data.
+    profile = get_object_or_404(UserProfile, user=request.user)
+    # If the request method is Post from the user
+    if request.method == 'POST':
+        # Create a new instance of the user profile form using the post data
+        form = UserProfileForm(request.POST, instance=profile)
         if form.is_valid():
             form.save()
             messages.success(request, 'Profile updated successfully')
