@@ -37,8 +37,8 @@ def bag_contents(request):
 
     if total < settings.FREE_DELIVERY_THRESHOLD:
         # Calculate delivery charges
-        delivery = total * Decimal(settings.FREE_DELIVERY_THRESHOLD / 300)
-        * Decimal(0.9)
+        delivery = total * Decimal(
+            settings.FREE_DELIVERY_THRESHOLD / 300) * Decimal(0.9)
         # Calculate how much more need to be spent for f-delivery
         free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total
     else:
@@ -58,4 +58,3 @@ def bag_contents(request):
     }
 
     return context
-    
