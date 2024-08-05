@@ -15,18 +15,18 @@
 
 {% block content %}
 <div class="overlay back-ground-white"></div>
-<div class="container">
-    <div class="row">
+<section class="container">
+    <header class="row">
         <div class="col">
             <hr>
             <h2 class="logo-font mb-4">Thank You</h2>
             <hr>
             <p class="text-black">Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
         </div>
-    </div>
+    </header>
 
     <div class="container my-5">
-        <div class="row justify-content-center">
+        <header class="row justify-content-center">
             <div class="col-12 col-lg-8">
                 <div class="p-4 shadow-sm rounded bg-white">
                     <hr>
@@ -35,7 +35,7 @@
                     <p class="text-black text-center">Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
                 </div>
             </div>
-        </div>
+        </header>
     
         <div class="row justify-content-center mt-4">
             <div class="col-12 col-lg-8">
@@ -229,5 +229,5 @@
         </div>
     </div>
 </div>
-</div>
+</section>
 {% endblock %}

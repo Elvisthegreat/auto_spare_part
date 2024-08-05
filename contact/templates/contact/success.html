@@ -14,25 +14,25 @@
         color: #333;
         box-shadow: 5px 5px 10px #000;
     }
-    h1 {
+    .h1-contact-with-us {
         color: #4CAF50;
     }
-    p {
+    .p-contact-with-us {
         font-size: 18px;
     }
-    a {
+    .a-contact-with-us {
         color: #4CAF50;
         text-decoration: none;
     }
 </style>
-<main class="push-content-down">
+<section class="push-content-down">
     <header>
-        <h1>Thank You!</h1>
+        <h1 class="h1-contact-with-us">Thank You!</h1>
     </header>
     <article>
-        <p>Your message has been successfully sent. We appreciate you reaching out to us.</p>
-        <p>We will get back to you as soon as possible.</p>
-        <p>In the meantime, feel free to <a href="{% url 'home' %}">return to our homepage</a>.</p>
+        <p class="p-contact-with-us">Your message has been successfully sent. We appreciate you reaching out to us.</p>
+        <p class="p-contact-with-us">We will get back to you as soon as possible.</p>
+        <p class="p-contact-with-us">In the meantime, feel free to <a class="a-contact-with-us" href="{% url 'home' %}">return to our homepage</a>.</p>
     </article>
-</main>
+</section>
 {% endblock %}
