@@ -14,6 +14,7 @@ def view_bag(request):
 def add_item_to_bag(request, item_id):
     """ Add a quantity of the specified product to the shopping bag """
     product = get_object_or_404(Product, pk=item_id)
+    #product_count = product.count()
     # Convert string to an integer
     quantity = int(request.POST.get('quantity'))
     # redirect_url found in our form

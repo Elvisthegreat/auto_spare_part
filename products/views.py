@@ -206,7 +206,12 @@ def wishlist(request):
     wishlist_count = wishlist_items.count()
     return render(
         request, 'products/wishlist.html',
-        {'wishlist_items': wishlist_items, 'wishlist_count': wishlist_count})
+        {
+            'wishlist_items': wishlist_items,
+            'wishlist_count': wishlist_count,
+            'just_message': True,  # from success toast
+        }
+    )
 
 
 @login_required
