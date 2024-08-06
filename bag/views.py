@@ -14,7 +14,6 @@ def view_bag(request):
 def add_item_to_bag(request, item_id):
     """ Add a quantity of the specified product to the shopping bag """
     product = get_object_or_404(Product, pk=item_id)
-    #product_count = product.count()
     # Convert string to an integer
     quantity = int(request.POST.get('quantity'))
     # redirect_url found in our form
@@ -64,21 +63,8 @@ def add_item_to_bag(request, item_id):
             bag[item_id] = quantity
             messages.success(request, f'Added {product.name} to your bag')
     request.session['bag'] = bag
-
-    # Calculate the total item count
-    total_items = 0
-
-    for item in bag.values():
-        if isinstance(item, dict):
-            for size in item['items_by_size'].keys():
-                total_items += item['items_by_size'][size]
-        else:
-            total_items += item
-
-    request.session['total_items'] = total_items
-
     return redirect(redirect_url)
-
+    
 
 def adjust_bag(request, item_id):
     """Adjust the quantity of the specified
