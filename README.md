@@ -174,6 +174,14 @@ Admin and Store Management
 | 28 |	Store Owner / Admin |	edit a product	| edit existing products in the shop
 | 29 |	Store Owner / Admin |	delete a product	| delete existing products from the shop
 
+### Kanban & User Stories
+- GitHub Kanban was used to track all open user stories
+
+<details><summary>View Kanban image board</summary>
+
+![Kanban](https://github.com/user-attachments/assets/47c20266-af0f-4c8c-a047-59e17aa8de56)
+</details>
+
 ## Troubleshooting
 If you encounter any issues while using our website, please refer to our FAQ or contact our customer support team at support@autosparepart.com.
 
