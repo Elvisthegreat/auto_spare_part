@@ -16,11 +16,25 @@
   - [Marketing](#marketing)
      - [Social Media](#social-media)
      - [News Letter](#news-letter)
+     - [SEO Implementations](#seo-implementations)
   - [User Goals](#user-goals)
   - [Site Owner Goals](#site-owner-goals)
   - [User Experience](#user-experience)
   - [User Stories](#user-stories)
   - [Wireframes](#wireframes)
+  - [Design](#design)
+    - [Colors](#colors)
+    - [Fonts](#fonts)
+    - [Structure](#structure)
+      - [Website pages](#website-pages)
+      - [AWS](#aws)
+      - [Database](#database)
+      - [Models](#models)
+  - [Technologies Used](#technologies-used)
+  - [Troubleshooting](#troubleshooting)
+  - [Contributing](#contributing)
+  - [Contact](#contact)
+  - [Acknowledgments](#acknowledgments)
 
 # AutoSparePart
 Welcome to AutoSparePart! This website is your one-stop destination for all your automobile spare parts needs. Whether you’re looking for parts for your car, truck, or motorcycle, we’ve got you covered. AutoSparePart is an online platform that provides a wide range of automotive spare parts for various makes and models. Our mission is to make vehicle maintenance easier and more accessible by offering high-quality parts at competitive prices.
@@ -96,6 +110,13 @@ AutoSparePart uses Mailchimp to manage its news letter. By joining the news lett
 ![MailChimp](https://github.com/user-attachments/assets/557f01aa-ef4f-4329-8516-7e3f4d96ecb2)<br> 
 ![Email](https://github.com/user-attachments/assets/110a8d36-c7a9-48a0-8731-e5459ea51e60)
 </details>
+
+
+### SEO Implementations
+
+- Descriptive meta tags & keywords were used throughout the site. In particular, the product descriptions and image file names.. 
+- [sitemap.xml](https://www.xml-sitemaps.com/) was used to create and add the sitemap.xml file to the root directory.
+- A robots.txt was added to the root directory of the project.
 
 ## User Goals
 
@@ -181,6 +202,236 @@ Admin and Store Management
 
 ![Kanban](https://github.com/user-attachments/assets/47c20266-af0f-4c8c-a047-59e17aa8de56)
 </details>
+
+##### Back to [top](#table-of-contents)<hr>
+
+## Wireframes
+I used Balsamiq to create wireframes for my project. It's a user-friendly wireframing tool that enables me to quickly and easily create mockups for my website or application. It offers a wide range of pre-built UI elements, and allows for easy collaboration with my team.
+
+## Design
+### Colors
+Multiples colors where used along while creating the site but the main colors i focus on using the most for maintainability are:
+**text-warning** <br>
+**color #132530** I choosed these colors the most cause i thought it could be easy and give users more site friendly using
+<details>
+<summary>View Color Palette</summary>
+
+![Color Hunt Palette 000957344cb7577bc1ebe645 (1)](https://github.com/user-attachments/assets/032c1790-646d-4542-abcc-8f9ba8e8b6f3)
+</details>
+
+### Font
+
+The font selected was from Google Fonts, Cormorant Garamond
+
+ <details><summary>See Font Image</summary>
+
+![Google Font Image](https://github.com/user-attachments/assets/255bac87-2bb9-4cab-a888-1dbfa3857b9f)
+</details>
+<hr>
+
+# Structure
+
+The site was designed for the user to be familiar with immediately he enter the site, there are already images in the home page that tell the users what the site stand for and represent. The layout are easy to follow such as a navigation bar along the top of the pages and well responsive for smaller screen.
+
+The footer contains all relevant social media links that the business has so the user can visit any social media site and follow the business there to expand the businesses followers, likes and shares.
+It contains an email sign up form and useful links as well as e.g FAQ, Products, About us and contact information.
+
+## Website pages
+
+- The site consists of the following pages:
+  - Home
+  - Product page
+  - Product details
+  - Testimonials
+  - Submit testimonials
+  - Edit testimonials
+  - Delete testimonials
+  - Cart
+  - Checkout
+  - Checkout Success
+  - Wislist
+  - Contact with us
+  - Register
+  - Profile
+  - Login
+  - Logout
+  - Reset Password
+  - Register
+  - 404
+  - FAQ
+  - About us
+
+  ##### Back to [top](#table-of-contents)
+  <hr>
+
+## AWS 
+
+I am using AWS S3 buckets to store my data. S3 is a highly scalable and durable cloud storage service provided by Amazon Web Services. It allows me to easily store and retrieve large amounts of data, and its built-in security features provide added protection for my files. I chose S3 for its scalability, durability, and security features.
+
+<details>
+<summary>View AWS amazon image</summary>
+
+![AWS amazon (739)](https://github.com/user-attachments/assets/d0a47db7-c896-4219-a68c-ddaa8a7b1f89)
+
+![Screenshot (740)](https://github.com/user-attachments/assets/9fbd6696-6e45-412c-a32c-cafb7aa31e84)
+</details>
+<hr>
+
+
+## Database
+
+Database for an auto spare parts e-commerce website involves several key considerations to ensure it meets the needs of both the business and its customers. Here are some important aspects:
+
+##### Key Considerations
+1. Product Information Management:
+   * Comprehensive Product Data: Ensure that each auto part has detailed information, including part number, description, compatibility, images, and specifications.
+2. Database Structure:
+   * Relational Database: Use a relational database like PostgreSQL to manage complex relationships between products, categories, and vehicle models.
+   * Scalability: Design the database to handle a large volume of products and transactions, allowing for future growth2.
+3. Search and Filtering:
+   * Advanced Search: Provide robust search functionality that allows users to search by part number, vehicle model, or keywords.
+   * Filtering Options: Include filters for brand, price, compatibility, and other relevant criteria to help users narrow down their choices3.
+4. User Accounts and Order Management:
+   * User Profiles: Allow users to create accounts to save their vehicle information, track orders, and manage wishlists.
+   * Order History: Maintain a record of past orders for easy reordering and customer service2.
+5. Security:
+   * Data Protection: Implement strong security measures to protect user data, including encryption and secure payment processing.
+6. User-Friendly Interface: Ensure the database supports a user-friendly front-end interface for easy navigation and product discovery.
+   * Mobile Compatibility: Optimize the database and website for mobile users, as many customers will shop from their smartphones2.
+
+<details><summary>See Database Image</summary>
+
+![Django Administrator](https://github.com/user-attachments/assets/a6a30f16-da33-4ae3-9ed3-4348216d7a27)
+
+</details>
+<hr>
+
+## Models  
+
+### User Model
+
+| Key        | Name         | Type        |
+| ---------- | ------------ | ----------- |
+| PrimaryKey | user_id      | AutoField   |
+|            | password     | VARCHAR(45) |
+|            | last_login   | VARCHAR(45) |
+|            | is_superuser | BOOLEAN     |
+|            | username     | VARCHAR(45) |
+|            | first_name   | VARCHAR(45) |
+|            | last_name    | VARCHAR(45) |
+|            | email        | VARCHAR(45) |
+|            | is_staff     | BOOLEAN     |
+|            |              |             |
+|            | is_active    | BOOLEAN     |
+|            | date_joined  | VARCHAR(45) |
+
+### Checkout Order Model  
+
+| Key        | Name            | Type               |
+| ---------- | --------------- | ------------------ |
+| PrimaryKey | order_id        | AutoField          |
+|            | order_number    | CharField[40]      |
+| ForeignKey | user_profile    | User profile Model |
+|            | full_name       | CharField[50]      |
+|            | email           | EmailField[254]    |
+|            | phone_number    | CharField[20]      |
+|            | address1        | CharField[80]      |
+|            | address2        | CharField[80]      |
+|            | town_city       | CharField[40]      |
+|            | postcode        | CharField[20]      |
+|            | county          | CharField[80]      |
+|            | country         | CharField[40]      |
+|            | date            | DateTimeField      |
+|            | delivery_cost   | DecimalField[6]    |
+|            | order_total     | DecimalField[10]   |
+|            | grand_total     | DecimalField[10]   |
+|            | original_basket | TextField          |
+|            | stripe_pid      | CharField          |
+
+### Checkout OrderLineItem Model  
+
+| Key        | Name             | Type            |
+| ---------- | ---------------- | --------------- |
+| PrimaryKey | OrderLineItem_id | AutoField       |
+| ForeignKey | order            | Order Model     |
+| ForeignKey | product          | Product Model   |
+|            | product_size     | CharField[2]    |
+|            | quantity         | IntegerField    |
+|            | line_item_total  | DecimalField[6] |
+
+### Contact Model
+
+| Key        | Name         | Type             |
+| ---------- | ------------ | ---------------- |
+| PrimaryKey | message_id   | AutoField        |
+|            | created_date | DateTimeField    |
+| ForeignKey | user         | User model       |
+|            | name         | CharField        |
+|            | email        | EmailField       |
+|            | message      | TextField        |
+|            | created_at   | DateTimeField    |
+
+### Product Model
+
+| Key        | Name        | Type           |
+| ---------- | ----------- | -------------- |
+| PrimaryKey | product_id  | AutoField      |
+|            | sku        | CharField[50]   |
+|            | name        | CharField[50]  |
+|            | description | TextField      |
+|            | has_sizes   | BooleanField   |
+|            | price       | DecimalField   |
+| ForeignKey | category    | Category model |
+|            | rating      | DecimalField   |
+|            | image_url   | URLField       |
+|            | image       | ImageField     |
+
+
+### Category Model  
+
+| Key        | Name          | Type      |
+| ---------- | ------------- | --------- |
+| PrimaryKey | category_id   | AutoField |
+|            | name          | Char[254] |
+|            | friendly_name | Char[254] |
+
+### Profile Model
+
+| Key        | Name                 | Type          |
+| ---------- | -------------------- | ------------- |
+| PrimaryKey | user_profile_id      | AutoField     |
+| ForeignKey | user                 | User model    |
+|            | default_phone_number | CharField[20] |
+|            | default_address1     | CharField[80] |
+|            | default_address2     | CharField[80] |
+|            | default_town_city    | CharField[40] |
+|            | default_county       | CharField[80] |
+|            | default_postcode     | CharField[20] |
+|            | default_country      | CharField[40] |
+
+
+### Wishlist Model
+
+| Key        | Name           | Type                |
+| ---------- | -------------- | ------------------- |
+| ForeignKey | user           | User model          |
+| ForeignKey | product        | Product model            |
+
+### Testimonial Model
+
+| Key        | Name         | Type                                   |
+| ---------- | ------------ | -------------------------------------- |
+| ForeignKey | product      | Post model<br>Cascade on<br>delete     |
+| ForeignKey | author       | User                                   |
+|            | message      | TextField                              |
+|            | created_date | DateTimeField                          |
+|            | approved     | BooleanField<br>default False          |
+ 
+
+##### Back to [top](#table-of-contents)
+<hr>
+
+
 
 ## Troubleshooting
 If you encounter any issues while using our website, please refer to our FAQ or contact our customer support team at support@autosparepart.com.
