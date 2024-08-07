@@ -34,6 +34,7 @@
   - [Troubleshooting](#troubleshooting)
   - [Contributing](#contributing)
   - [Contact](#contact)
+  - [Credit](#credit)
   - [Acknowledgments](#acknowledgments)
 
 # AutoSparePart
@@ -431,6 +432,28 @@ Database for an auto spare parts e-commerce website involves several key conside
 ##### Back to [top](#table-of-contents)
 <hr>
 
+## Technologies Used
+<details>
+<summary>View them</summary>
+
+- [Compress PNG](https://compresspng.com/#google_vignette) = compress all png images
+- Favicons = designs icon
+- [PostgreSQL](https://dbs.ci-dbs.net/)
+- [Am I Responsive](https://ui.dev/amiresponsive)
+- Django = Framework
+- HTML = mark up language
+- CSS = styling
+- Bootstrap = styling
+- Python = functionality
+- Javascript = functionality
+- Gitpod = IDE
+- Stripe = payment system
+- AWS amazon = for storing images and static files
+- Heroku = Deployment
+- GitHub = Used to store the project
+- Git = version control
+
+</details>
 
 
 ## Troubleshooting
@@ -445,6 +468,12 @@ If you have any questions or need further assistance, please feel free to reach 
 - Email: support@autosparepart.com
 - Phone: +1-800-123-4567
 - Address: 123 AutoSparePart Lane, Car City, CA 12345.
+
+## Credit
+<details><summary>Website Content</summary>
+
+When i started creating the website the i followed the same example as the [Boutique Ado Walkthrough](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+EA101+4/courseware/eb05f06e62c64ac89823cc956fcd8191/4df834ab921c418aa40b1b73ae878d0e/?child=first) for the project and allauth setup just to make sure am on the right track am project goes smoothly as expected. And also a big thanks to one of my biggest google search engine [Copilot or Ai-bing](https://www.bing.com/chat?form=NTPCHB) it was one of the tools i used in every of my project, especially when i get a terminal error that i don't completely undertsand i just copy and paste the errors to this search engine and it help me figure out what wrong and how to fix it.
+</details>
 
 ## Acknowledgments
 We would like to extend our heartfelt thanks to the following individuals for their invaluable contributions:
