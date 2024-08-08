@@ -348,7 +348,7 @@ Database for an auto spare parts e-commerce website involves several key conside
 |            | delivery_cost   | DecimalField[6]    |
 |            | order_total     | DecimalField[10]   |
 |            | grand_total     | DecimalField[10]   |
-|            | original_basket | TextField          |
+|            | original_bag | TextField          |
 |            | stripe_pid      | CharField          |
 
 ### Checkout OrderLineItem Model  
