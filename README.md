@@ -22,6 +22,7 @@
   - [User Experience](#user-experience)
   - [User Stories](#user-stories)
   - [Wireframes](#wireframes)
+  - [ERD Diagram](#erd-diagram)
   - [Design](#design)
     - [Colors](#colors)
     - [Fonts](#fonts)
@@ -210,6 +211,16 @@ Admin and Store Management
 
 ## Wireframes
 I used Balsamiq to create wireframes for my project. It's a user-friendly wireframing tool that enables me to quickly and easily create mockups for my website or application. It offers a wide range of pre-built UI elements, and allows for easy collaboration with my team.
+
+## ERD Diagram
+
+**Created with LucidChart**
+
+<details>
+<summary>View ERD Diagram</summary>
+
+![Screenshot (752)](https://github.com/user-attachments/assets/3ab5f059-f8d8-4039-942d-aef933f9e60e)
+</details>
 
 ## Design
 ### Colors
