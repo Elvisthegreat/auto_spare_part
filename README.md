@@ -31,6 +31,7 @@
       - [Database](#database)
       - [Models](#models)
   - [Technologies Used](#technologies-used)
+  - [Testing](#testing)
   - [Troubleshooting](#troubleshooting)
   - [Contributing](#contributing)
   - [Contact](#contact)
@@ -453,6 +454,86 @@ Database for an auto spare parts e-commerce website involves several key conside
 - GitHub = Used to store the project
 - Git = version control
 
+</details>
+
+## Testing
+All python code have being manually tested with [CI Python Linter](https://pep8ci.herokuapp.com/) and the result showed that all whitespace, trailing whtespace and line too long are all corrected
+
+### Python Testing
+<details><summary>View all Linter results</summary>
+
+- bag app
+
+![context py](https://github.com/user-attachments/assets/e2548eb1-a9a9-4ec4-b6c2-49ee7c1d140a)
+![views py](https://github.com/user-attachments/assets/fe97663d-d570-429b-97dd-e3e96c4452f4)
+
+- Checkout app
+
+![checkout signals py](https://github.com/user-attachments/assets/22527d45-2b57-401a-915a-8c598bf5623f)
+![checkout views](https://github.com/user-attachments/assets/8f283709-42a5-43fc-9b62-33a49e687797)
+![checkout webhooks py](https://github.com/user-attachments/assets/51c1f351-f27f-45c5-ab06-08fb3df6a3f9)
+
+**The reason why the warnings here wasn't fixed was because i tried to refactor the codes in different ways, but find out that it was causing bugs and throwing red lines in my gitpod workspace, so didn't really know how to fix that yet and because of time i just decided to live it future works**
+
+![checkout webhooks_handler](https://github.com/user-attachments/assets/4186ca08-d5c9-4793-99aa-2fc9d04820a6)
+
+- Contact app
+
+![forms](https://github.com/user-attachments/assets/741c7b84-b8f4-4e32-a531-a360973f2d17)
+![views](https://github.com/user-attachments/assets/da4fd710-4409-486f-97c6-b535db3295a3)
+
+- products app
+
+![product admin](https://github.com/user-attachments/assets/b7dde8a6-77c2-4fce-a312-d8f42b91d41e)
+![product widget](https://github.com/user-attachments/assets/9b43f794-ebdf-4fcb-954c-1d18cdb82bba)
+![products forms](https://github.com/user-attachments/assets/a0b02d47-b213-4519-928c-cd80f5f2171d)
+![products models](https://github.com/user-attachments/assets/0e4d3d48-83b1-43ad-85f9-2654f001040e)
+![products views](https://github.com/user-attachments/assets/ce7cf601-e374-4317-b0bf-6fae24095850)
+
+- Profile app
+
+![forms](https://github.com/user-attachments/assets/e026525c-40fd-4e52-a8a6-fb8cf2b5d383)
+![models](https://github.com/user-attachments/assets/796d37b0-2a9f-4b56-b9c3-0e278e9e2655)
+![views](https://github.com/user-attachments/assets/09b882e0-f592-478e-9195-421b0c4222fa)
+</details>
+
+### Javascript Testing
+<details><summary>View all jshint results</summary>
+
+**Got some warnings saying missing semicolons and unclosed regular expreesions but when i go through the code can't really found what wrong and what the warning are talkingand didn't really want to spend much time on controlling the warnings because of time, but everything testing manually and all functionalities are working as expected**
+
+- Javascript in base.html
+
+![base html js](https://github.com/user-attachments/assets/1bffc35f-ee90-427f-bc65-d5fb03c6689f)
+
+- Increment and Decrement buttons
+
+![+ - js](https://github.com/user-attachments/assets/ae0e45c5-0cd7-4268-92f4-dccdeffccec3)
+
+- Back top top
+
+![Screenshot (742)](https://github.com/user-attachments/assets/b39cc8a6-e253-47de-bb31-8a16bcc88b21)
+
+- Open modal to view single image product
+
+![Screenshot (743)](https://github.com/user-attachments/assets/63308e43-9f72-4e31-940e-e9e51a1e8a28)
+</details>
+
+### Cascading Style Sheet
+<details>
+<summary>View CSS Testing</summary>
+
+![Screenshot (703)](https://github.com/user-attachments/assets/58451da9-b72c-43d3-8d20-3bd8d7db228d)
+</details>
+
+### HTML
+<details>
+<summary>View HTML Testing</summary>
+
+**Its took me half a day to try and fix the error found here in the html testing but there was nothing i could do to resolve the issue i even requested for a tutor help, i talked with one of the tutor we were able to solve some of the issues found in the html but couldn't resolve all, but while we were stll trying to figure out a way to solve the remaining issues its was taking too long, which i ws already running out of time to submit the project so i decided to leave this error for a future fix sincing it's not causing any functionalities to malfunction**
+
+![Screenshot (713)](https://github.com/user-attachments/assets/7ce48b61-9ec5-4855-aa4f-6a5412d218d9)
+![Screenshot (712)](https://github.com/user-attachments/assets/0e3aa8ed-37ee-4739-bea0-e89a10cffa81)
 </details>
 
 
