@@ -158,7 +158,7 @@ AutoSparePart uses Mailchimp to manage its news letter. By joining the news lett
 
 ##### Back to [top](#table-of-contents)<hr>
 
-## User |Stories || 
+## User |Stories | 
 | User Story ID                  | As A/AN             | I CAN...                                                | SO THAT I CAN...                                          
 |--------------------------------|---------------------|---------------------------------------------------------|-----------------------------------------------------------|
 Registration and User Accounts			
@@ -547,6 +547,7 @@ All python code have being manually tested with [CI Python Linter](https://pep8c
 ![Screenshot (746)](https://github.com/user-attachments/assets/5e350517-85c3-4415-a10f-9e1a580a09ed)
 ![Screenshot (745)](https://github.com/user-attachments/assets/a5618168-7d3e-47f2-ade2-b9ce2ba50a5f)
 ![Screenshot (744)](https://github.com/user-attachments/assets/271b5aea-a1a3-44a9-a474-7a345305c90b)
+![Screenshot (751)](https://github.com/user-attachments/assets/bd5a6d4b-a140-485f-8856-cc8cdebed20c)
 ![Screenshot (748)](https://github.com/user-attachments/assets/9f37615c-a589-4e54-b064-f25894da4755)
 </details>
 
