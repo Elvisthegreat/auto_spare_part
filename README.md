@@ -32,6 +32,7 @@
       - [Models](#models)
   - [Technologies Used](#technologies-used)
   - [Testing](#testing)
+  - [Bugs](#bugs)
   - [Troubleshooting](#troubleshooting)
   - [Contributing](#contributing)
   - [Contact](#contact)
@@ -535,6 +536,42 @@ All python code have being manually tested with [CI Python Linter](https://pep8c
 ![Screenshot (713)](https://github.com/user-attachments/assets/7ce48b61-9ec5-4855-aa4f-6a5412d218d9)
 ![Screenshot (712)](https://github.com/user-attachments/assets/0e3aa8ed-37ee-4739-bea0-e89a10cffa81)
 </details>
+
+### Testing proves from browser for responsiveness
+<details>
+<summary>View browser responsive testing images</summary>
+
+**I've decided to add to add these screenshoots images here below for real browser responsiveness, because i found out that after i used Am I Responsive website to check my website if responsive, but on tablet it seems like the icons for wishlist, profile and cart are under the nav which i can't really see the same when i tested it responsiveness manually from the browser and the result carried out here from these images showed that the website is responsive**
+
+![Screenshot (747)](https://github.com/user-attachments/assets/b9e926d3-0851-484b-a4b8-b9c86cd56e06)
+![Screenshot (746)](https://github.com/user-attachments/assets/5e350517-85c3-4415-a10f-9e1a580a09ed)
+![Screenshot (745)](https://github.com/user-attachments/assets/a5618168-7d3e-47f2-ade2-b9ce2ba50a5f)
+![Screenshot (744)](https://github.com/user-attachments/assets/271b5aea-a1a3-44a9-a474-7a345305c90b)
+![Screenshot (748)](https://github.com/user-attachments/assets/9f37615c-a589-4e54-b064-f25894da4755)
+</details>
+
+## Bugs
+
+**Issues found:** 
+- When i first deployed the website to heroku, i found that the website wasn't opening all i saw was just Server Error 505
+- When i first deployed the website to heroku, i found that alot of images were broken and only the Alt name was only showing up
+- Found that the page 404 added to the website when a user tries to enter an invalid url link wasn't hidden under the navigation bar
+- On tablet screen size the remove product button under the increment button in the cart is not really aligning properly
+
+**Issues Fixed:**
+- When a user log in to the deployed website from heroku site no longer displaying Server error 505 ✔️
+- Go to all products page now all broken and lost images are displaying properly as expected ✔️
+- When a user enter a wrong url error 404 page now displaying properly no longer under the navigation bar ✔️ 
+
+#### Unfixed bugs
+- The remove product button under the increment button in the cart is not really aligning properly on tablet screen, only on tablet, i've tried and spent many hours trying to fix the error, but in anyhow i try fixing the error it keeps affecting other screen sizes so just because of time i just decided to leave it for a future fix
+
+![Screenshot (749)](https://github.com/user-attachments/assets/9d437164-88ae-43cb-aaf1-0b6d3b44c56f)
+
+- In the shopping cart there are two **Back to store** links display on same row and column on screen size between tablet and a little bit larger whcih is something i didn't really wanted it to be that way. I personally added those two links which one have to be on top on smaller screen why on larger screen the both links have to display on top while the other on the bottom. I've tried using bootstrap to stop them both from displaying on same row and column on smaller screen which one have to be hidden but not on the bottom on larger screen but its wasn't working so just because of time i leave that error for a future fix.
+
+![Screenshot (750)](https://github.com/user-attachments/assets/c50fb3b2-d4fa-4b47-9b98-0b929742b02b)
+
 
 
 ## Troubleshooting
