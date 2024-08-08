@@ -367,7 +367,6 @@ Database for an auto spare parts e-commerce website involves several key conside
 | Key        | Name         | Type             |
 | ---------- | ------------ | ---------------- |
 | PrimaryKey | message_id   | AutoField        |
-|            | created_date | DateTimeField    |
 | ForeignKey | user         | User model       |
 |            | name         | CharField        |
 |            | email        | EmailField       |
@@ -424,11 +423,9 @@ Database for an auto spare parts e-commerce website involves several key conside
 
 | Key        | Name         | Type                                   |
 | ---------- | ------------ | -------------------------------------- |
-| ForeignKey | product      | Post model<br>Cascade on<br>delete     |
 | ForeignKey | author       | User                                   |
 |            | message      | TextField                              |
 |            | created_date | DateTimeField                          |
-|            | approved     | BooleanField<br>default False          |
  
 
 ##### Back to [top](#table-of-contents)
