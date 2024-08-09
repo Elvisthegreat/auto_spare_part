@@ -232,7 +232,12 @@ def submit_testimonial(request, product_id):
             return redirect('product_detail', product_id=product.id)
     testimonial_form = TestimonialForm()
     return render(
-        request, 'submit_testimonial.html', {'form': testimonial_form})
+        request, 'submit_testimonial.html',
+        {
+            'form': testimonial_form,
+            'just_message': True,  # from success toast
+        }
+    )
 
 
 @login_required

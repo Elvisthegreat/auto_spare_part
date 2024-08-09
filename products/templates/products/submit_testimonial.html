@@ -1,5 +1,6 @@
 {% load static %}
 
+
 <section>
     <header>
         <h4 class="text-muted">Submit a Testimonial</h4>
@@ -38,10 +39,10 @@
 
 
 <!-- Delete confirmation modal -->
-<div class="modal push-modal-down custom-modal" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel"
+<div class="modal custom-modal custom-modal-conf-delete" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel"
     aria-hidden="true" data-bs-backdrop="false">
     <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content modal-content-conf-delete">
             <div class="modal-header">
                 <h5 class="modal-title" id="deleteModalLabel">Delete comment?</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -57,7 +58,6 @@
         </div>
     </div>
 </div>
-
 
 
 {% block postloadjs %}

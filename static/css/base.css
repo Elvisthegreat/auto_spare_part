@@ -563,6 +563,17 @@ a.category-badge > span.badge:hover {
 }
 /**********************End Contact us input fields styling*/
 
+/* Delete modal*/
+.custom-modal-conf-delete{
+    z-index: 9999;
+}
+
+.modal-content-conf-delete {
+    max-width: 80%;
+    width: 80%;
+    height: 100%;
+}
+
 /*Mailchimp*/
 #mc_embed_signup {
 padding: 0;
@@ -708,6 +719,5 @@ padding: 0;
         max-width: 300px;
     }
 }
-
   
   
