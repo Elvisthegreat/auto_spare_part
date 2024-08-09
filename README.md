@@ -532,7 +532,11 @@ All python code have being manually tested with [CI Python Linter](https://pep8c
 <details>
 <summary>View CSS Testing</summary>
 
+###### All pages styling result
 ![Screenshot (703)](https://github.com/user-attachments/assets/58451da9-b72c-43d3-8d20-3bd8d7db228d)
+
+###### Contact success.html css styling result
+![Screenshot (753)](https://github.com/user-attachments/assets/2bc5f770-56ae-4f64-a3d9-0524d6551d87)
 </details>
 
 ### HTML
