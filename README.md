@@ -619,6 +619,7 @@ During the manual testing process, each form was meticulously checked to ensure 
 By thoroughly testing each form manually, we have ensured that they function correctly and provide a smooth and reliable user experience. Users can confidently fill out and submit forms, knowing that any errors will be clearly indicated and that successful submissions will be acknowledged.
 </details>
 
+
 ## Homepage Images
 
 <details>
@@ -636,11 +637,19 @@ Not all **Homepage** images has links, and the reason was because of time, just 
 - When i first deployed the website to heroku, i found that alot of images were broken and only the Alt name was only showing up
 - Found that the page 404 added to the website when a user tries to enter an invalid url link wasn't hidden under the navigation bar
 - On tablet screen size the remove product button under the increment button in the cart is not really aligning properly
+- Delete modal was under the navigation because there of the z-index of the nav bar
 
 **Issues Fixed:**
 - When a user log in to the deployed website from heroku site no longer displaying Server error 505 ✔️
 - Go to all products page now all broken and lost images are displaying properly as expected ✔️
-- When a user enter a wrong url error 404 page now displaying properly no longer under the navigation bar ✔️ 
+- When a user enter a wrong url error 404 page now displaying properly no longer under the navigation bar ✔️
+- Modal now displaying properly ✔️
+<details>
+<summary>View modal image</summary>
+
+![Screenshot (761)](https://github.com/user-attachments/assets/b60fa3e8-2b4c-44d7-b75e-157a654258eb)
+</details>
+
 
 #### Unfixed bugs
 - The remove product button under the increment button in the cart is not really aligning properly on tablet screen, only on tablet, i've tried and spent many hours trying to fix the error, but in anyhow i try fixing the error it keeps affecting other screen sizes so just because of time i just decided to leave it for a future fix
