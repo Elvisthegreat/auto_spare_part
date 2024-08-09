@@ -33,11 +33,16 @@
       - [Models](#models)
   - [Technologies Used](#technologies-used)
   - [Testing](#testing)
+  - [Forms Testing](#forms-testing)
+  - [Homepage Images](#homepage-images)
   - [Bugs](#bugs)
   - [Troubleshooting](#troubleshooting)
   - [Contributing](#contributing)
   - [Contact](#contact)
   - [Credit](#credit)
+  - [Deployment](#deployment)
+  - [Fork Repository](#fork-repository)
+  - [Clone Repository](#clone-repository)
   - [Acknowledgments](#acknowledgments)
 
 # AutoSparePart
@@ -563,6 +568,33 @@ All python code have being manually tested with [CI Python Linter](https://pep8c
 ![Screenshot (748)](https://github.com/user-attachments/assets/9f37615c-a589-4e54-b064-f25894da4755)
 </details>
 
+## Forms Testing
+<details>
+<summary>Forms Testing</summary>
+
+All forms on this website have been tested manually, and they all work as expected. If you fill in all fields correctly, the form will be submitted successfully, and you will receive a success message. However, if any required field is left unfilled, the submit button will not work until all required fields are completed correctly.
+
+During the manual testing process, each form was meticulously checked to ensure that all validation rules are enforced. This includes verifying that:
+
+1. Required Fields: All mandatory fields must be filled in before submission. If any required field is left blank, the form will not submit, and an error message will prompt the user to complete the missing information.
+2. Input Validation: Each field was tested to ensure it accepts only valid input. For example, email fields were checked to ensure they accept only properly formatted email addresses, and numeric fields were tested to accept only numbers.
+3. Error Handling: The forms were tested to ensure that appropriate error messages are displayed when invalid data is entered. These messages guide the user to correct the errors before resubmitting the form.
+4. Success Messages: Upon successful submission, a confirmation message is displayed to inform the user that their data has been submitted correctly. This message provides assurance that the form has been processed as intended.
+5. User Experience: The overall user experience was evaluated to ensure that the forms are user-friendly and intuitive. This includes checking the layout, field labels, and instructions to make sure they are clear and helpful.
+<br>
+By thoroughly testing each form manually, we have ensured that they function correctly and provide a smooth and reliable user experience. Users can confidently fill out and submit forms, knowing that any errors will be clearly indicated and that successful submissions will be acknowledged.
+</details>
+
+## Homepage Images
+
+<details>
+<summary>View homepage images</summary>
+
+Not all **Homepage** images has links, and the reason was because of time, just because i got so many other things to work on so i added just few link to the 12 images in the homepage and the onces that doesn't have links are from images 7 to 11.
+
+![Screenshot (759)](https://github.com/user-attachments/assets/6c68d7a6-8910-4e73-9082-0d0c244fb398)
+</details>
+
 ## Bugs
 
 **Issues found:** 
@@ -605,6 +637,48 @@ If you have any questions or need further assistance, please feel free to reach 
 
 When i started creating the website the i followed the same example as the [Boutique Ado Walkthrough](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+EA101+4/courseware/eb05f06e62c64ac89823cc956fcd8191/4df834ab921c418aa40b1b73ae878d0e/?child=first) for the project and allauth setup just to make sure am on the right track am project goes smoothly as expected. And also a big thanks to one of my biggest google search engine [Copilot or Ai-bing](https://www.bing.com/chat?form=NTPCHB) it was one of the tools i used in every of my project, especially when i get a terminal error that i don't completely undertsand i just copy and paste the errors to this search engine and it help me figure out what wrong and how to fix it.
 </details>
+
+# Deployment
+<details>
+
+<summary>Steps taken to deploy on Heroku</summary>
+
+Set up the workspace:
+1. Install gunicorn through the terminal workspace
+2. Add to requirements.txt 
+3. Create Procfile
+4. In settings.py set DEBUG = False or DEBUG = 'DEVELOPMENT' in os.environ to use enviroment variables
+5. Add Database_url to env.py and also generated secret key from any sceret key site generator
+6. Ensure all secret keys were added to the env.py file & env.py is stored in the gitignore file
+7. Ensure you also added your Stripe public and secret key and also STRIPE_WH_SECRET to env.py
+8. Open your heroku app app and create the name for your website connect it to github
+9. Also add the same database_url and and generated secret key, all that you added to env.py to Heroku config var
+10. Git add, commit and push changes to GitHub
+13. Navigate to the "Deploy" tab and scroll down to click on "Deploy Branch" in the "Manual deploy" section
+
+</details>
+
+## Fork Repository
+
+Forking a repository allows you to create a copy to GitHub, and any changes made will not affect the original repository:
+
+- Within GitHub, navigate to the repository page you are going to fork
+- Click "Fork" on the top right corner of the page
+- Wait for the copy to be created and you are then redirected to the forked repository
+
+## Clone Repository
+
+Cloning a repository means creating a local copy of a remote repository from platforms like GitHub. This allows you to work on the project files, commit history, and branches independently on your local machine.
+<br>
+When you clone a repository, you download all the data from the remote repository, including all versions of every file and folder. This is useful for contributing to projects, fixing issues, or adding new features without affecting the original repository. <br>
+
+1. Go to the GitHub repository 
+2. Locate the Code button above the list of files and click it 
+3. Select if you prefere to clone using HTTPS, SSH, or Github CLI and click the copy button to copy the URL to your clipboard
+4. Open Git Bash
+5. Change the current working directory to the one where you want the cloned directory
+6. Type git clone and paste the URL from the clipboard
+7.Press Enter to create your local clone.
 
 ## Acknowledgments
 We would like to extend our heartfelt thanks to the following individuals for their invaluable contributions:
