@@ -21,7 +21,8 @@
   - [Site Owner Goals](#site-owner-goals)
   - [User Experience](#user-experience)
   - [User Stories](#user-stories)
-  - [Wireframes](#wireframes)
+  - [Kanban & User Stories](#kanban-&user-stories)
+  - [Epics](#epics)
   - [ERD Diagram](#erd-diagram)
   - [Design](#design)
     - [Colors](#colors)
@@ -34,6 +35,7 @@
   - [Technologies Used](#technologies-used)
   - [Testing](#testing)
   - [Forms Testing](#forms-testing)
+  - [Manual Testing](#manual-testing)
   - [Homepage Images](#homepage-images)
   - [Bugs](#bugs)
   - [Troubleshooting](#troubleshooting)
@@ -212,10 +214,23 @@ Admin and Store Management
 ![Kanban](https://github.com/user-attachments/assets/47c20266-af0f-4c8c-a047-59e17aa8de56)
 </details>
 
-##### Back to [top](#table-of-contents)<hr>
+## Epics
+Epics were created using the milestones feature in Github
+Backlog, In Progress.
 
-## Wireframes
-I used Balsamiq to create wireframes for my project. It's a user-friendly wireframing tool that enables me to quickly and easily create mockups for my website or application. It offers a wide range of pre-built UI elements, and allows for easy collaboration with my team.
+<details>
+<summary>Epic milestone Overview</summary>
+
+![Screenshot (760)](https://github.com/user-attachments/assets/0b87841f-fecc-4014-8e56-813c72273bfd)
+</details>
+
+<details>
+<summary>Apologies</summary>
+
+I didn't really think or even remember that creating a backlog and adding label are something we decorators and add to our readme, because my whole thought was adding a Kanban board was enough, i already started creating the backlog and tying to add labels in github now after talking with mentor he told me to try and add them to my readme, but now i won't be having sufficient time to build them in my github sice my deadline day is today and its almost time now for me to start getting ready for work.
+</details>
+
+##### Back to [top](#table-of-contents)<hr>
 
 ## ERD Diagram
 
@@ -568,7 +583,26 @@ All python code have being manually tested with [CI Python Linter](https://pep8c
 ![Screenshot (748)](https://github.com/user-attachments/assets/9f37615c-a589-4e54-b064-f25894da4755)
 </details>
 
+## Manual testing
+
+1. As a User I can navigate across the site so that I can move to each feature of the site easily
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Click on the 'Home' link in the navigation bar | Homepage will load | Works as expected |
+| Click on the 'Register' link in the navigation bar | Sign up page will load | Works as expected |
+| Click on the 'Login' link in the navigation bar | Login page will load | Works as expected |
+| Click on the 'Logout' link in the navigation bar, | logout page is display | Works as expected |
+| Click on the 'Contact' link in the navigation bar, | fields are display | Works as expected |
+| Click on the 'Wishlist' link in the navigation bar, | products added to wishlist are display | Works as expected |
+| Click on the 'Cart' link in the navigation bar, | items or no items in cart are display | Works as expected |
+| Click on the 'Images' in the homepage, | images direct you to another page of the site, except the once with no links yet | Works as expected |
+| Search for 'product' in our site | if product is found or we have the product or not result is given back | Works as expected |
+| Click on 'AllSparePart' button | you will be directed to all products page | Works as expected |
+
+
 ## Forms Testing
+
 <details>
 <summary>Forms Testing</summary>
 
