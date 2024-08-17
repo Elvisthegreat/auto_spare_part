@@ -1,6 +1,7 @@
 from django.shortcuts import (
     render, get_object_or_404, redirect, reverse
     )
+from django.core.files.storage import FileSystemStorage
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q  # To generate a search query
@@ -196,7 +197,7 @@ def remove_from_wishlist(request, product_id):
     else:
         messages.add_message(request, messages.ERROR, 'Product was not found \
         in your wishlist!')
-    return redirect('wishlist')
+    return redirect('product_detail', product_id=product_id)
 
 
 @login_required
@@ -220,13 +221,18 @@ def submit_testimonial(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
 
     if request.method == 'POST':
-        testimonial_form = TestimonialForm(data=request.POST)
+        testimonial_form = TestimonialForm(data=request.POST, files=request.FILES)
         if testimonial_form.is_valid():  # Check if the form is valid
             # Create a testimonial object but don't save to the database yet
             form = testimonial_form.save(commit=False)
             form.author = request.user  # Set the author of the testimonial
             # Associate the testimonial with the current post
             form.product = product
+            if 'image' in request.FILES:
+                image = request.FILES['image']
+                fs = FileSystemStorage()
+                filename = fs.save(image.name, image)
+                form.image = fs.url(filename)
             form.save()  # Save the testimonial to the database
             messages.success(request, "Submitted Successfully")
             return redirect('product_detail', product_id=product.id)

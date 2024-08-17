@@ -54,6 +54,7 @@ class Testimonial(models.Model):
         User, on_delete=models.CASCADE, related_name='testimonials')
     message = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
+    image = models.ImageField(upload_to='testimonials/', null=True, blank=True)
 
     def __str__(self):
         return f"{self.author.username} - {self.product.name}"

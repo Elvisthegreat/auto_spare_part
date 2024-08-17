@@ -5,7 +5,7 @@
     <header>
         <h4 class="text-muted">Submit a Testimonial</h4>
     </header>
-    <form class="answer-box" id="commentForm" method="POST" action="{% url 'submit_testimonial' product.id %}">
+    <form class="answer-box" id="commentForm" method="POST" action="{% url 'submit_testimonial' product.id %}" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
         <button id="submitButton" class="cart-bg text-success offset-lg-5 mt-2" type="submit">Submit</button>
@@ -22,17 +22,20 @@
                     <small><em>{{ testimonial.created_at }}</em></small>
                 </time>
             </header>
-            <p id="testimonial{{ testimonial.id }}">{{ testimonial.message }}</p>  
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-bs-toggle btn-sm" type="button" id="commentActions" data-bs-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">
-                  ...
-                </button>
-                <div class="dropdown-content">
-                    <button class="btn btn-delete text-danger" data-product_id="{{ product.id }}" data-product_id="{{ product.id }}" data-testimonial_id="{{ testimonial.id }}">Delete</button>
-                    <button class="btn btn-edit text-success" data-testimonial_id="{{ testimonial.id }}">Edit</button>
+            <p id="testimonial{{ testimonial.id }}">{{ testimonial.message }}</p>
+            <img class="card-img-top img-fluid" src="{{ testimonial.image }}" alt="testimonial profile image">
+            {% if user == testimonial.author %}  
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-bs-toggle btn-sm mt-2" type="button" id="commentActions" data-bs-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    ...
+                    </button>
+                    <div class="dropdown-content">
+                        <button class="btn btn-delete text-danger" data-product_id="{{ product.id }}" data-product_id="{{ product.id }}" data-testimonial_id="{{ testimonial.id }}">Delete</button>
+                        <button class="btn btn-edit text-success" data-testimonial_id="{{ testimonial.id }}">Edit</button>
+                    </div>
                 </div>
-            </div>
+            {% endif %}
         </article>
     {% endfor %}
 </section>
