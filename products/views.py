@@ -1,7 +1,6 @@
 from django.shortcuts import (
     render, get_object_or_404, redirect, reverse
     )
-from django.core.files.storage import FileSystemStorage
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q  # To generate a search query
@@ -228,11 +227,6 @@ def submit_testimonial(request, product_id):
             form.author = request.user  # Set the author of the testimonial
             # Associate the testimonial with the current post
             form.product = product
-            if 'image' in request.FILES:
-                image = request.FILES['image']
-                fs = FileSystemStorage()
-                filename = fs.save(image.name, image)
-                form.image = fs.url(filename)
             form.save()  # Save the testimonial to the database
             messages.success(request, "Submitted Successfully")
             return redirect('product_detail', product_id=product.id)
