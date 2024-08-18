@@ -23,7 +23,7 @@
                 </time>
             </header>
             <p id="testimonial{{ testimonial.id }}">{{ testimonial.message }}</p>
-            <img class="card-img-top img-fluid" src="{{ testimonial.image.url }}" alt="testimonial profile image">
+            <img class="card-img-top img-fluid" src="{{ testimonial.image.url }}" alt="testimonial profile image" style="max-width: 300px; width: 50%; height: auto;">
             {% if user == testimonial.author %}  
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-bs-toggle btn-sm mt-2" type="button" id="commentActions" data-bs-toggle="dropdown"
