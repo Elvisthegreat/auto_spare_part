@@ -74,23 +74,25 @@
   <header class="fixed-top base-header">
     <div class="container mt-2">
       <!--Section for our contact info-->
-      <section class="d-flex justify-content-center">
-          <div class="w-100 d-flex d-none d-md-block">
-            <div>
-              <i class="bi bi-envelope-fill text-light contact-info"></i>
-              <span class="navbar-sm-brand text-light text-decoration-none contact-info">info@autosparepart.com</span>
-              <i class="bi bi-phone-fill contact-info text-light"></i>
-              <span class="navbar-sm-brand text-white text-decoration-none contact-info">+39356123478</span>
-              
+      <section class="d-flex justify-content-center align-items-center">
+        <div class="w-100 d-flex d-none d-md-block">
+            <div class="d-flex align-items-center">
+                <i class="bi bi-envelope-fill text-light contact-info mr-2"></i>
+                <span class="navbar-sm-brand text-light text-decoration-none contact-info mr-4">info@autosparepart.com</span>
+                <i class="bi bi-phone-fill contact-info text-light mr-2"></i>
+                <span class="navbar-sm-brand text-white text-decoration-none contact-info mr-4">+39356123478</span>
                 <span class="mt-0" style="margin-left: 190px;">
-                  Free shipping for orders above €86
-                  <i class="fa fa-truck" style="margin-left: 8px;"></i>
+                    Free shipping for orders above €86
+                    <i class="fa fa-truck" style="margin-left: 8px;"></i>
+                </span>
+                <!-- Section block for random text -->
+                <span class="d-none d-lg-block" style="margin-left: 398px;">
+                    <span class="contact-info" id="footer-date"></span>
                 </span>
             </div>
-          </div>
-    </section>
+        </div>
+      </section>
     </div>
-
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg bg-body-tertiary my-3 remove-overflow-in-basehtml">
       <!--Wrapped the button and logo in a div with d-flex align-items-center to align them horizontally.-->
@@ -370,11 +372,24 @@
         <!--Mailchimp-->
                 <script
                   type="text/javascript">(function ($) { window.fnames = new Array(); window.ftypes = new Array(); fnames[0] = 'EMAIL'; ftypes[0] = 'email'; fnames[1] = 'FNAME'; ftypes[1] = 'text'; fnames[2] = 'LNAME'; ftypes[2] = 'text'; fnames[3] = 'ADDRESS'; ftypes[3] = 'address'; fnames[4] = 'PHONE'; ftypes[4] = 'phone'; fnames[5] = 'BIRTHDAY'; ftypes[5] = 'birthday'; }(jQuery)); var $mcj = jQuery.noConflict(true);</script>
+
+                <script src="{% static 'js/randompost.js' %}"></script>
 	  {% endblock %}
   </main>
 
   <!--Footer section-->
   <footer class="bd-footer py-4 py-md-5 mt-5 bg-body-tertiary">
+      <!--Section block for random text-->
+    <section class=" py-3">
+      <div class="container mt-3 fs-5">
+        <div class="text-center">
+          <article>
+            <p id="footer-message"  style="font-weight: bold;"></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <div class="container py-4 py-md-5 px-4 px-md-3 text-body-secondary">
         <div class="row">
             <div class="col-lg-3 mb-3">
