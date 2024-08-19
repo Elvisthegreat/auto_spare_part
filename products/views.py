@@ -181,7 +181,7 @@ def add_to_wishlist(request, product_id):
     else:
         messages.add_message(request, messages.ERROR, 'Product is already \
         in your wishlist!')
-    return redirect('wishlist')
+    return redirect('all_products')
 
 
 @login_required
@@ -196,7 +196,7 @@ def remove_from_wishlist(request, product_id):
     else:
         messages.add_message(request, messages.ERROR, 'Product was not found \
         in your wishlist!')
-    return redirect('product_detail', product_id=product_id)
+    return redirect('wishlist')
 
 
 @login_required
@@ -258,7 +258,7 @@ def testimonial_edit(request, product_id, testimonial_id):
 
     else:
         testimonial_form = TestimonialForm(instance=testimonial)
-    return HttpResponseRedirect(reverse('post_detail', product_id=product_id))
+    return HttpResponseRedirect(reverse('product_detail', kwargs={'product_id': product_id}))
 
 
 @login_required
