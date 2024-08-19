@@ -116,6 +116,7 @@ def add_product(request):
 
     context = {
         'form': form,
+        'just_message': True,
     }
 
     return render(request, 'products/add_product.html', context)
