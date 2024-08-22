@@ -23,7 +23,7 @@
                 </time>
             </header>
             <p id="testimonial{{ testimonial.id }}">{{ testimonial.message }}</p>
-            <!--Check if image is associated-->
+            <!--Check if the testimonial has an associated image and display it-->
             {% if testimonial.image %}
                 <a href="{{ testimonial.image.url }}" target="_blank">
                     <img class="card-img-top img-fluid" src="{{ testimonial.image.url }}" alt="testimonial profile image" style="max-width: 300px; width: 50%; height: auto;">

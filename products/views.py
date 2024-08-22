@@ -182,7 +182,7 @@ def add_to_wishlist(request, product_id):
     else:
         messages.add_message(request, messages.ERROR, 'Product is already \
         in your wishlist!')
-    return redirect('all_products')
+    return redirect('wishlist')
 
 
 @login_required
