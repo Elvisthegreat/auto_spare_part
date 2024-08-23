@@ -13,8 +13,11 @@ const editButtons = document.querySelectorAll(".btn-edit");
         // Set the action attribute to know which testimonial to update
         commentForm.setAttribute("action", `edit_testimonial/${testimonialId}/`);
 
-        // Scroll to the comment text box
-        commentText.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        // Scroll to the comment text box and center it in the viewport
+        window.scrollTo({
+            top: commentText.offsetTop - (window.innerHeight / 2) + (commentText.offsetHeight / 2),
+            behavior: 'smooth'
+          });
     });
 });
 
