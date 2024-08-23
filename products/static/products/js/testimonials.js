@@ -12,6 +12,9 @@ const editButtons = document.querySelectorAll(".btn-edit");
         submitButton.innerText = "Update";
         // Set the action attribute to know which testimonial to update
         commentForm.setAttribute("action", `edit_testimonial/${testimonialId}/`);
+
+        // Scroll to the comment text box
+        commentText.scrollIntoView({ behavior: 'smooth', block: 'center' });
     });
 });
 
