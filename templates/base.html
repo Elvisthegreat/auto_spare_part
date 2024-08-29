@@ -372,20 +372,7 @@
         <!--Mailchimp-->
             <script
                   type="text/javascript">(function ($) { window.fnames = new Array(); window.ftypes = new Array(); fnames[0] = 'EMAIL'; ftypes[0] = 'email'; fnames[1] = 'FNAME'; ftypes[1] = 'text'; fnames[2] = 'LNAME'; ftypes[2] = 'text'; fnames[3] = 'ADDRESS'; ftypes[3] = 'address'; fnames[4] = 'PHONE'; ftypes[4] = 'phone'; fnames[5] = 'BIRTHDAY'; ftypes[5] = 'birthday'; }(jQuery)); var $mcj = jQuery.noConflict(true);</script>
-          
-            <!--Store and Restore Scroll Position-->
-          <script>
-            window.addEventListener('beforeunload', function() {
-                localStorage.setItem('scrollPosition', window.scrollY);
-            });
-        
-            window.addEventListener('load', function() {
-                if (localStorage.getItem('scrollPosition') !== null) {
-                    window.scrollTo(0, parseInt(localStorage.getItem('scrollPosition')));
-                    localStorage.removeItem('scrollPosition');
-                }
-            });
-        </script>
+                  
           <!--Select random text-->
         <script src="{% static 'js/randompost.js' %}"></script>
 	  {% endblock %}
