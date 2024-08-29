@@ -584,6 +584,12 @@ a.category-badge > span.badge:hover {
 padding: 0;
 }
 
+/* Apply btn-sm class only on screens smaller than 576px */
+@media (max-width: 575.98px) {
+    .custom-btn {
+        font-size: 12px;
+    }
+}
 
 /* For screens smaller than 992px */
 @media (max-width: 992px) {
@@ -724,5 +730,3 @@ padding: 0;
         max-width: 300px;
     }
 }
-  
-  
