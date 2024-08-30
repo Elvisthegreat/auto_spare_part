@@ -24,6 +24,7 @@
   - [Kanban & User Stories](#kanban-&user-stories)
   - [Epics](#epics)
   - [ERD Diagram](#erd-diagram)
+  - [Wireframe](#wireframe)
   - [Design](#design)
     - [Colors](#colors)
     - [Fonts](#fonts)
@@ -241,6 +242,14 @@ I didn't really think or even remember that creating a backlog and adding label 
 
 ![Screenshot (752)](https://github.com/user-attachments/assets/3ab5f059-f8d8-4039-942d-aef933f9e60e)
 </details>
+
+### Wireframe
+   Figma was use to create the blueprint for the structure of the website
+   <details>
+   <summary>View Wifreframe image</summary>
+
+   ![Desktop_smaller screen](https://github.com/user-attachments/assets/0f93a691-d95d-457c-8035-71bf07cade9a)
+   </details>
 
 ## Design
 ### Colors
