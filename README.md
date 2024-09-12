@@ -244,11 +244,11 @@ I didn't really think or even remember that creating a backlog and adding label 
 </details>
 
 ### Wireframe
-   Figma was use to create the blueprint for the structure of the website
+   Figma was use to create the blueprint for the structure of the website for differents screen sizes
    <details>
    <summary>View Wifreframe image</summary>
 
-   ![Desktop_smaller screen](https://github.com/user-attachments/assets/0f93a691-d95d-457c-8035-71bf07cade9a)
+   ![Wireframe for all screen](https://github.com/user-attachments/assets/72470f08-421b-4533-afd1-11aa599026bf)
    </details>
 
 ## Design
