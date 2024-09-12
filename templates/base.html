@@ -118,7 +118,7 @@
               <a class="nav-link active" aria-current="page" href="{% url 'contact' %}">Contact Us</a>
             </li>
             <li class="nav-item dropdown">
-              <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+              <div class="dropdown-menu border-0">
                   <a href="{% url 'all_products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
                   <a href="{% url 'all_products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
                   <a href="{% url 'all_products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
@@ -138,9 +138,6 @@
                   <a class="dropdown-item" href="{% url 'all_products' %}?category=winter_tires">Winter</a>
                 </li>
                 <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li>
                   <a class="dropdown-item" href="{% url 'all_products' %}?category=summer_tires,winter_tires">All-Season-Tires</a>
                 </li>
               </ul>
@@ -158,9 +155,6 @@
                   <a class="dropdown-item" href="{% url 'all_products' %}?category=breaks_disc">Breaks Disc</a>
                 </li>
                 <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li>
                   <a class="dropdown-item" href="{% url 'all_products' %}?category=break_pad,breaks_disc">All-Items</a>
                 </li>
               </ul>
@@ -173,9 +167,6 @@
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="{% url 'all_products' %}?category=shock_absorber">Shock Absorber</a></li>
                 <li><a class="dropdown-item" href="{% url 'all_products' %}?category=ignition_preheating">Ignition &amp; preheating</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
                 <li><a class="dropdown-item" href="{% url 'all_products' %}?category=shock_absorber,ignition_preheating">All-Items</a></li>
               </ul>
             </li>
@@ -188,7 +179,6 @@
                 <li><a class="dropdown-item" href="{% url 'all_products' %}?category=filters">Filters</a></li>
                 <li><a class="dropdown-item" href="{% url 'all_products' %}?category=clutch">Clutch</a></li>
                 <li><a class="dropdown-item" href="{% url 'all_products' %}?category=engines">Engines</a></li>
-                <hr class="dropdown-divider">
                 <li><a class="dropdown-item" href="{% url 'all_products' %}?category=filters,clutch,engines">All-Items</a></li>
               </ul>
             </li>        
