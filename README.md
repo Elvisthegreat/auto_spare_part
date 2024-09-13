@@ -572,10 +572,9 @@ All python code have being manually tested with [CI Python Linter](https://pep8c
 <details>
 <summary>View HTML Testing</summary>
 
-**Its took me half a day to try and fix the error found here in the html testing but there was nothing i could do to resolve the issue i even requested for a tutor help, i talked with one of the tutor we were able to solve some of the issues found in the html but couldn't resolve all, but while we were stll trying to figure out a way to solve the remaining issues its was taking too long, which i ws already running out of time to submit the project so i decided to leave this error for a future fix sincing it's not causing any functionalities to malfunction**
+**All Html template as being tested and all code pass validation tools**
 
-![Screenshot (713)](https://github.com/user-attachments/assets/7ce48b61-9ec5-4855-aa4f-6a5412d218d9)
-![Screenshot (712)](https://github.com/user-attachments/assets/0e3aa8ed-37ee-4739-bea0-e89a10cffa81)
+![Screenshot (849)](https://github.com/user-attachments/assets/71bdfafd-4e73-4631-a472-8d9294f2b41d)
 </details>
 
 ### Testing proves from browser for responsiveness
