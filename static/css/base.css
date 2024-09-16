@@ -45,10 +45,11 @@ body{
 }
 
 /******************************* Logo Styling / Brightening Background*/
+
 .nav-shine {
     position: relative;
     display: inline-block;
-    padding: 10px;
+    height: 40px;
     color: #000;
     text-decoration: none;
     font-weight: bold;
@@ -614,11 +615,12 @@ padding: 0;
     }
 }
 
-@media (min-width: 769px) {
+/* Styles for screens 769px and wider */
+@media (min-width: 768px) {
     .fixed-section {
         position: fixed;
         right: 0;
-        top: 57px;
+        top: 57px; 
     }
 }
 
