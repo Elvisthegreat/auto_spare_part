@@ -105,12 +105,6 @@ body{
     overflow-x: hidden;
 }
 
-.fixed-section {
-    position: fixed;
-    right: 0;
-    z-index: 1000;
-}
-
 
 /****************************** All Main Content Section
 
@@ -620,6 +614,14 @@ padding: 0;
     }
 }
 
+@media (min-width: 769px) {
+    .fixed-section {
+        position: fixed;
+        right: 0;
+        top: 57px;
+    }
+}
+
 /*For screens that are 768px wider or smaller.*/
 @media (max-width: 768px) {
 
@@ -651,7 +653,6 @@ padding: 0;
         position: fixed;
         top: 20px;
         left: 1px;
-        z-index: 1000;
     }
 
     /*Profile and Cart icon*/
