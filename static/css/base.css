@@ -618,11 +618,12 @@ padding: 0;
 /* Styles for screens 769px and wider */
 @media (min-width: 768px) {
     .fixed-section {
-        position: fixed;
-        right: 0;
-        top: 57px; 
+        position: fixed !important;
+        right: 0 !important;
+        top: 57px !important;
     }
 }
+
 
 /*For screens that are 768px wider or smaller.*/
 @media (max-width: 768px) {
@@ -654,7 +655,6 @@ padding: 0;
     .fixed-section {
         position: fixed;
         top: 20px;
-        left: 1px;
     }
 
     /*Profile and Cart icon*/
