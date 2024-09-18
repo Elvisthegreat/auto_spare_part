@@ -584,6 +584,17 @@ padding: 0;
     .custom-btn {
         font-size: 12px;
     }
+
+    .custom-block {
+        display: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .custom-block {
+        display: none !important;
+    }
 }
 
 /* For screens smaller than 992px */

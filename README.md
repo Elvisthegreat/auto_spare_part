@@ -572,9 +572,9 @@ All python code have being manually tested with [CI Python Linter](https://pep8c
 <details>
 <summary>View HTML Testing</summary>
 
-**All Html template as being tested and all code pass validation tools**
+**All Html source code as being tested and all code pass validation tools**
 
-![Screenshot (849)](https://github.com/user-attachments/assets/71bdfafd-4e73-4631-a472-8d9294f2b41d)
+![Screenshot (859)](https://github.com/user-attachments/assets/e89ed5f0-eedf-4f30-8bee-c451a1c59d25)
 </details>
 
 ### Testing proves from browser for responsiveness

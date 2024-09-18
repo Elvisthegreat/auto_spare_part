@@ -32,7 +32,7 @@
                                 </div>
                                 <div class="row d-block d-md-block">
                                     <div class="col">
-                                        <a class="text-decoration-none btn btn-outline-warning rounded-5" href="{% url 'all_products' %}"><i class="bi bi-arrow-left"></i>Back to Store</a>
+                                        <a class="text-decoration-none btn btn-outline-warning rounded-5" href="{% url 'all_products' %}"><i class="bi bi-arrow-left"></i> Back to Store</a>
                                     </div>
                                 </div>
                                 <div class="row d-block d-md-none">
@@ -48,7 +48,7 @@
                                 <!--Iterate through the bag items and generate a row for each item. on smaller screen-->
                             {% for item in bag_items %}
                                 <div class="row d-block d-md-none">
-                                    <div class="col-12 col-sm-6 mb-2 d-flex align-items-center">s
+                                    <div class="col-12 col-sm-6 mb-2 d-flex align-items-center">
                                       {% include "bag/product-image.html" %}
                                       <div style="margin-left: 10px;">
                                         <!-- Product info and price inline with the image on smaller screens -->

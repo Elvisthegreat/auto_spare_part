@@ -175,12 +175,12 @@
             <li class="nav-item dropdown">
               <a class="text-black nav-link dropdown-toggle nav-links" href="#" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
-                Automotive Components
+                Engines
               </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="{% url 'all_products' %}?category=filters">Filters</a></li>
                 <li><a class="dropdown-item" href="{% url 'all_products' %}?category=clutch">Clutch</a></li>
-                <li><a class="dropdown-item" href="{% url 'all_products' %}?category=engines">Engines</a></li>
+                <li><a class="dropdown-item" href="{% url 'all_products' %}?category=engines">Engines-items</a></li>
                 <li><a class="dropdown-item" href="{% url 'all_products' %}?category=filters,clutch,engines">All-Items</a></li>
               </ul>
             </li>        
@@ -190,14 +190,14 @@
 
       <section class="d-flex justify-content-end col-12 col-md-6 col-lg-6 my-auto pt-sm-0 py-lg-0 style-nav-icons fixed-section" style="margin-right: 23px;">
         <ul class="list-inline list-unstyled text-center profile-and-cart-icon offset-sm-2 text-lg-right my-0">
-          <li class="list-inline-item">
-            <div>
-                <a class="text-black text-decoration-none d-none d-sm-block" href="{% url 'contact' %}">
-                    <i class="fas fa-phone fs-4"></i>
-                    <p class="my-0">Contact</p>
-                </a>
-            </div>
-        </li>
+            <li class="list-inline-item">
+                <div>
+                    <a class="text-black text-decoration-none d-none d-sm-block" href="{% url 'contact' %}">
+                        <i class="fas fa-phone fs-4"></i>
+                        <p class="my-0">Contact</p>
+                    </a>
+                </div>
+            </li>
             <li class="list-inline-item">
                 <div>
                     <a class="text-black text-decoration-none" href="{% url 'wishlist' %}">
@@ -214,20 +214,21 @@
                     </div>
                 </a>
                 <div class="dropdown-menu border-0" aria-labelledby="user-options">
-                  {% if request.user.is_authenticated %}
-                  {% if request.user.is_superuser %}
-                    <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
-                  {% endif %}
-                      <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                      <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                  {% else %}
-                      <!-- Register Modal -->
-                      <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                      <!-- Login Modal -->
-                      <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                </div>
-                {% endif %}
-            </li>
+                    {% if request.user.is_authenticated %}
+                    {% if request.user.is_superuser %}
+                        <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
+                    {% endif %}
+                        <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                        <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                    {% else %}
+                        <!-- Register Modal -->
+                        <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                        <!-- Login Modal -->
+                        <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                    </div> <!-- Close the dropdown-menu div here -->
+                    {% endif %}
+                </div> <!-- Close the dropdown-menu div here -->
+            </li> <!-- Close the list-inline-item dropdown li here -->
             <li class="list-inline-item">
                 <a class="{% if grand_total %}text-info text-green-color font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
                     <div style="margin-left: 7px; position: relative;">
@@ -246,7 +247,7 @@
                 </a>
             </li>
         </ul>
-    </section>
+    </section>    
     </nav>
 
     <!--Search div-->
