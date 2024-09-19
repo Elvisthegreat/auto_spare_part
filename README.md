@@ -248,7 +248,8 @@ I didn't really think or even remember that creating a backlog and adding label 
    <details>
    <summary>View Wifreframe image</summary>
 
-   ![Wireframe for all screen](https://github.com/user-attachments/assets/72470f08-421b-4533-afd1-11aa599026bf)
+   ![Wireframe for all screen (1)](https://github.com/user-attachments/assets/2f5609e3-bb64-461d-81ac-9504f4458192)
+   ![AutoSparePart](https://github.com/user-attachments/assets/f98a636e-9d51-4aca-bc5b-19ba96732a11)
    </details>
 
 ## Design
