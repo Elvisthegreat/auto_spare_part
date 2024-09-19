@@ -601,6 +601,8 @@ padding: 0;
 }
 
 
+
+
 /*For screens that are 768px wider or smaller.*/
 @media (max-width: 768px) {
 
@@ -628,20 +630,16 @@ padding: 0;
     }
 
     /***********************Nav icons*/
-    .fixed-section {
-        position: fixed;
-        top: 20px;
-    }
 
     /*Profile and Cart icon*/
     .profile-and-cart-icon {
         display: flex;
         justify-content: flex-end;
         position: absolute; 
-        top: 6px;
-        right: 27px;
-        padding-top: 8px;
-        margin-left: 25px;
+        top: 7px;
+        right: 20px;
+        padding-top: 0;
+        margin-left: 0;
     }
 
 
