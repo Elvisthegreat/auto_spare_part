@@ -1,5 +1,5 @@
 # E-commerce AutoSparePart:
-![Am I Responsive](https://github.com/user-attachments/assets/362ad696-fae7-4619-87ee-bb45acba0aa2)
+![Am I Responsive](https://github.com/user-attachments/assets/c35e930a-9265-42bd-b9c6-12437f88e995)
 
 **Developer: Elvis Blessing**
 
@@ -646,7 +646,7 @@ Not all **Homepage** images has links, and the reason was because of time, just 
 - When i first deployed the website to heroku, i found that alot of images were broken and only the Alt name was only showing up
 - Found that the page 404 added to the website when a user tries to enter an invalid url link wasn't hidden under the navigation bar
 - On tablet screen size the remove product button under the increment button in the cart is not really aligning properly
-- Delete modal was under the navigation because there of the z-index of the nav bar
+- Delete modal was under the navigation because of the z-index of the nav bar
 
 **Issues Fixed:**
 - When a user log in to the deployed website from heroku site no longer displaying Server error 505 ✔️
@@ -664,11 +664,6 @@ Not all **Homepage** images has links, and the reason was because of time, just 
 - The remove product button under the increment button in the cart is not really aligning properly on tablet screen, only on tablet, i've tried and spent many hours trying to fix the error, but in anyhow i try fixing the error it keeps affecting other screen sizes so just because of time i just decided to leave it for a future fix
 
 ![Screenshot (749)](https://github.com/user-attachments/assets/9d437164-88ae-43cb-aaf1-0b6d3b44c56f)
-
-- In the shopping cart there are two **Back to store** links display on same row and column on screen size between tablet and a little bit larger whcih is something i didn't really wanted it to be that way. I personally added those two links which one have to be on top on smaller screen why on larger screen the both links have to display on top while the other on the bottom. I've tried using bootstrap to stop them both from displaying on same row and column on smaller screen which one have to be hidden but not on the bottom on larger screen but its wasn't working so just because of time i leave that error for a future fix.
-
-![Screenshot (750)](https://github.com/user-attachments/assets/c50fb3b2-d4fa-4b47-9b98-0b929742b02b)
-
 
 
 ## Troubleshooting
