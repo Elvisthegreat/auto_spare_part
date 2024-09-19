@@ -598,6 +598,11 @@ padding: 0;
         right: 0 !important;
         top: 57px !important;
     }
+
+    .push-modal-x-down {
+        margin-top: 25px;
+        padding: 2.7rem;
+    }
 }
 
 
@@ -637,7 +642,7 @@ padding: 0;
         justify-content: flex-end;
         position: absolute; 
         top: 7px;
-        right: 20px;
+        right: 13px;
         padding-top: 0;
         margin-left: 0;
     }
