@@ -21,7 +21,7 @@
   - [Site Owner Goals](#site-owner-goals)
   - [User Experience](#user-experience)
   - [User Stories](#user-stories)
-  - [Kanban & User Stories](#kanban-&user-stories)
+  - [Kanban & User Stories](#kanban-&-user-stories) 
   - [Epics](#epics)
   - [ERD Diagram](#erd-diagram)
   - [Wireframe](#wireframe)
@@ -208,11 +208,14 @@ Admin and Store Management
 | 29 |	Store Owner / Admin |	delete a product	| delete existing products from the shop
 
 ### Kanban & User Stories
+
 - GitHub Kanban was used to track all open user stories
 
 <details><summary>View Kanban image board</summary>
 
 ![Kanban](https://github.com/user-attachments/assets/47c20266-af0f-4c8c-a047-59e17aa8de56)
+
+***[Full Kanban board in Github](https://github.com/users/Elvisthegreat/projects/8)***
 </details>
 
 ## Epics
@@ -222,14 +225,52 @@ Backlog, In Progress.
 <details>
 <summary>Epic milestone Overview</summary>
 
-![Screenshot (760)](https://github.com/user-attachments/assets/0b87841f-fecc-4014-8e56-813c72273bfd)
+![Screenshot (869)](https://github.com/user-attachments/assets/665b6391-4c40-4794-8712-3fa6abbfc9e8)
 </details>
 
 <details>
-<summary>Apologies</summary>
+<summary>Epic 1</summary>
 
-I didn't really think or even remember that creating a backlog and adding label are something we decorators and add to our readme, because my whole thought was adding a Kanban board was enough, i already started creating the backlog and tying to add labels in github now after talking with mentor he told me to try and add them to my readme, but now i won't be having sufficient time to build them in my github sice my deadline day is today and its almost time now for me to start getting ready for work.
+![Screenshot (863)](https://github.com/user-attachments/assets/fb4f726e-8375-48a8-ae79-d13376ab0801)
 </details>
+
+<details>
+<summary>Epic 2</summary>
+
+![Screenshot (864)](https://github.com/user-attachments/assets/af4c926d-d327-484f-b5fd-1e11f0fb9a8e)
+</details>
+
+<details>
+<summary>Epic 3</summary>
+
+![Screenshot (865)](https://github.com/user-attachments/assets/2a4a7514-c496-4773-a35a-56dbf9e60cf7)
+</details>
+
+<details>
+<summary>Epic 4</summary>
+
+![Screenshot (866)](https://github.com/user-attachments/assets/afb06065-3049-445b-bc39-b5729f4b77b4)
+</details>
+
+<details>
+<summary>Epic 5</summary>
+
+![Screenshot (867)](https://github.com/user-attachments/assets/be2da6d3-b968-4f01-beca-1b3b6ce576f6)
+</details>
+
+<details>
+<summary>Epic 6</summary>
+
+![Screenshot (868)](https://github.com/user-attachments/assets/4b3e042f-7b6c-4924-85da-e523b60ab794)
+</details>
+
+<details>
+<summary>All Users Stories</summary>
+
+![Screenshot (872)](https://github.com/user-attachments/assets/80c97af8-4185-47a3-91e8-ba8b6c734670)
+![Screenshot (871)](https://github.com/user-attachments/assets/97c50c5e-228c-43ea-9afd-ff218f70c233)
+</details>
+
 
 ##### Back to [top](#table-of-contents)<hr>
 
