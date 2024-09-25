@@ -157,5 +157,6 @@
 {% endblock %}
 
 {% block postloadjs %}
+{{ block.super }}
     <script src="{% static 'js/randompost.js' %}"></script>
 {% endblock %}
