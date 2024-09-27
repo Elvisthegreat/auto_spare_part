@@ -579,6 +579,7 @@ a.category-badge > span.badge:hover {
 padding: 0;
 }
 
+
 /* Apply btn-sm class only on screens smaller than 576px */
 @media (max-width: 575.98px) {
     .custom-btn {
