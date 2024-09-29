@@ -91,6 +91,14 @@
             <span class="d-none d-lg-block">
               <span class="contact-info" id="footer-date"></span>
             </span>
+              <!-- Login span -->
+              <span class="d-none d-lg-block bg-success" style="margin-left: 20px;">
+                {% if user.is_authenticated %}
+                  <span class="contact-info text-white py-1">Logged in as {{ user }}</span>
+                {% else %}
+                  <span class="text-warning contact-info">You're not logged in</span>
+                {% endif %}
+              </span>
           </div>
         </div>
       </section>
@@ -183,7 +191,19 @@
                 <li><a class="dropdown-item" href="{% url 'all_products' %}?category=engines">Engines-items</a></li>
                 <li><a class="dropdown-item" href="{% url 'all_products' %}?category=filters,clutch,engines">All-Items</a></li>
               </ul>
-            </li>        
+            </li>
+
+            <li class="nav-item d-lg-none">
+              <!-- Login span -->
+              <span class="bg-success" style="margin-left: 20px;">
+                {% if user.is_authenticated %}
+                  <span class="contact-info text-white py-1">Logged in as {{ user }}</span>
+                {% else %}
+                  <span class="text-warning contact-info">You're not logged in</span>
+                {% endif %}
+              </span></a>
+            </li> 
+                   
           </ul>
         </div>
       </div>
